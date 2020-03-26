@@ -80,13 +80,18 @@ $border:#ddd;
 
 } /* card */
 
-.btn-primary{
+.btn-primary{ 
 	background-color:$primaryColor;
 	border:solid 1Px $primaryColor;
 
 	&:hover{
 		background-color:$primaryColorHover;
 		border-color:$primaryColorHover;
+	}
+
+	&:disabled{
+		background-color:$primaryColor;
+		border:solid 1Px $primaryColor;
 	}
 
 }

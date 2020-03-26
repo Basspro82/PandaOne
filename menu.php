@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
       <a class="navbar-brand" href="/home">
-        <img src="/images/logo.png" /> HippoSeries
+        <img src="/images/logo.png" /> PandaOne
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,8 @@
                 <img class="gravatar" src="<?php print_r(get_gravatar('ylaurain@gmail.com')); ?>" /> Yann LAURAIN
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="/friends">Friends</a>
+                <a class="dropdown-item" href="/friends">My friends</a>
+                <a class="dropdown-item" href="/friends">My comments</a>
                 <a class="dropdown-item" href="#">Logout</a>
               </div>
             </li>

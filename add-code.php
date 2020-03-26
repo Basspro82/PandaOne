@@ -4,7 +4,7 @@ include 'config.php';
 
 require_once '../../framework/log.php';
 
-require_once "manager/serieManager.php";
+require_once "manager/commentManager.php";
 require_once "model/serie.php";
 require_once "model/comment.php";
 
@@ -32,7 +32,7 @@ if (isset($_POST['mode'])){
 
 				showLog('add-code.php','',$comment);
 				
-				//CommentManager::Add($comment);
+				CommentManager::Add($comment);
 
 			}
 		}

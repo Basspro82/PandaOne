@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>HippoSeries</title>
+        <title>PandaOne</title>
 
         <link rel="canonical" href="#">
 

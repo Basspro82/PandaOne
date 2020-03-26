@@ -97,11 +97,14 @@ $input.addEventListener('keyup', function(){
 		    }
 	
 		    $(".resultRow").click(function() {
-				//alert($(this).attr('data-imdbid'));
 				$("#imdbID").val($(this).attr('data-imdbid'));
 				$("#title").val($(this).attr('data-title'));
 				$("#year").val($(this).attr('data-year'));
 				$("#poster").val($(this).attr('data-poster'));
+				$(".preview").empty();
+				$(this).clone().appendTo(".preview");
+				$result.innerHTML = "";
+				$(".btnSave").removeAttr("disabled");
 			});
 
 		});
