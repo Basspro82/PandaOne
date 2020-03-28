@@ -44,7 +44,27 @@ class CommentManager{
 		Disconnect($con);
 	}
 
-	public static function GetLast($nb)
+	public static function Update($comment)
+	{
+						
+		$con = Connect();
+		
+		showLog('CommentManager.php','Update',$comment);
+
+		// Update comment
+
+		$commentraw = mysqli_real_escape_string($con,$comment->comment);
+
+		$query = "UPDATE comment SET comment = '$commentraw' WHERE commentID = " . $comment->commentID;
+
+		If (!ExecuteQuery($query)){
+			return;
+		}
+			
+		Disconnect($con);
+	}
+
+	public static function LoadAll($filtre,$nb=0)
 	{
 
 		$con = Connect();
@@ -53,6 +73,10 @@ class CommentManager{
 			   ' INNER JOIN user ON comment.userID = user.userID ' .
 			   ' INNER JOIN serie ON comment.imdbID = serie.imdbID';
 		
+		if (!empty($filtre)) {
+			$sql .= ' WHERE ' . $filtre;
+		}	   
+
 		$sql .= ' ORDER BY comment.createdAt DESC ';	   
 
 		if ($nb != 0) $sql .= ' LIMIT 0,' . $nb;

@@ -11,7 +11,7 @@
 	  </div>
 	  <div class="footerDown">
 	  	<div class="container text-center">		
-      		© HippoSeries 2020
+      		© PandaOne 2020
 		</div>
 		</div>
     </footer>

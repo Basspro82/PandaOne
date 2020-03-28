@@ -5,7 +5,7 @@ include 'config.php';
 require_once '../../framework/log.php';
 
 require_once "manager/serieManager.php";
-require_once "model/serie.php";
+require_once "model/serieModel.php";
 
 $showLog = false;
 

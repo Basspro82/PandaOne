@@ -10,12 +10,12 @@ require_once "model/commentModel.php";
 $showLog = false;
 
 $series;
-$result = CommentManager::LoadAll('',10);
+$result = CommentManager::LoadAll('comment.userID = 1');
 while($row = mysqli_fetch_row($result)){
 	$comment = Comment::fromDB($row);
 	$comments[] = $comment;
 }
 
-showLog('home-code','',$comments[0]);
+showLog('my-comments-code','',$comments[0]);
 
 ?>

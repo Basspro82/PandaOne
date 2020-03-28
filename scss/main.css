@@ -1,3 +1,115 @@
+.card {
+  padding: 1rem;
+  background-color: #f9f9f9; }
+  .card a h4 {
+    color: #f1ad1f; }
+    .card a h4:hover {
+      color: #f7c457; }
+    .card a h4 .badge {
+      font-size: 60%;
+      background-color: transparent;
+      border: solid 1px #f1ad1f;
+      color: #f1ad1f;
+      margin-top: 0.3rem; }
+  .card a:hover {
+    text-decoration: none; }
+  .card .img-box {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: #fff; }
+    .card .img-box img {
+      border-radius: 50%;
+      width: 100%; }
+  .card blockquote {
+    margin: 1rem; }
+  .card .card-serie {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1Px #ddd;
+    font-size: 0.9rem; }
+    .card .card-serie .card-poster img {
+      width: 70px; }
+  .card .card-pseudo {
+    margin-bottom: 0; }
+  .card .card-date {
+    font-size: 0.8rem; }
 
+/* card */
+.btn-primary {
+  background-color: #f1ad1f;
+  border: solid 1Px #f1ad1f; }
+  .btn-primary:hover {
+    background-color: #f7c457;
+    border-color: #f7c457; }
+  .btn-primary:disabled {
+    background-color: #f1ad1f;
+    border: solid 1Px #f1ad1f; }
+
+.navbar-brand img {
+  max-height: 50px; }
+
+.gravatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-right: 10px; }
+
+footer {
+  color: #fff;
+  margin-top: 4rem; }
+  footer .footerUp {
+    background-color: #464e56;
+    padding: 1rem; }
+  footer .footerDown {
+    background-color: #343a40;
+    padding: 1rem; }
+
+body {
+  font-size: 35px;
+  font-family: sans-serif; }
+
+.rate-base-layer {
+  color: #aaa; }
+
+.rate-hover-layer {
+  color: orange; }
+
+.rate2 {
+  font-size: 35px; }
+
+.rate2 .rate-hover-layer {
+  color: pink; }
+
+.rate2 .rate-select-layer {
+  color: red; }
+
+.im {
+  background-image: url("./images/heart.gif");
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block; }
+
+.im2 {
+  background-image: url("./images/emoji5.png");
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 64px;
+  display: inline-block; }
+
+#rate5 .rate-base-layer span, #rate7 .rate-base-layer span {
+  opacity: 0.5; }
+
+hr {
+  border: 1px solid #ccc; }
+
+p {
+  font-size: 15px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,4 @@
-<?php require 'add-code.php' ?>
+<?php require 'comment-code.php' ?>
 
 <?php include 'header.php' ?>
 
@@ -9,7 +9,7 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Your comment</h1>
+          <h1 class="display-3">Edit your comment</h1>
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         </div>
       </div>
@@ -17,13 +17,12 @@
       <div class="container">
         <!-- Example row of columns -->
 
-        <form action="add.php" method="post">
+        <form action="comment" method="post">
           <div class="container">
             <div class="searchArea row">
               <div class="col-8">
                 <div class="form-group">
-                  <input class="form-control" id="searchBox" type="text" placeholder="enter a serie">
-                  <div id="result"></div>
+                  <input class="form-control" id="title" type="text" value="<?php echo $comment->serie->title ?>" disabled>
                 </div>
               </div>
               <div class="col-4">
@@ -36,13 +35,17 @@
             <input type="hidden" name="year" id="year">
             <input type="hidden" name="poster" id="poster">
             <input type="hidden" name="score" id="score">
+            <input type="hidden" name="commentID" value="<?php echo $comment->commentID ?>">
             <div class="form-group">
               <div class="rate"></div>
             </div>
             <div class="form-group">
-                <textarea class="form-control" type="text" name="comment" id="comment" placeholder="enter your comment"></textarea>
+                <textarea class="form-control" type="text" name="comment" id="comment" placeholder="enter your comment"><?php echo $comment->comment ?></textarea>
             </div>
-            <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save" disabled="false">
+            <div class="btn-group" role="group" aria-label="Action">
+              <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save">
+              <a class="btn btn-secondary btnCancel" href="comments.php">Cancel</a>
+            </div>
           </div>
         </form>
 

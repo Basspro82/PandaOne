@@ -28,9 +28,8 @@
               <a class="nav-link dropdown-toggle" href="http://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="gravatar" src="<?php print_r(get_gravatar('ylaurain@gmail.com')); ?>" /> Yann LAURAIN
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="/friends">My friends</a>
-                <a class="dropdown-item" href="/friends">My comments</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="/comments">My comments</a>
                 <a class="dropdown-item" href="#">Logout</a>
               </div>
             </li>

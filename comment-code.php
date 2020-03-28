@@ -8,7 +8,16 @@ require_once "manager/commentManager.php";
 require_once "model/serieModel.php";
 require_once "model/commentModel.php";
 
-$showLog = true;
+$showLog = false;
+
+//Load comment
+
+$result = CommentManager::LoadAll('comment.commentID = ' . $_GET["commentID"]);
+while($row = mysqli_fetch_row($result)){
+	$comment = Comment::fromDB($row);
+}
+
+// Save comment
 
 if (isset($_POST['mode'])){
 	if ($_POST["mode"]==1){
@@ -21,18 +30,16 @@ if (isset($_POST['mode'])){
 				// Enregistrement du commentaire
 
 				$comment = new Comment();
+				$comment->commentID = $_POST['commentID'];
 				$comment->imdbID = $_POST['imdbID'];
 				$comment->userID = 1;
-				$comment->comment = utf8_decode($_POST['comment']);
-				$comment->serie = new Serie();
-				$comment->serie->imdbID = $_POST['imdbID'];
-				$comment->serie->title = $_POST['title'];
-				$comment->serie->year = $_POST['year'];
-				$comment->serie->poster = $_POST['poster']; 
-
+				$comment->comment = $_POST['comment'];
+				
 				showLog('add-code.php','',$comment);
 				
-				CommentManager::Add($comment);
+				CommentManager::Update($comment);
+
+				header('Location:comments');      
 
 			}
 		}

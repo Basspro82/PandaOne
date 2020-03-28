@@ -1,7 +1,7 @@
 <?php
 
 require_once '../../framework/string.php';
-require_once 'user.php';
+require_once 'userModel.php';
 
 class Serie
 {
@@ -62,7 +62,7 @@ class Serie
         $instance->genre = $row[$firstIndex + 4];
         $instance->poster = $row[$firstIndex + 5];
         $instance->createdAt = $row[$firstIndex + 6];
-        $instance->url = "/" . ConvertStringToUrl($instance->title) . "/" . $instance->imdbID;
+        $instance->url = "/serie?imdbID=" . $instance->imdbID;
 		return $instance;
     }
 	

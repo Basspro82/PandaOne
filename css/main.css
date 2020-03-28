@@ -45,6 +45,9 @@
   .btn-primary:hover {
     background-color: #f7c457;
     border-color: #f7c457; }
+  .btn-primary:disabled {
+    background-color: #f1ad1f;
+    border: solid 1Px #f1ad1f; }
 
 .navbar-brand img {
   max-height: 50px; }
@@ -64,5 +67,17 @@ footer {
   footer .footerDown {
     background-color: #343a40;
     padding: 1rem; }
+
+.rate {
+  font-size: 35px; }
+  .rate .rate-base-layer {
+    color: #aaa; }
+  .rate .rate-hover-layer {
+    color: #f7c457; }
+  .rate .rate-select-layer {
+    color: #f1ad1f; }
+
+.seriePoster img {
+  max-width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

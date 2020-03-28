@@ -1,4 +1,4 @@
-<?php require 'home-code.php' ?>
+<?php require 'serie-code.php' ?>
 
 <?php include 'header.php' ?>
 
@@ -7,9 +7,16 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Home</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="/add" role="button">Add comment +</a></p>
+          <h1 class="display-3"><?php echo $serie->title ?></h1>
+          <div class="row">
+            <div class="col-3 seriePoster">
+              <img src="<?php echo $serie->poster ?>"/>
+            </div>
+            <div class="col">
+              <p><?php echo $serie->plot ?></p>
+              <p><a class="btn btn-primary btn-lg" href="/add" role="button">Add comment +</a></p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -17,10 +24,10 @@
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-12">
-        <h2>Last comments</h2>  
 
         <div class="row">
-        <?php foreach ($comments as $comment) { ?>     
+        <?php foreach ($serie->comments as $comment) { ?>
+
             <div class="col-12">
               <?php require "commentCard.php" ?>
             </div>

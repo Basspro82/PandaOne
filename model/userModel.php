@@ -15,6 +15,7 @@ class User
 		$instance->pseudo = $row[$firstIndex + 1];
 		$instance->mail = $row[$firstIndex + 2];
 		$instance->gravatar = $row[$firstIndex + 3];
+		$instance->password = $row[$firstIndex + 4];
 		return $instance;
     }
 	
