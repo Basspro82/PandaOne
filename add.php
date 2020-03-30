@@ -17,7 +17,7 @@
       <div class="container">
         <!-- Example row of columns -->
 
-        <form action="add.php" method="post">
+        <form action="add" method="post">
           <div class="container">
             <div class="searchArea row">
               <div class="col-8">
@@ -36,6 +36,7 @@
             <input type="hidden" name="year" id="year">
             <input type="hidden" name="poster" id="poster">
             <input type="hidden" name="score" id="score">
+            <input type="hidden" name="urlReferrer" value="<?php echo $urlReferrer; ?>">
             <div class="form-group">
               <div class="rate"></div>
             </div>

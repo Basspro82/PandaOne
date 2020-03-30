@@ -39,7 +39,7 @@ if (isset($_POST['mode'])){
 				
 				CommentManager::Update($comment);
 
-				header('Location:comments');      
+				header('Location:my-comments');      
 
 			}
 		}

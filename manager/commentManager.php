@@ -91,4 +91,22 @@ class CommentManager{
 		
 	}
 
+	public static function Delete($commentID)
+	{
+						
+		$con = Connect();
+		
+		showLog('CommentManager.php','Delete',$commentID);
+
+		$sql = " DELETE FROM comment WHERE commentID = " . $commentID;
+		$result = $con->query($sql);
+
+		Disconnect($con);
+
+		showLog('commentManager.php','Delete',$sql);
+
+		return $result;
+
+	}
+
 }

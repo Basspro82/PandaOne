@@ -8,12 +8,11 @@ require_once "manager/commentManager.php";
 require_once "model/serieModel.php";
 require_once "model/commentModel.php";
 
-$showLog = true;
+$showLog = false;
 
 if (isset($_POST['mode'])){
 	if ($_POST["mode"]==1){
-		
-		// Mise à jour des titres des vidéos
+
 		foreach($_POST as $key => $value) {
 			$pos = strpos($key, "imdbID");
 			if ($pos !== false) {
@@ -23,7 +22,7 @@ if (isset($_POST['mode'])){
 				$comment = new Comment();
 				$comment->imdbID = $_POST['imdbID'];
 				$comment->userID = 1;
-				$comment->comment = utf8_decode($_POST['comment']);
+				$comment->comment = $_POST['comment'];
 				$comment->serie = new Serie();
 				$comment->serie->imdbID = $_POST['imdbID'];
 				$comment->serie->title = $_POST['title'];
@@ -34,9 +33,12 @@ if (isset($_POST['mode'])){
 				
 				CommentManager::Add($comment);
 
+				header('Location:' . $_POST["urlReferrer"]);    	
 			}
 		}
 	}
+}else{
+	$urlReferrer = $_SERVER['HTTP_REFERER'];
 }
 
 showLog('add-code','',$_POST);

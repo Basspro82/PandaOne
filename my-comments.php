@@ -1,6 +1,5 @@
-<?php require 'comments-code.php' ?>
-
 <?php include 'header.php' ?>
+<?php require 'my-comments-code.php' ?>
 
     <main role="main">
 
@@ -18,13 +17,16 @@
         <div class="row">
           <div class="col-12">
 
-        <div class="row">
-        <?php foreach ($comments as $comment) { ?>     
-            <div class="col-12">
-              <?php require "commentCard.php" ?>
-            </div>
-            <?php } ?>
-          </div><!--row-->
+            <div class="row">
+              <?php if (isset($comments)) { foreach ($comments as $comment) { ?>     
+                <div class="col-12">
+                  <?php require "commentCard.php" ?>
+                </div>
+              <?php }} ?>
+            </div><!--row-->
+
+            <p><?php echo $message ?></p>
+
           </div>
         </row>
 

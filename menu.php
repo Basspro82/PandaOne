@@ -1,4 +1,6 @@
-<?php include '../../framework/gravatar.php' ?>
+<?php require "menu-code.php" ?>
+
+<?php session_start(); ?>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
@@ -26,11 +28,14 @@
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="http://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="gravatar" src="<?php print_r(get_gravatar('ylaurain@gmail.com')); ?>" /> Yann LAURAIN
+                <img class="gravatar" src="<?php echo $_SESSION["gravatar"]; ?>" /> <?php echo $_SESSION["pseudo"]; ?>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="/comments">My comments</a>
-                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="/my-comments">My comments</a>
+                <form class="form-inline" action="menu" method="POST">
+                  <input type="hidden" name="mode" value="logout">
+                  <button class="dropdown-item">Logout</button>
+                </form>
               </div>
             </li>
           </ul>

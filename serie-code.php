@@ -9,6 +9,7 @@ require_once "manager/commentManager.php";
 require_once "model/commentModel.php";
 
 $showLog = false;
+$page = "serie";
 
 // Load Serie Info
 

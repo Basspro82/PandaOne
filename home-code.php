@@ -8,6 +8,7 @@ require_once "manager/commentManager.php";
 require_once "model/commentModel.php";
 
 $showLog = false;
+$page = 'home';
 
 $series;
 $result = CommentManager::LoadAll('',10);
