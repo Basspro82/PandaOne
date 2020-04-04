@@ -20,7 +20,7 @@
   <body class="text-center">
     <form action="index.php" method="post" class="form-signin">
       <input type="hidden" name="mode" value="1">
-      <img class="mb-4" src="/images/logo.png" alt="" width="110" height="72">
+      <img class="mb-4" src="./images/logo.png" alt="" width="110" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Bienvenue sur PandaOne</h1>
       <label for="inputEmail" class="sr-only">Email</label>
       <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus="">

@@ -63,8 +63,8 @@
 
     </main>
 
-    <script type="text/javascript" src="/js/add.js"></script>
-    <script type="text/javascript" src="/js/rater.min.js"></script>
+    <script type="text/javascript" src="./js/add.js"></script>
+    <script type="text/javascript" src="./js/rater.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
             var options = {
