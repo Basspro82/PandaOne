@@ -22,7 +22,17 @@
             <div class="searchArea row">
               <div class="col-8">
                 <div class="form-group">
-                  <input class="form-control" id="searchBox" type="text" placeholder="enter a serie">
+                  <?php 
+                    if (isset($_GET['imdbID'])){ 
+                    $disabled = '';
+                  ?>
+                    <input class="form-control" id="title" type="text" value="<?php echo $serie->title ?>" disabled>
+                  <?php 
+                    }else{ 
+                      $disabled = 'disabled';
+                  ?>  
+                    <input class="form-control" id="searchBox" type="text" placeholder="enter a serie">
+                  <?php } ?>
                   <div id="result"></div>
                 </div>
               </div>
@@ -31,7 +41,7 @@
               </div>
             </div>
             <input type="hidden" name="mode" value="1">
-            <input type="hidden" name="imdbID" id="imdbID">
+            <input type="hidden" name="imdbID" id="imdbID" value="<?php echo $_GET['imdbID'] ?>">
             <input type="hidden" name="title" id="title">
             <input type="hidden" name="year" id="year">
             <input type="hidden" name="poster" id="poster">
@@ -43,7 +53,7 @@
             <div class="form-group">
                 <textarea class="form-control" type="text" name="comment" id="comment" placeholder="enter your comment"></textarea>
             </div>
-            <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save" disabled="false">
+            <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save" "<?php echo $disabled ?>">
           </div>
         </form>
 
@@ -52,7 +62,6 @@
     </main>
 
     <script type="text/javascript" src="/js/add.js"></script>
-    <script type="text/javascript" src="/js/rater.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
             var options = {

@@ -18,10 +18,11 @@ class Comment
 		$instance->imdbID = $row[1];
 		$instance->userID = $row[2];
 		$instance->comment = $row[3];
-		$date = new DateTime($row[4]);
-		$instance->createdAt = $date->format('d/m/y H:i');
-		$instance->user = User::fromDB($row,5);
-		$instance->serie = Serie::fromDB($row,10);
+		$instance->score = $row[4];
+		$date = new DateTime($row[5]);
+		$instance->createdAt = $date->format('d/m/y');
+		$instance->user = User::fromDB($row,6);
+		$instance->serie = Serie::fromDB($row,11);
 		return $instance;
     }
 	

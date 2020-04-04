@@ -1,6 +1,6 @@
 .card {
-  padding: 1rem;
-  background-color: #f9f9f9; }
+  background-color: #f9f9f9;
+  /* card-user */ }
   .card a h4 {
     color: #f1ad1f; }
     .card a h4:hover {
@@ -13,18 +13,9 @@
       margin-top: 0.3rem; }
   .card a:hover {
     text-decoration: none; }
-  .card .img-box {
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    background-color: #fff; }
-    .card .img-box img {
-      border-radius: 50%;
-      width: 100%; }
   .card blockquote {
-    margin: 1rem; }
+    margin: 1rem;
+    margin-left: 0; }
   .card .card-serie {
     background-color: #f1f1f1;
     padding: 10px;
@@ -33,12 +24,36 @@
     font-size: 0.9rem; }
     .card .card-serie .card-poster img {
       width: 70px; }
-  .card .card-pseudo {
-    margin-bottom: 0; }
+    .card .card-serie .card-poster:hover {
+      opacity: 0.8; }
+  .card .card-user {
+    text-align: center;
+    display: block; }
+    .card .card-user .card-pseudo {
+      margin-bottom: 0;
+      color: #212529; }
+    .card .card-user:hover {
+      opacity: 0.8; }
   .card .card-date {
-    font-size: 0.8rem; }
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    line-height: 52px; }
+  .card .card-text {
+    color: #666; }
 
 /* card */
+.img-box {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  margin: auto; }
+  .img-box img {
+    border-radius: 50%;
+    width: 100%; }
+
 .btn-primary {
   background-color: #f1ad1f;
   border: solid 1Px #f1ad1f; }
@@ -68,16 +83,20 @@ footer {
     background-color: #343a40;
     padding: 1rem; }
 
-.rate {
+.rate, .rateRO {
   font-size: 35px; }
-  .rate .rate-base-layer {
+  .rate .rate-base-layer, .rateRO .rate-base-layer {
     color: #aaa; }
-  .rate .rate-hover-layer {
+  .rate .rate-hover-layer, .rateRO .rate-hover-layer {
     color: #f7c457; }
-  .rate .rate-select-layer {
+  .rate .rate-select-layer, .rateRO .rate-select-layer {
     color: #f1ad1f; }
 
 .seriePoster img {
   max-width: 100%; }
+
+/*******************************************/
+.series img {
+  max-width: 100px; }
 
 /*# sourceMappingURL=main.css.map */

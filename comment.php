@@ -1,6 +1,5 @@
-<?php require 'comment-code.php' ?>
-
 <?php include 'header.php' ?>
+<?php require 'comment-code.php' ?>
 
     <link href="./css/imdb-autocomplete.css" rel="stylesheet">
 
@@ -22,7 +21,18 @@
             <div class="searchArea row">
               <div class="col-8">
                 <div class="form-group">
-                  <input class="form-control" id="title" type="text" value="<?php echo $comment->serie->title ?>" disabled>
+                  <?php 
+                    if (isset($_GET['imdbID']) || isset($_GET['commentID'])){ 
+                    $save = '';
+                  ?>
+                    <input class="form-control" id="title" type="text" value="<?php echo $title ?>" disabled>
+                  <?php 
+                    }else{ 
+                      $save = 'disabled';
+                  ?>  
+                    <input class="form-control" id="searchBox" type="text" placeholder="enter a serie">
+                  <?php } ?>
+                  <div id="result"></div>
                 </div>
               </div>
               <div class="col-4">
@@ -30,21 +40,21 @@
               </div>
             </div>
             <input type="hidden" name="mode" value="1">
-            <input type="hidden" name="imdbID" id="imdbID">
+            <input type="hidden" name="imdbID" id="imdbID" value="<?php echo $imdbID ?>">
             <input type="hidden" name="title" id="title">
             <input type="hidden" name="year" id="year">
             <input type="hidden" name="poster" id="poster">
             <input type="hidden" name="score" id="score">
-            <input type="hidden" name="commentID" value="<?php echo $comment->commentID ?>">
+            <input type="hidden" name="commentID" value="<?php echo $commentID ?>">
             <div class="form-group">
-              <div class="rate"></div>
+              <div class="rate" data-rate-value="<?php echo $score ?>"></div>
             </div>
             <div class="form-group">
-                <textarea class="form-control" type="text" name="comment" id="comment" placeholder="enter your comment"><?php echo $comment->comment ?></textarea>
+                <textarea class="form-control" type="text" name="comment" id="comment" placeholder="enter your comment"><?php echo $commentRaw ?></textarea>
             </div>
             <div class="btn-group" role="group" aria-label="Action">
-              <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save">
-              <a class="btn btn-secondary btnCancel" href="comments.php">Cancel</a>
+              <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save" <?php echo $save ?>>
+              <a class="btn btn-secondary btnCancel" href="<?php echo $urlReferrer ?>">Cancel</a>
             </div>
           </div>
         </form>

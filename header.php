@@ -1,5 +1,6 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
-<!-- saved from url=(0053)https://getbootstrap.com/docs/4.0/examples/jumbotron/ -->
 <html lang="en">
     <head>
         
@@ -12,7 +13,7 @@
 
         <link rel="canonical" href="#">
 
-        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./vendor/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="./css/jumbotron.css" rel="stylesheet">
         <link href="./css/jquery.dataTables.min.css" rel="stylesheet">
         <link href="./css/main.css" rel="stylesheet">
@@ -22,5 +23,12 @@
     </head>
 
     <body>
+
+    <?php
+        $urlReferrer = '';
+        if ((!isset($_POST['mode']))&&(isset($_SERVER['HTTP_REFERER']))){
+            $urlReferrer = $_SERVER['HTTP_REFERER'];
+        }    
+    ?>
 
     <?php include 'menu.php' ?>

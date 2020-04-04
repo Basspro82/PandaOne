@@ -8,7 +8,16 @@ require_once "manager/commentManager.php";
 require_once "model/serieModel.php";
 require_once "model/commentModel.php";
 
-$showLog = false;
+$showLog = true;
+
+// Load Preselected Series if it is necessary
+
+if (isset($_GET['imdbID'])){
+	$result = LoadAll("serie","imdbID = '" . $_GET["imdbID"] . "'");
+	while($row = mysqli_fetch_row($result)){
+		$serie = Serie::fromDB($row,0);
+	}
+}
 
 if (isset($_POST['mode'])){
 	if ($_POST["mode"]==1){
@@ -21,8 +30,10 @@ if (isset($_POST['mode'])){
 
 				$comment = new Comment();
 				$comment->imdbID = $_POST['imdbID'];
-				$comment->userID = 1;
+				$comment->userID = $_SESSION['userID'];
 				$comment->comment = $_POST['comment'];
+				$comment->score = $_POST['score'];	
+
 				$comment->serie = new Serie();
 				$comment->serie->imdbID = $_POST['imdbID'];
 				$comment->serie->title = $_POST['title'];

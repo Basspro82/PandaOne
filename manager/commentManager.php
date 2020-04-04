@@ -35,7 +35,7 @@ class CommentManager{
 
 		$commentraw = mysqli_real_escape_string($con,$comment->comment);
 
-		$query = "INSERT INTO comment(imdbID,userID,comment,createdAt) VALUES('$comment->imdbID',1,'$commentraw',CURDATE())";
+		$query = "INSERT INTO comment(imdbID,userID,comment,score,createdAt) VALUES('$comment->imdbID',$comment->userID,'$commentraw','$comment->score',CURDATE())";
 
 		If (!ExecuteQuery($query)){
 			return;
@@ -55,7 +55,7 @@ class CommentManager{
 
 		$commentraw = mysqli_real_escape_string($con,$comment->comment);
 
-		$query = "UPDATE comment SET comment = '$commentraw' WHERE commentID = " . $comment->commentID;
+		$query = "UPDATE comment SET comment = '$commentraw', score = " . $comment->score . " WHERE commentID = " . $comment->commentID;
 
 		If (!ExecuteQuery($query)){
 			return;

@@ -14,7 +14,7 @@
             </div>
             <div class="col">
               <p><?php echo $serie->plot ?></p>
-              <p><a class="btn btn-primary btn-lg" href="/add" role="button">Add comment +</a></p>
+              <p><a class="btn btn-primary btn-lg" href="/comment?imdbID=<?php echo $serie->imdbID ?>" role="button">Add comment +</a></p>
             </div>
           </div>
         </div>

@@ -9,43 +9,82 @@ require_once "model/serieModel.php";
 require_once "model/commentModel.php";
 
 $showLog = false;
+$imdbID = '';
+$commentID = '';
+$commentRaw = '';
+$score = '';
+
+//Load serie
+
+if (isset($_GET['imdbID'])){
+	$result = LoadAll("serie","imdbID = '" . $_GET["imdbID"] . "'");
+	while($row = mysqli_fetch_row($result)){
+		$serie = Serie::fromDB($row,0);
+		$imdbID = $serie->imdbID;
+		$title = $serie->title;
+	}
+}
 
 //Load comment
 
-$result = CommentManager::LoadAll('comment.commentID = ' . $_GET["commentID"]);
-while($row = mysqli_fetch_row($result)){
-	$comment = Comment::fromDB($row);
+if (isset($_GET['commentID'])){
+	$result = CommentManager::LoadAll('comment.commentID = ' . $_GET["commentID"]);
+	while($row = mysqli_fetch_row($result)){
+		$comment = Comment::fromDB($row);
+		$commentID = $comment->commentID;
+		$commentRaw = $comment->comment;
+		$score = $comment->score;
+		$title = $comment->serie->title; 
+	}
 }
 
 // Save comment
 
 if (isset($_POST['mode'])){
+
+	showLog('add-code','POST OBJECT ',$_POST);
+
 	if ($_POST["mode"]==1){
 		
-		// Mise à jour des titres des vidéos
-		foreach($_POST as $key => $value) {
-			$pos = strpos($key, "imdbID");
-			if ($pos !== false) {
+		if (isset($_GET['imdbID'])){
 				
-				// Enregistrement du commentaire
+				// Update comment
 
 				$comment = new Comment();
 				$comment->commentID = $_POST['commentID'];
 				$comment->imdbID = $_POST['imdbID'];
-				$comment->userID = 1;
+				$comment->userID = $_SESSION['userID'];
 				$comment->comment = $_POST['comment'];
-				
-				showLog('add-code.php','',$comment);
-				
+				$comment->score = $_POST['score'];
 				CommentManager::Update($comment);
 
-				header('Location:my-comments');      
+				showLog('add-code.php','Update comment',$comment);
+
+			}else{
+				
+				//Create comment
+
+				$comment = new Comment();
+				$comment->imdbID = $_POST['imdbID'];
+				$comment->userID = $_SESSION['userID'];
+				$comment->comment = $_POST['comment'];
+				$comment->score = $_POST['score'];	
+
+				$comment->serie = new Serie();
+				$comment->serie->imdbID = $_POST['imdbID'];
+				$comment->serie->title = $_POST['title'];
+				$comment->serie->year = $_POST['year'];
+				$comment->serie->poster = $_POST['poster']; 
+				
+				CommentManager::Add($comment);
+
+				showLog('comment-code.php','Create comment',$comment);
 
 			}
-		}
+
+		header('Location:$urlReferrer');   
+
 	}
 }
-
-showLog('add-code','',$_POST);
 
 ?>
