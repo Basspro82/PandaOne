@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="#">
 
-    <title>HippoSeries</title>
+    <title>PandaOne</title>
 
     <link rel="canonical" href="#">
     <link href="./css/bootstrap.min.css" rel="stylesheet">

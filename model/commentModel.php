@@ -20,7 +20,7 @@ class Comment
 		$instance->comment = $row[3];
 		$instance->score = $row[4];
 		$date = new DateTime($row[5]);
-		$instance->createdAt = $date->format('d/m/y');
+		$instance->createdAt = $date->format('d/m/yy');
 		$instance->user = User::fromDB($row,6);
 		$instance->serie = Serie::fromDB($row,11);
 		return $instance;

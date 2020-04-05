@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    if (!isset($_SESSION['userID'])){
+        header('Location:./'); 
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">

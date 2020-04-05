@@ -34,7 +34,7 @@
                  <td><?php echo $serie->plot ?></td>
                  <td><?php echo $serie->year ?></td>
                  <td><?php echo $serie->genre ?></td>
-                 <td>5</td> 
+                 <td>[Rate]</td> 
               </tr>
               <?php } ?>
           </tbody>
