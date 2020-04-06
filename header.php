@@ -3,6 +3,9 @@
     if (!isset($_SESSION['userID'])){
         header('Location:./'); 
     }
+
+    require_once('../../framework/log.php');
+
 ?>
 
 <!DOCTYPE html>

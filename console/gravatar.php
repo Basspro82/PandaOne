@@ -2,6 +2,6 @@
 
 require_once('../../../framework/gravatar.php');
 
-print_r(get_gravatar('juliendelanoe@gmail.com'));
+print_r(get_gravatar('lucasdiguet@hotmail.fr'));
 
 ?>

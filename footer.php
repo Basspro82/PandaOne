@@ -26,3 +26,7 @@
 	<script src="./js/main.js"></script>
 
 </body></html>
+
+<?php
+	showLog('header.php','URLREFERRER',$urlReferrer);
+?>

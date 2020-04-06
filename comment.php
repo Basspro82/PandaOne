@@ -8,7 +8,7 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Edit your comment</h1>
+          <h1 class="display-3">Your comment</h1>
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         </div>
       </div>
@@ -39,13 +39,17 @@
                 <span class="preview"></span>
               </div>
             </div>
+            
             <input type="hidden" name="mode" value="1">
+            <input type="hidden" name="urlReferrer" value="<?php echo $urlReferrer ?>">
+
             <input type="hidden" name="imdbID" id="imdbID" value="<?php echo $imdbID ?>">
             <input type="hidden" name="title" id="title">
             <input type="hidden" name="year" id="year">
             <input type="hidden" name="poster" id="poster">
             <input type="hidden" name="score" id="score">
             <input type="hidden" name="commentID" value="<?php echo $commentID ?>">
+
             <div class="form-group">
               <div class="rate" data-rate-value="<?php echo $score ?>"></div>
             </div>
