@@ -23,7 +23,7 @@
                 <h4 class="my-0 font-weight-normal">Comments</h4>
               </div>
               <div class="card-body">
-                <h1 class="card-title pricing-card-title">12<small class="text-muted"></small></h1>
+                <h1 class="card-title pricing-card-title"><?php echo $nbComments ?><small class="text-muted"></small></h1>
               </div>
             </div>
             <div class="card mb-4 shadow-sm">
@@ -31,7 +31,7 @@
                 <h4 class="my-0 font-weight-normal">Average rate</h4>
               </div>
               <div class="card-body">
-                <h1 class="card-title pricing-card-title">3,5 <small class="text-muted">/ 5</small></h1>
+                <h1 class="card-title pricing-card-title"><?php echo $averageRate ?><small class="text-muted"> / 5</small></h1>
               </div>
             </div>
             <div class="card mb-4 shadow-sm">
@@ -39,7 +39,7 @@
                 <h4 class="my-0 font-weight-normal">Friends</h4>
               </div>
               <div class="card-body">
-                <h1 class="card-title pricing-card-title">2<small class="text-muted"></small></h1>
+                <h1 class="card-title pricing-card-title"><?php echo $nbFriends ?><small class="text-muted"></small></h1>
               </div>
             </div>
           </div> 

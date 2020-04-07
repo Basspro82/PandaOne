@@ -1,16 +1,11 @@
 .card {
   background-color: #f9f9f9;
+  position: relative;
   /* card-user */ }
   .card a h4 {
     color: #f1ad1f; }
     .card a h4:hover {
       color: #f7c457; }
-    .card a h4 .badge {
-      font-size: 60%;
-      background-color: transparent;
-      border: solid 1px #f1ad1f;
-      color: #f1ad1f;
-      margin-top: 0.3rem; }
   .card a:hover {
     text-decoration: none; }
   .card blockquote {
@@ -38,6 +33,32 @@
     font-size: 0.8rem;
     color: #aaaaaa;
     line-height: 52px; }
+  .card .card-corner {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    overflow: hidden;
+    width: 100px;
+    height: 100px; }
+    .card .card-corner span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 30px;
+      right: -30px;
+      top: 5px;
+      text-align: center;
+      font-size: 16px;
+      font-family: arial;
+      transform: rotate(45deg);
+      display: block;
+      background-color: #dc3545;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      border: solid 2px #fff; }
   .card .card-text {
     color: #666; }
 

@@ -45,7 +45,7 @@ if (isset($_POST['mode'])){
 
 	if ($_POST["mode"]==1){
 		
-		if (isset($_POST['commentID'])){
+		if ($_POST['commentID']!=''){
 				
 			// Update comment
 

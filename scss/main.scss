@@ -8,10 +8,12 @@ $border:#ddd;
 
 $yellow:#f1ad1f;
 $lightYellow:#f7c457;
+$red:#dc3545;
 
 .card{
 	
-	background-color:$background; 
+	background-color:$background;
+	position:relative; 
 
 	 a {
 		h4{
@@ -20,14 +22,6 @@ $lightYellow:#f7c457;
 			&:hover{
 				color:$primaryColorHover;
 			}
-
-			.badge{
-				font-size:60%;
-				background-color:transparent;
-				border: solid 1px $primaryColor;
-				color:$primaryColor;
-				margin-top:0.3rem;
-			}	
 
 		}
 
@@ -83,6 +77,31 @@ $lightYellow:#f7c457;
 		color:#aaaaaa;
 		line-height:52px;
 	}
+
+	.card-corner{
+  		position:absolute;
+  		right:0;top:0;
+  		display:block;
+  		overflow:hidden;
+  		width:100px;height:100px;
+
+  		span{
+  		  position:absolute;top:0;right:0;	
+		  width: 100px;height:30px;
+		  right: -30px;top:5px;
+		  text-align: center;
+		  font-size: 16px;
+		  font-family: arial;
+		  transform: rotate(45deg);
+		  display:block;
+			background-color:$red;
+  			color:#fff;
+  			line-height:30px;
+  			text-align:center;
+  		border:solid 2px #fff;
+  		}
+
+	}	
 
 	.card-text{
 			color:#666; 
