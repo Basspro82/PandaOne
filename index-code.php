@@ -9,7 +9,7 @@ require_once "model/serieModel.php";
 require_once "model/commentModel.php";
 require_once "../../framework/gravatar.php";
 
-$showLog = false;
+$showLog = true;
 
 $message = '';
 
@@ -19,7 +19,7 @@ if (isset($_POST['mode'])){
 		$email = $_POST["email"];
 		$password = $_POST["password"];
 
-		$result = LoadAll('user',"email = '" . $email . "' AND password = '" . $password . "'");
+		$result = LoadAll('user',"email = '" . $email . "' AND password = '" . $password . "'", 'email');
 		if (mysqli_num_rows($result)!=0) {
 			
 			while($row = mysqli_fetch_row($result)){

@@ -16,6 +16,8 @@ class User
 		$instance->mail = $row[$firstIndex + 2];
 		$instance->gravatar = $row[$firstIndex + 3];
 		$instance->password = $row[$firstIndex + 4];
+		$instance->betaLogin = $row[$firstIndex + 5];
+		$instance->betaID = $row[$firstIndex + 6];
 		return $instance;
     }
 	
