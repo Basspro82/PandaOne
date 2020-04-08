@@ -19,13 +19,15 @@
           </div>
         </div>
         <blockquote>"<?php echo $comment->comment ?>"</blockquote>
-        <?php if ($comment->user->userID == $_SESSION["userID"]){ ?>
-          <div class="btn-group" role="group" aria-label="Action">
-            <a class="btn btn-primary" href="./comment?commentID=<?php echo $comment->commentID ?>">Modify</a>
-            <button type="button" class="btn btn-danger btnRemove" data-commentID="<?php echo $comment->commentID ?>">Remove</button>
-          </div>
-        <?php } ?>
       </div>
+      <?php if ($comment->user->userID == $_SESSION["userID"]){ ?>
+      <div class="col text-right">
+      	<div class="btn-group" role="group" aria-label="Action">
+        	<a class="btn btn-primary" href="./comment?commentID=<?php echo $comment->commentID ?>">Modify</a>
+        	<button type="button" class="btn btn-danger btnRemove" data-commentID="<?php echo $comment->commentID ?>">Remove</button>
+      	</div>
+      </div>
+      <?php } ?>
     </div><!--row-->  
 
     <div class="row">

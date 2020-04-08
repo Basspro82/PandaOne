@@ -9,6 +9,7 @@ $border:#ddd;
 $yellow:#f1ad1f;
 $lightYellow:#f7c457;
 $red:#dc3545;
+$gray:#aaa;
 
 .card{
 	
@@ -74,7 +75,7 @@ $red:#dc3545;
 
 	.card-date{
 		font-size:0.8rem;
-		color:#aaaaaa;
+		color:$gray;
 		line-height:52px;
 	}
 
@@ -198,4 +199,10 @@ footer{
 	img{
 		max-width:100px;
 	}
+}
+
+.serie-yearAndGenre{
+	color:$gray;
+	margin-bottom:1rem;
+	display:block;
 }

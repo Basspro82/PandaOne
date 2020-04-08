@@ -71,7 +71,8 @@ if (isset($_POST['mode'])){
 			$comment->serie->imdbID = $_POST['imdbID'];
 			$comment->serie->title = $_POST['title'];
 			$comment->serie->year = $_POST['year'];
-			$comment->serie->poster = $_POST['poster']; 
+			$comment->serie->poster = $_POST['poster'];
+			$comment->serie->plot = getElementByClassName('https://www.imdb.com/title/' . $_POST['imdbID'] . '/','summary_text'); 
 			
 			CommentManager::Add($comment);
 

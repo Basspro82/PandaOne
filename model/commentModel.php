@@ -20,7 +20,7 @@ class Comment
 		$instance->comment = $row[3];
 		$instance->score = $row[4];
 		$date = new DateTime($row[5]);
-		$instance->createdAt = $date->format('d/m/yy H:m');
+		$instance->createdAt = $date->format('d/m/yy H:i');
 
 		$now = new DateTime;
 		$now->setTime(0,0,0);

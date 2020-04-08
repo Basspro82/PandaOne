@@ -16,7 +16,7 @@
           <div class="col-12">
               <ul>
                 <li>Pagination sur la liste des derniers commentaires de la home</li>
-                <li>Récupération automatique du résumé de la série</li>
+                <li><strike>Récupération automatique du résumé de la série</strike></li>
                 <li>Afficher la note moyenne dans la liste des séries et sur la fiche série</li>
                 <li>Ajouter la plateforme qui propose la série lors de la création</li>
               </ul>

@@ -20,10 +20,11 @@ class CommentManager{
 			$serie = $comment->serie;	
 			$title = mysqli_real_escape_string($con,$serie->title);
 			$poster = mysqli_real_escape_string($con,$serie->poster);
+			$plot = mysqli_real_escape_string($con,$serie->plot);
 
 			// Insert in serie table 
 
-			$query = "INSERT INTO serie VALUES('$comment->imdbID','$title','','$serie->year','','$poster',CURDATE())";
+			$query = "INSERT INTO serie VALUES('$comment->imdbID','$title','$plot','$serie->year','','$poster',NOW())";
 
 			If (!ExecuteQuery($query)){
 				return;
@@ -35,7 +36,7 @@ class CommentManager{
 
 		$commentraw = mysqli_real_escape_string($con,$comment->comment);
 
-		$query = "INSERT INTO comment(imdbID,userID,comment,score,createdAt) VALUES('$comment->imdbID',$comment->userID,'$commentraw','$comment->score',CURDATE())";
+		$query = "INSERT INTO comment(imdbID,userID,comment,score,createdAt) VALUES('$comment->imdbID',$comment->userID,'$commentraw','$comment->score',NOW())";
 
 		If (!ExecuteQuery($query)){
 			return;

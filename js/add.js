@@ -80,11 +80,14 @@ $input.addEventListener('keyup', function(){
 		    		}
 		    		snippet.innerHTML = result.d[i].s;
 
+		    		// Show user choice
+
 		    		$(description).append(name);
 		    		$(description).append(snippet);
-
 		    		$(resultRow).append(poster);
 		    		$(resultRow).append(description);
+
+		    		// Set user choice
 
 		    		resultRow.setAttribute('data-imdbID',result.d[i].id);
 		    		resultRow.setAttribute('data-title',result.d[i].l);

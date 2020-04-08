@@ -5,6 +5,7 @@
     }
 
     require_once('../../framework/log.php');
+    require_once('../../framework/dom.php');
 
 ?>
 
