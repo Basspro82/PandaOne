@@ -29,7 +29,7 @@
           <tbody>
               <?php foreach ($series as $serie) { ?>    
               <tr>
-                 <td><a href="<?php echo $serie->url ?>"><img src="<?php echo $serie->poster ?>" class="img-fluid" alt="<?php echo $serie->title ?>"></a></td> 
+                 <td><a href="./serie?imdbID=<?php echo $serie->imdbID ?>"><img src="<?php echo $serie->poster ?>" class="img-fluid" alt="<?php echo $serie->title ?>"></a></td> 
                  <td><?php echo $serie->title ?></td>
                  <td><?php echo $serie->plot ?></td>
                  <td><?php echo $serie->year ?></td>
