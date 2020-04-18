@@ -12,7 +12,7 @@ $page = 'home';
 
 $series;
 $result = CommentManager::LoadAll('',10);
-while($row = mysqli_fetch_row($result)){
+while($row = mysqli_fetch_object($result)){
 	$comment = Comment::fromDB($row);
 	$comments[] = $comment;
 }

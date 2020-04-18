@@ -14,7 +14,7 @@ $showLog = true;
 
 if (isset($_GET['imdbID'])){
 	$result = LoadAll("serie","imdbID = '" . $_GET["imdbID"] . "'");
-	while($row = mysqli_fetch_row($result)){
+	while($row = mysqli_fetch_object($result)){
 		$serie = Serie::fromDB($row,0);
 	}
 }

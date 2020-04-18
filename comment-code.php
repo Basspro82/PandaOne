@@ -16,7 +16,7 @@ $score = '';
 
 if (isset($_GET['imdbID'])){
 	$result = LoadAll("serie","imdbID = '" . $_GET["imdbID"] . "'");
-	while($row = mysqli_fetch_row($result)){
+	while($row = mysqli_fetch_object($result)){
 		$serie = Serie::fromDB($row,0);
 		$imdbID = $serie->imdbID;
 		$title = $serie->title;
@@ -27,7 +27,7 @@ if (isset($_GET['imdbID'])){
 
 if (isset($_GET['commentID'])){
 	$result = CommentManager::LoadAll('comment.commentID = ' . $_GET["commentID"]);
-	while($row = mysqli_fetch_row($result)){
+	while($row = mysqli_fetch_object($result)){
 		$comment = Comment::fromDB($row);
 		$commentID = $comment->commentID;
 		$commentRaw = $comment->comment;

@@ -53,15 +53,17 @@ class Serie
 
     }*/
 
-    public static function fromDb($row,$firstIndex) {
-    	$instance = new self();
-    	$instance->imdbID = $row[$firstIndex];
-		$instance->title = $row[$firstIndex + 1];
-		$instance->plot = $row[$firstIndex + 2];
-		$instance->year = $row[$firstIndex + 3];
-        $instance->genre = $row[$firstIndex + 4];
-        $instance->poster = $row[$firstIndex + 5];
-        $instance->createdAt = $row[$firstIndex + 6];
+    public static function fromDb($object,$firstIndex) {
+
+    	$instance = $object;
+//    	$instance->imdbID = $row[$firstIndex];
+//		$instance->title = $row[$firstIndex + 1];
+//		$instance->plot = $row[$firstIndex + 2];
+//		$instance->year = $row[$firstIndex + 3];
+//        $instance->genre = $row[$firstIndex + 4];
+//        $instance->poster = $row[$firstIndex + 5];
+//        $instance->createdAt = $row[$firstIndex + 6];
+//        $instance->score = $row[$firstIndex + 7];
         $instance->url = "/serie?imdbID=" . $instance->imdbID;
 		return $instance;
     }

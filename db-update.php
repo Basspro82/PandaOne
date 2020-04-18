@@ -54,6 +54,11 @@ if (!property_exists($row,"platformLogo")) {
     ExecuteQuery($sql);
     echo "Ajout de la colonne platformLogo<br>";
 }
+if (!property_exists($row,"genres")) {
+    $sql = "ALTER TABLE serie ADD COLUMN genres NVARCHAR(250)";
+    ExecuteQuery($sql);
+    echo "Ajout de la colonne genres<br>";
+}
 
 
 ?>
