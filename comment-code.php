@@ -16,7 +16,7 @@ $page = "comment";
 // Load comment
 
 $result = CommentManager::LoadOne($_GET['commentID']);
-while($row = mysqli_fetch_row($result)){
+while($row = mysqli_fetch_object($result)){
 	$comment = Comment::fromDB($row);
 }
 showLog('comment-code','',$comment);

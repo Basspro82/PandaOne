@@ -14,7 +14,7 @@ $message = '';
 
 $result = CommentManager::LoadAll('comment.userID = ' . $_SESSION["userID"]);
 if ($result){
-	while($row = mysqli_fetch_row($result)){
+	while($row = mysqli_fetch_object($result)){
 		$comment = Comment::fromDB($row);
 		$comments[] = $comment;
 	}

@@ -20,9 +20,10 @@ if (isset($_POST['mode'])){
 		$password = $_POST["password"];
 
 		$result = LoadAll('user',"email = '" . $email . "' AND password = '" . $password . "'", 'email');
+
 		if (mysqli_num_rows($result)!=0) {
 			
-			while($row = mysqli_fetch_row($result)){
+			while($row = mysqli_fetch_object($result)){
 				$user = User::fromDB($row,0);
 			}
 
