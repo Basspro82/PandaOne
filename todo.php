@@ -19,6 +19,11 @@
                 <li><strike>Récupération automatique du résumé de la série</strike></li>
                 <li>Afficher la note moyenne dans la liste des séries et sur la fiche série</li>
                 <li>Ajouter la plateforme qui propose la série lors de la création</li>
+                <li>Ajouter la possibilité de répondre à un commentaire</li>
+                <li><strike>Fiche série : ajouter l'année et la description dans le header</strike></li>
+                <li>Fiche utilisateur : ajouter la liste des amis</li>
+                <li>Espace privé : ajouter la page "my friends"</li>
+                <li>Uploader les visuels (utilisateur et films) en local"</li>
               </ul>
           </div>
         </div>

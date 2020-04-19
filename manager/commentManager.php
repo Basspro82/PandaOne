@@ -86,7 +86,27 @@ class CommentManager{
 		
 		Disconnect($con);
 
-		showLog('commentManager.php','GetLast',$sql);
+		showLog('commentManager.php','LoadAll',$sql);
+
+		return $result;
+		
+	}
+
+	public static function LoadOne($commentID)
+	{
+
+		$con = Connect();
+		
+		$sql = ' SELECT * FROM comment ' . 
+			   ' INNER JOIN user ON comment.userID = user.userID ' .
+			   ' INNER JOIN serie ON comment.imdbID = serie.imdbID' .
+			   ' WHERE commentID = ' . $commentID;   
+
+		showLog('commentManager.php','LoadOne',$sql);
+
+		$result = $con->query($sql);
+		
+		Disconnect($con);
 
 		return $result;
 		

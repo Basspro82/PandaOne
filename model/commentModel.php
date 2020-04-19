@@ -29,7 +29,7 @@ class Comment
 
 		$instance->user = User::fromDB($row,6);
 		
-		$instance->serie = Serie::fromDB($row,11);
+		$instance->serie = Serie::fromDB($row,13);
 		
 		return $instance;
     }

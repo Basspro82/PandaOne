@@ -55,5 +55,19 @@ if (!property_exists($row,"platformLogo")) {
     echo "Ajout de la colonne platformLogo<br>";
 }
 
-
+// Ajout de la table reply
+if (!tableExist('reply')){
+    $sql = "CREATE TABLE IF NOT EXISTS `reply` (
+      `replyID` int(11) NOT NULL AUTO_INCREMENT,
+      `userID` int(11) NOT NULL,
+      `commentID` int(11) NOT NULL,
+      'body' text NULL,
+      `createdAt` datetime NOT NULL, 
+      PRIMARY KEY (`replyID`),
+      KEY `FK_reply_user` (`userID`),
+      KEY `FK_reply_comment` (`commentID`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+    ExecuteQuery($sql);
+    echo "Ajout de la table reply<br>";
+}
 ?>

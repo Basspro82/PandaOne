@@ -16,7 +16,7 @@
               <div class="rateRO" data-rate-value="<?php echo $averageRate ?>"></div>
               <p><?php echo $serie->plot ?></p>
               <span class="serie-yearAndGenre"><?php echo $serie->year ?></span>
-              <p><a class="btn btn-primary btn-lg" href="./comment?imdbID=<?php echo $serie->imdbID ?>" role="button">Add comment +</a></p>
+              <p><a class="btn btn-primary btn-lg" href="./yourComment?imdbID=<?php echo $serie->imdbID ?>" role="button">Add comment +</a></p>
             </div>
           </div>
         </div>

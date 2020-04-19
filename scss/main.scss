@@ -16,62 +16,9 @@ $gray:#aaa;
 	background-color:$background;
 	position:relative; 
 
-	 a {
-		h4{
-			color:$primaryColor;
-
-			&:hover{
-				color:$primaryColorHover;
-			}
-
-		}
-
-		&:hover{
-			text-decoration:none;
-		}
-	}
-
 	blockquote{
 		margin:1rem;margin-left:0;
 	}
-
-	.card-serie{
-
-		background-color:$background2;
-		padding:10px;
-		border-radius:5px;
-		border:solid 1Px $border;
-
-		font-size:0.9rem;
-
-		.card-poster{
-			img{
-				width:70px;
-			}
-
-			&:hover{
-				opacity:0.8;
-			}
-
-		}
-
-	}
-
-	.card-user{
-
-		text-align:center;
-		display:block;
-
-		.card-pseudo{
-			margin-bottom:0;
-			color:#212529; 
-		}
-
-		&:hover{
-			opacity:0.8;
-		}
-
-	}/* card-user */
 
 	.card-date{
 		font-size:0.8rem;
@@ -108,7 +55,29 @@ $gray:#aaa;
 			color:#666; 
 	}
 
+	.card-footer{
+		a{
+			color:$primaryColor;
+		}
+	}
+
 } /* card */
+
+.user{
+
+	text-align:center;
+	display:block;
+
+	.pseudo{
+		margin-bottom:0;
+		color:#212529; 
+	}
+
+	&:hover{
+		opacity:0.8;
+	}
+
+}/* card-user */
 
 .img-box{
 
@@ -205,4 +174,55 @@ footer{
 	color:$gray;
 	margin-bottom:1rem;
 	display:block;
+}
+
+.serie{
+
+	background-color:#fff;
+	padding:10px;
+	border-radius:5px;
+	border:solid 1Px $border;
+
+	font-size:0.9rem;
+
+	a {
+		h4{
+			color:$primaryColor;
+
+			&:hover{
+				color:$primaryColorHover;
+			}
+
+		}
+
+		&:hover{
+			text-decoration:none;
+		}
+	}
+
+	.poster{
+		img{
+			width:70px;
+		}
+
+		&:hover{
+			opacity:0.8;
+		}
+
+	}
+
+}
+
+.replies{
+
+	background-color:$background2;
+	padding: 10px;
+	border-radius: 5px;
+	border: solid 1Px #ddd;
+	font-size: 0.9rem;
+	margin-top:1rem;
+	
+	.reply{
+		
+	}
 }

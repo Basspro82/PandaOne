@@ -1,84 +1,81 @@
 <?php include 'header.php' ?>
 <?php require 'comment-code.php' ?>
 
-    <link href="./css/imdb-autocomplete.css" rel="stylesheet">
-
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Your comment</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        </div>
-      </div>
-
-      <div class="container">
-        <!-- Example row of columns -->
-
-        <form action="comment" method="post">
-          <div class="container">
-            <div class="searchArea row">
-              <div class="col-8">
-                <div class="form-group">
-                  <?php 
-                    if (isset($_GET['imdbID']) || isset($_GET['commentID'])){ 
-                    $save = '';
-                  ?>
-                    <input class="form-control" id="title" type="text" value="<?php echo $title ?>" disabled>
-                  <?php 
-                    }else{ 
-                      $save = 'disabled';
-                  ?>  
-                    <input class="form-control" id="searchBox" type="text" placeholder="enter a serie">
-                  <?php } ?>
-                  <div id="result"></div>
-                </div>
-              </div>
-              <div class="col-4">
-                <span class="preview"></span>
-              </div>
+          <div class="row">
+            <div class="col-2 userGravatar text-center">
+              <h1><?php echo $comment->user->pseudo ?></h1>
+              <div class="img-box"><img src="<?php echo $comment->user->gravatar ?>"/></div>
             </div>
-            
-            <input type="hidden" name="mode" value="1">
-            <input type="hidden" name="urlReferrer" value="<?php echo $urlReferrer ?>">
-
-            <input type="hidden" name="imdbID" id="imdbID" value="<?php echo $imdbID ?>">
-            <input type="hidden" name="title" id="title">
-            <input type="hidden" name="year" id="year">
-            <input type="hidden" name="poster" id="poster">
-            <input type="hidden" name="score" id="score">
-            <input type="hidden" name="commentID" value="<?php echo $commentID ?>">
-
-            <div class="form-group">
-              <div class="rate" data-rate-value="<?php echo $score ?>"></div>
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" type="text" name="comment" id="comment" placeholder="enter your comment"><?php echo $commentRaw ?></textarea>
-            </div>
-            <div class="btn-group" role="group" aria-label="Action">
-              <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save" <?php echo $save ?>>
-              <a class="btn btn-secondary btnCancel" href="<?php echo $urlReferrer ?>">Cancel</a>
+            <div class="col">
+              <div class="rateRO" data-rate-value="<?php echo $comment->score ?>"></div>
+              <p><?php echo $comment->comment ?></p>
             </div>
           </div>
-        </form>
+          <div class="row">
+            <div class="col-12">
+              <div class="row no-gutters serie m-3">
+                  <div class="col-auto">
+                      <a href="./serie?imdbID=<?php echo $comment->imdbID ?>" class="poster"><img src="<?php echo $comment->serie->poster ?>" class="img-fluid" alt="<?php echo $comment->serie->title ?>"></a>
+                  </div>
+                  <div class="col">
+                      <div class="card-block px-2">
+                          <a href="./serie?imdbID=<?php echo $comment->imdbID ?>"><h4 class="card-title"><?php echo $comment->serie->title ?><!--&nbsp;<span class="badge badge-secondary">2 comments</span>--></h4></a>
+                          <p class="card-text"><?php echo $comment->serie->plot ?></p>
+                      </div>
+                  </div>
+              </div><!--serie-->
+            </div>
+          </div>
+        </div><!-- container -->
+      </div><!-- jumbotron -->
+
+      <div class="container">
+
+        <h2>Replies</h2>
+
+          <div class="replies">
+            <?php if (isset($replies)):
+                if ($replies->num_rows > 0){
+                  foreach ($replies as $reply): 
+            ?>
+                <!-- reply -->
+                <div class="reply clearfix">
+                  <div class="row">
+                    <div class="col text-right align-self-center">
+                      <span class="comment-date"><?php echo date("d/m/yy H:i", strtotime($reply["createdAt"])); ?></span>
+                      <p><?php echo $reply['body']; ?></p>
+                    </div>
+                    <div class="col-auto align-self-center">
+                        <a class="user" href="./user?userID=<?php echo $reply["userID"] ?>">
+                          <div class="img-box"><img src="<?php echo $reply["gravatar"] ?>"/></div>
+                          <h3 class="pseudo"><?php echo $reply["pseudo"] ?></h3>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                <hr/>
+              <?php endforeach;
+            }else{ ?>
+              <p><i>There are no reply for this comment</i></p>
+            <?php }
+            endif ?>
+
+            <form action="comment.php?commentID=<?php echo $comment->commentID ?>" class="reply_form clearfix" method="POST">
+              <input type="hidden" name="mode" id="mode" value="1">
+              <input type="hidden" name="commentID" id="commentID" value="<?php echo $comment->commentID ?>">
+              <textarea class="form-control" name="body" id="body" cols="30" rows="2"></textarea>
+              <button class="btn btn-primary btn-xs float-right submit-reply mt-2">Submit reply</button>
+            </form>
+
+          </div><!--replies-->
 
       </div> <!-- /container -->
 
     </main>
 
-    <script type="text/javascript" src="./js/add.js"></script>
-    <script type="text/javascript" src="./js/rater.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-            var options = {
-                max_value: 5,
-                step_size: 0.5,
-                selected_symbol_type: 'utf8_star',
-                initial_value: 0,
-                update_input_field_name: $("#score"),
-            }
-            $(".rate").rate(options);
-      });
-    </script>
 <?php include 'footer.php' ?>
