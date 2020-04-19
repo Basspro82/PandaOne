@@ -7,7 +7,20 @@ class SerieManager{
 	public static function GetLast($nb)
 	{
 
-		return LoadAll('serie','','imdbID ASC',$nb);
+        $con = Connect();
+
+        $sSQL = ' SELECT serie.*, avg(score) as score
+             FROM serie
+             LEFT JOIN comment on serie.imdbID=comment.imdbID
+             GROUP BY serie.imdbID ';
+
+        if ($nb != 0){
+            $sSQL .= ' LIMIT 0,' . $nb;
+        }
+
+        $result = $con->query($sSQL);
+
+		return $result;
 		
 	}
 
@@ -15,6 +28,9 @@ class SerieManager{
 	    $imdbId = $betaData->imdb_id;
 	    $seasons = $betaData->seasons;
 	    $episodes = $betaData->episodes;
+	    $genres = get_object_vars($betaData->genres);
+
+	    $genres = implode(", ",array_keys($genres));
 	    $over = ($betaData->status == "Ended") ? 1 : 0;
 
 	    $platform = "";
@@ -26,7 +42,7 @@ class SerieManager{
             $platformLogo = $betaData->platforms->svod->logo;
         }
 
-	    $sql = "UPDATE serie SET seasons=$seasons, episodes=$episodes, over=$over, platform='$platform', platformUrl='$platformUrl' platformLogo='$platformLogo' WHERE imdbID='$imdbId'";
+	    $sql = "UPDATE serie SET seasons=$seasons, episodes=$episodes, genres='$genres', over=$over, platform='$platform', platformUrl='$platformUrl', platformLogo='$platformLogo' WHERE imdbID='$imdbId'";
 	    ExecuteQuery($sql);
         echo $sql . "<br>";
     }

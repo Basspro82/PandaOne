@@ -21,9 +21,10 @@
                   <th></th>
                   <th>Title</th>
                   <th>Description</th>
-                  <th>Year</th>
+                  <th>Année</th>
                   <th>Genre</th>
-                  <th>Rate</th>
+                  <th>Note moyenne</th>
+                  <th>Visible sur</th>
               </tr>
           </thead>
           <tbody>
@@ -33,8 +34,13 @@
                  <td><?php echo $serie->title ?></td>
                  <td><?php echo $serie->plot ?></td>
                  <td><?php echo $serie->year ?></td>
-                 <td><?php echo $serie->genre ?></td>
-                 <td>[Rate]</td> 
+                 <td><?php echo $serie->genres ?></td>
+                 <td><?php echo $serie->score ?></td>
+                 <td><?php
+                     if ($serie->platform) {
+                        echo "<a target='_blank' href='" . $serie->platformUrl . "'><img src='" . $serie->platformLogo ."' </a>";
+                     }
+                     ?></td>
               </tr>
               <?php } ?>
           </tbody>

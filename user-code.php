@@ -18,7 +18,7 @@ $nbFriends = '-';
 // Load user
 
 $result = LoadOne('user','userID',$_GET['userID']);
-while($row = mysqli_fetch_row($result)){
+while($row = mysqli_fetch_object($result)){
 	$user = User::fromDB($row,0);
 }
 
@@ -30,7 +30,7 @@ $result = CommentManager::LoadAll('comment.userID = ' . $_GET['userID']);
 
 $sum = 0;
 
-while($row = mysqli_fetch_row($result)){
+while($row = mysqli_fetch_object($result)){
 	$comment = Comment::fromDB($row);
 	$comments[] = $comment;
 	$series[] = $comment->serie;

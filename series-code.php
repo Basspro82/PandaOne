@@ -11,8 +11,10 @@ $showLog = false;
 $page = "serie";
 
 $result = SerieManager::GetLast(10);
-while($row = mysqli_fetch_row($result)){
-	$serie = Serie::fromDB($row,0);
+while($serie = mysqli_fetch_object($result)){
+
+    $serie->url = "/serie?imdbID=" . $serie->imdbID;
+	//$serie = Serie::fromDB($row,0);
 	$series[] = $serie;
 }
 
