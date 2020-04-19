@@ -13,6 +13,21 @@ require_once "model/replyModel.php";
 $showLog = false;
 $page = "comment";
 
+
+if (isset($_POST['mode'])){
+
+	showLog('yourComment-code.php','POST OBJECT ',$_POST);
+				
+	// Update comment
+
+	$reply = new Reply();
+	$reply->userID = $_SESSION['userID'];
+	$reply->commentID = $_POST['commentID'];
+	$reply->body = $_POST['body'];
+	ReplyManager::Add($reply);
+
+}
+
 // Load comment
 
 $result = CommentManager::LoadOne($_GET['commentID']);
