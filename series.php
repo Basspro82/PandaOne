@@ -38,7 +38,7 @@
                  <td><?php echo $serie->score ?></td>
                  <td><?php
                      if ($serie->platform) {
-                        echo "<a target='_blank' href='" . $serie->platformUrl . "'><img src='" . $serie->platformLogo ."' </a>";
+                        echo "<a target='_blank' href='" . $serie->platformUrl . "'><img src='" . $serie->platformLogo ."'></a>";
                      }
                      ?></td>
               </tr>

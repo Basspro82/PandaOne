@@ -15,8 +15,29 @@
             <div class="col">
               <div class="rateRO" data-rate-value="<?php echo $averageRate ?>"></div>
               <p><?php echo $serie->plot ?></p>
-              <span class="serie-yearAndGenre"><?php echo $serie->year ?></span>
+              <span class="serie-yearAndGenre"><?php echo $serie->year ?>
+                <?php
+                    foreach (explode(", ",$serie->genres) as $genre) {
+                        echo "<span class='badge badge-info ml-2'>$genre</span>";
+                    }
+                ?>
+              </span>
               <p><a class="btn btn-primary btn-lg" href="./yourComment?imdbID=<?php echo $serie->imdbID ?>" role="button">Add comment +</a></p>
+                <div class="row">
+                    <div class="col-3">
+                        <?php
+                        if ($serie->platform) {
+                            echo "<a target='_blank' href='" . $serie->platformUrl . "'><img style='max-width:170px' src='" . $serie->platformLogo ."'></a>";
+                        }
+                        ?>
+                    </div>
+                    <div class="col">
+                        <p>Statut : <?php echo ($serie->over) ? "Terminée" : "En cours" ?><br>
+                            <?php echo ($serie->seasons) . " saison" . (($serie->seasons>1) ? "s" : "") ?><br>
+                            <?php echo ($serie->episodes) . " épisode" . (($serie->episodes>1) ? "s" : "") ?></p>
+                    </div>
+                </div>
+
             </div>
           </div>
         </div>
