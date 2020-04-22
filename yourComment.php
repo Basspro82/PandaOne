@@ -16,7 +16,7 @@
       <div class="container">
         <!-- Example row of columns -->
 
-        <form action="comment" method="post">
+        <form action="yourComment" method="post">
           <div class="container">
             <div class="searchArea row">
               <div class="col-8">

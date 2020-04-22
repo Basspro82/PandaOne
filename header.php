@@ -25,7 +25,7 @@
         <link href="./vendor/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="./css/jumbotron.css" rel="stylesheet">
         <link href="./css/jquery.dataTables.min.css" rel="stylesheet">
-        <link href="/vendor/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+        <link href="./vendor/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
 
         <link href="./css/main.css" rel="stylesheet">
 

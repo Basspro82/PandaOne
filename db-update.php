@@ -66,7 +66,7 @@ if (!tableExist('reply')){
       `replyID` int(11) NOT NULL AUTO_INCREMENT,
       `userID` int(11) NOT NULL,
       `commentID` int(11) NOT NULL,
-      'body' text NULL,
+      `body` text NULL,
       `createdAt` datetime NOT NULL, 
       PRIMARY KEY (`replyID`),
       KEY `FK_reply_user` (`userID`),

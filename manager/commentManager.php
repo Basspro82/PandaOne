@@ -24,7 +24,7 @@ class CommentManager{
 
 			// Insert in serie table 
 
-			$query = "INSERT INTO serie VALUES('$comment->imdbID','$title','$plot','$serie->year','','$poster',NOW())";
+			$query = "INSERT INTO serie VALUES('$comment->imdbID','$title','$plot','$serie->year','','$poster',NOW(),NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
 
 			If (!ExecuteQuery($query)){
 				return;
