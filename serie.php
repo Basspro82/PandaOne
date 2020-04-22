@@ -2,10 +2,10 @@
 
 <?php include 'header.php' ?>
 
-    <main role="main">
+    <main role="main" class="fiche-serie">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
+      <div class="jumbotron" style="background-image: url('<?php echo $serie->banner ?>')">
         <div class="container">
           <h1 class="display-3"><?php echo $serie->title ?></h1>
           <div class="row">
@@ -27,7 +27,7 @@
                     <div class="col-3">
                         <?php
                         if ($serie->platform) {
-                            echo "<a target='_blank' href='" . $serie->platformUrl . "'><img style='max-width:170px' src='" . $serie->platformLogo ."'></a>";
+                            echo "<a target='_blank' href='" . $serie->platformUrl . "'><img class='platform' src='" . $serie->platformLogo ."'></a>";
                         }
                         ?>
                     </div>

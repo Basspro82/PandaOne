@@ -28,6 +28,8 @@ class SerieManager{
 	    $imdbId = $betaData->imdb_id;
 	    $seasons = $betaData->seasons;
 	    $episodes = $betaData->episodes;
+	    $banner = $betaData->images->show;
+	    $desc = str_ireplace("'","''",$betaData->description);
 	    $genres = get_object_vars($betaData->genres);
 
 	    $genres = implode(", ",array_keys($genres));
@@ -42,7 +44,16 @@ class SerieManager{
             $platformLogo = $betaData->platforms->svod->logo;
         }
 
-	    $sql = "UPDATE serie SET seasons=$seasons, episodes=$episodes, genres='$genres', over=$over, platform='$platform', platformUrl='$platformUrl', platformLogo='$platformLogo' WHERE imdbID='$imdbId'";
+	    $sql = "UPDATE serie SET seasons=$seasons, 
+                        plot='$desc', 
+                        episodes=$episodes, 
+                        genres='$genres', 
+                        banner='$banner', 
+                        over=$over, 
+                        platform='$platform', 
+                        platformUrl='$platformUrl', 
+                        platformLogo='$platformLogo' 
+                        WHERE imdbID='$imdbId'";
 	    ExecuteQuery($sql);
         echo $sql . "<br>";
     }

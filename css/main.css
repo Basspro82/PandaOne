@@ -137,4 +137,31 @@ footer {
   font-size: 0.9rem;
   margin-top: 1rem; }
 
+.fiche-serie {
+
+}
+
+.fiche-serie .jumbotron {
+  background-size: cover;
+}
+.fiche-serie .jumbotron .container {
+  color:white;
+}
+
+.fiche-serie .jumbotron .container h1 {
+  position: relative;
+}
+.fiche-serie .jumbotron .container::before {
+    content: "COUCOU";
+    background: black;
+    opacity: 0.65;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
+.fiche-serie .platform {
+  width:100%;
+}
 /*# sourceMappingURL=main.css.map */
