@@ -1,7 +1,5 @@
 <?php
 
-require_once '../../framework/string.php';
-
 require_once 'userModel.php';
 require_once 'serieModel.php';
 
@@ -15,11 +13,7 @@ class Comment
     public static function fromDb($object) {
 
     	$instance = $object;
-//    	$instance->commentID = $row[0];
-//		$instance->imdbID = $row[1];
-//		$instance->userID = $row[2];
-//		$instance->comment = $row[3];
-//		$instance->score = $row[4];
+
         $date = new DateTime($object->createdAt);
 		$instance->createdAt = $date->format('d/m/yy H:i');
 

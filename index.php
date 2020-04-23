@@ -1,4 +1,9 @@
-<?php require 'index-code.php' ?>
+<?php 
+  ini_set('display_errors',1);
+  require '../framework/log.php';
+  require '../framework/database.php';
+  require 'index-code.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,15 +25,16 @@
   <body class="text-center">
     <form action="index.php" method="post" class="form-signin">
       <input type="hidden" name="mode" value="1">
-      <img class="mb-4" src="./images/logo.png" alt="" width="110" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Bienvenue sur PandaOne</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Bienvenue sur</h1>
+      <img class="mb-4" src="./images/logo.png" alt="logo">
       <label for="inputEmail" class="sr-only">Email</label>
       <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus="">
       <br/>
-      <label for="inputPassword" class="sr-only">Password</label>
+      <label for="inputPassword" class="sr-only">Mot de passe</label>
       <input type="password" id="password" name="password" class="form-control" required placeholder="Password">
       <br/>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
+      <a href="/subscribe.php">S'inscrire</a>
       <p><?php echo $message ?></p>
       <p class="mt-5 mb-3 text-muted">© 2020</p>
     </form>

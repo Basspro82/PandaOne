@@ -1,6 +1,9 @@
-<?php require 'home-code.php' ?>
+<?php 
 
-<?php include 'header.php' ?>
+  include 'header.php';
+  require 'home-code.php';
+
+?>
 
     <main role="main">
 
@@ -24,8 +27,9 @@
             <div class="col-12">
               <?php require "commentCard.php" ?>
             </div>
-            <?php } ?>
+          <?php } ?>
           </div><!--row-->
+          <?php echo $pagination ?>
           </div>
         </div>
 

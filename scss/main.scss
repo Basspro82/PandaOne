@@ -113,7 +113,7 @@ $gray:#aaa;
 
 .navbar-brand{
 	img{
-	max-height:50px;
+	max-height:66px; 
 	}
 }
 
@@ -224,5 +224,16 @@ footer{
 	
 	.reply{
 		
+	}
+}
+
+.page-link{
+	color:$dark;
+}
+
+.page-item.active {
+	.page-link{
+		background-color:$primaryColor;
+		border-color:$primaryColor;
 	}
 }

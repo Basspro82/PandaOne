@@ -1,6 +1,7 @@
-<?php require 'serie-code.php' ?>
-
-<?php include 'header.php' ?>
+<?php 
+	include 'header.php';
+	require 'serie-code.php'; 
+?>
 
     <main role="main">
 

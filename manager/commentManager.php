@@ -1,7 +1,5 @@
 <?php
 
-require_once "../../framework/database.php";
-
 class CommentManager{
 
 	public static function Add($comment)
@@ -65,7 +63,7 @@ class CommentManager{
 		Disconnect($con);
 	}
 
-	public static function LoadAll($filtre,$nb=0)
+	public static function LoadAll($filtre,$nb=0,$p=1)
 	{
 
 		$con = Connect();
@@ -80,7 +78,7 @@ class CommentManager{
 
 		$sql .= ' ORDER BY comment.createdAt DESC ';	   
 
-		if ($nb != 0) $sql .= ' LIMIT 0,' . $nb;
+		if ($nb > 0) $sql .= " LIMIT " . $nb * ($p - 1) . ", " . $nb;
 		
 		$result = $con->query($sql);
 		

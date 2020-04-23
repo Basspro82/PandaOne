@@ -1,44 +1,67 @@
 .card {
-  padding: 1rem;
-  background-color: #f9f9f9; }
-  .card a h4 {
-    color: #f1ad1f; }
-    .card a h4:hover {
-      color: #f7c457; }
-    .card a h4 .badge {
-      font-size: 60%;
-      background-color: transparent;
-      border: solid 1px #f1ad1f;
-      color: #f1ad1f;
-      margin-top: 0.3rem; }
-  .card a:hover {
-    text-decoration: none; }
-  .card .img-box {
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    background-color: #fff; }
-    .card .img-box img {
-      border-radius: 50%;
-      width: 100%; }
+  background-color: #f9f9f9;
+  position: relative; }
   .card blockquote {
-    margin: 1rem; }
-  .card .card-serie {
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 5px;
-    border: solid 1Px #ddd;
-    font-size: 0.9rem; }
-    .card .card-serie .card-poster img {
-      width: 70px; }
-  .card .card-pseudo {
-    margin-bottom: 0; }
+    margin: 1rem;
+    margin-left: 0; }
   .card .card-date {
-    font-size: 0.8rem; }
+    font-size: 0.8rem;
+    color: #aaa;
+    line-height: 52px; }
+  .card .card-corner {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    overflow: hidden;
+    width: 100px;
+    height: 100px; }
+    .card .card-corner span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 30px;
+      right: -30px;
+      top: 5px;
+      text-align: center;
+      font-size: 16px;
+      font-family: arial;
+      transform: rotate(45deg);
+      display: block;
+      background-color: #dc3545;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      border: solid 2px #fff; }
+  .card .card-text {
+    color: #666; }
+  .card .card-footer a {
+    color: #f1ad1f; }
 
 /* card */
+.user {
+  text-align: center;
+  display: block; }
+  .user .pseudo {
+    margin-bottom: 0;
+    color: #212529; }
+  .user:hover {
+    opacity: 0.8; }
+
+/* card-user */
+.img-box {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  margin: auto; }
+  .img-box img {
+    border-radius: 50%;
+    width: 100%; }
+
 .btn-primary {
   background-color: #f1ad1f;
   border: solid 1Px #f1ad1f; }
@@ -50,7 +73,7 @@
     border: solid 1Px #f1ad1f; }
 
 .navbar-brand img {
-  max-height: 50px; }
+  max-height: 66px; }
 
 .gravatar {
   width: 60px;
@@ -68,48 +91,57 @@ footer {
     background-color: #343a40;
     padding: 1rem; }
 
-body {
-  font-size: 35px;
-  font-family: sans-serif; }
-
-.rate-base-layer {
-  color: #aaa; }
-
-.rate-hover-layer {
-  color: orange; }
-
-.rate2 {
+.rate, .rateRO {
   font-size: 35px; }
+  .rate .rate-base-layer, .rateRO .rate-base-layer {
+    color: #aaa; }
+  .rate .rate-hover-layer, .rateRO .rate-hover-layer {
+    color: #f7c457; }
+  .rate .rate-select-layer, .rateRO .rate-select-layer {
+    color: #f1ad1f; }
 
-.rate2 .rate-hover-layer {
-  color: pink; }
+.seriePoster img {
+  max-width: 100%; }
 
-.rate2 .rate-select-layer {
-  color: red; }
+/*******************************************/
+.series img {
+  max-width: 100px; }
 
-.im {
-  background-image: url("./images/heart.gif");
-  background-size: 32px 32px;
-  background-repeat: no-repeat;
-  width: 32px;
-  height: 32px;
-  display: inline-block; }
+.serie-yearAndGenre {
+  color: #aaa;
+  margin-bottom: 1rem;
+  display: block; }
 
-.im2 {
-  background-image: url("./images/emoji5.png");
-  background-size: 64px 64px;
-  background-repeat: no-repeat;
-  width: 64px;
-  height: 64px;
-  display: inline-block; }
+.serie {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1Px #ddd;
+  font-size: 0.9rem; }
+  .serie a h4 {
+    color: #f1ad1f; }
+    .serie a h4:hover {
+      color: #f7c457; }
+  .serie a:hover {
+    text-decoration: none; }
+  .serie .poster img {
+    width: 70px; }
+  .serie .poster:hover {
+    opacity: 0.8; }
 
-#rate5 .rate-base-layer span, #rate7 .rate-base-layer span {
-  opacity: 0.5; }
+.replies {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1Px #ddd;
+  font-size: 0.9rem;
+  margin-top: 1rem; }
 
-hr {
-  border: 1px solid #ccc; }
+.page-link {
+  color: #343a40; }
 
-p {
-  font-size: 15px; }
+.page-item.active .page-link {
+  background-color: #f1ad1f;
+  border-color: #f1ad1f; }
 
 /*# sourceMappingURL=main.css.map */

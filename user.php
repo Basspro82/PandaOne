@@ -1,6 +1,7 @@
-<?php require 'user-code.php' ?>
-
-<?php include 'header.php' ?>
+<?php
+  include 'header.php'; 
+  require 'user-code.php'; 
+?>
 
     <main role="main">
 

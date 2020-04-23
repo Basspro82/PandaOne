@@ -1,6 +1,5 @@
 <?php
 
-require_once '../../framework/string.php';
 require_once 'userModel.php';
 
 class Reply

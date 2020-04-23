@@ -1,11 +1,19 @@
-<?php 
+<?php
+
+    ini_set('display_errors',1);
+
     session_start(); 
     if (!isset($_SESSION['userID'])){
         header('Location:./'); 
     }
 
-    require_once('../../framework/log.php');
-    require_once('../../framework/dom.php');
+    include('config.php');
+    
+    require_once('../framework/log.php');
+    require_once('../framework/dom.php');
+    require_once('../framework/database.php');
+    require_once('../framework/string.php');
+    require_once('../framework/ux.php');
 
 ?>
 

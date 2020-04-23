@@ -2,12 +2,9 @@
 
 include 'config.php';
 
-require_once '../../framework/log.php';
-
 require_once "manager/commentManager.php";
 require_once "model/serieModel.php";
 require_once "model/commentModel.php";
-require_once "../../framework/gravatar.php";
 
 $showLog = true;
 

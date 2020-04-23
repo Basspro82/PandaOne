@@ -1,9 +1,5 @@
 <?php
 
-include 'config.php';
-
-require_once '../../framework/log.php';
-
 require_once "manager/serieManager.php";
 require_once "manager/commentManager.php";
 require_once "model/commentModel.php";
