@@ -59,6 +59,11 @@ if (!property_exists($row,"genres")) {
     ExecuteQuery($sql);
     echo "Ajout de la colonne genres<br>";
 }
+if (!property_exists($row,"banner")) {
+    $sql = "ALTER TABLE serie ADD COLUMN banner NVARCHAR(250)";
+    ExecuteQuery($sql);
+    echo "Ajout de la colonne banner<br>";
+}
 
 // Ajout de la table reply
 if (!tableExist('reply')){
@@ -75,4 +80,7 @@ if (!tableExist('reply')){
     ExecuteQuery($sql);
     echo "Ajout de la table reply<br>";
 }
+$sql = "ALTER TABLE serie MODIFY COLUMN plot NVARCHAR(1000)";
+ExecuteQuery($sql);
+echo "Rallongement de la colonne plot<br>";
 ?>
