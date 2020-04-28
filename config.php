@@ -5,4 +5,6 @@ define ('dbUSER','root');
 define ('dbPASSWD','');
 define ('dbBDD','hippoSeries');
 
+define ('imgPhysicalPath',__DIR__ ."\images\\");
+
 ?>
