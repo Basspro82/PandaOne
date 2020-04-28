@@ -1,39 +1,82 @@
-<?php 
+<?php
 
-  include 'header.php';
-  require 'home-code.php';
+include 'header.php';
+require 'home-code.php';
 
 ?>
 
     <main role="main">
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">Bienvenue</h1>
-          <p>Partagez avec vos amis les commentaires sur vos séries préférées !</p>
-          <p><a class="btn btn-primary btn-lg" href="./yourComment" role="button">Ajouter un commentaire +</a></p>
-        </div>
-      </div>
-
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-12">
-        <h2>Quoi de neuf ?</h2>  
-
-        <div class="row">
-        <?php foreach ($comments as $comment) { ?>     
-            <div class="col-12">
-              <?php require "commentCard.php" ?>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-3">Bienvenue</h1>
+                        <p>Partagez avec vos amis les commentaires sur vos séries préférées !</p>
+                        <p><a class="btn btn-primary btn-lg" href="./yourComment" role="button">Ajouter un commentaire
+                                +</a>
+                        </p>
+                    </div>
+                    <div class="col-auto">
+                        <div class="row">
+                            <div class="card mb-4 shadow-sm mr-2">
+                                <div class="card-header">
+                                    <h4 class="my-0 font-weight-normal">Le plus bavard</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title pricing-card-title text-center">
+                                        <a href="./user?userID=<?php echo $top->userID ?>">
+                                            <div class="img-box"><img src="<?php echo $top->gravatar ?>"/></div>
+                                            <?php echo $top->pseudo ?></a></h4>
+                                </div>
+                            </div>
+                            <div class="card mb-4 shadow-sm mr-2">
+                                <div class="card-header">
+                                    <h4 class="my-0 font-weight-normal">Le plus sympa</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title pricing-card-title text-center">
+                                        <a href="./user?userID=<?php echo $best->userID ?>">
+                                            <div class="img-box"><img src="<?php echo $best->gravatar ?>"/></div>
+                                            <?php echo $best->pseudo ?></a></h4>
+                                </div>
+                            </div>
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <h4 class="my-0 font-weight-normal">Le plus dur</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title pricing-card-title text-center">
+                                        <a href="./user?userID=<?php echo $worst->userID ?>">
+                                            <div class="img-box"><img src="<?php echo $worst->gravatar ?>"/></div>
+                                            <?php echo $worst->pseudo ?></a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          <?php } ?>
-          </div><!--row-->
-          <?php echo $pagination ?>
-          </div>
         </div>
 
-      </div> <!-- /container -->
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-12">
+                    <h2>Quoi de neuf ?</h2>
+
+                    <div class="row">
+                        <?php foreach ($comments as $comment) { ?>
+                            <div class="col-12">
+                                <?php require "commentCard.php" ?>
+                            </div>
+                        <?php } ?>
+                    </div><!--row-->
+                    <?php echo $pagination ?>
+                </div>
+            </div>
+
+        </div> <!-- /container -->
 
     </main>
 
