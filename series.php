@@ -36,7 +36,7 @@
                  <td><?php echo $serie->plot ?></td>
                  <td><?php echo $serie->year ?></td>
                  <td><?php echo $serie->genres ?></td>
-                 <td><?php echo $serie->score ?></td>
+                 <td><?php echo round($serie->score,2) ?></td>
                  <td><?php
                      if ($serie->platform) {
                         echo "<a target='_blank' href='" . $serie->platformUrl . "'><img src='" . $serie->platformLogo ."'></a>";
