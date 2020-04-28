@@ -2,8 +2,8 @@
 
 include 'config.php';
 
-require_once '../../framework/log.php';
-require_once "../../framework/database.php";
+require_once '../framework/log.php';
+require_once "../framework/database.php";
 require_once "manager/serieManager.php";
 
 $series = LoadAll('serie',"", 'imdbID');
