@@ -8,8 +8,8 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Your comment</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <h1 class="display-3">Votre commentaire</h1>
+          <p>Partager votre point de vue en quelques clics !</p>
         </div>
       </div>
 
@@ -30,7 +30,7 @@
                     }else{ 
                       $save = 'disabled';
                   ?>  
-                    <input class="form-control" id="searchBox" type="text" placeholder="enter a serie">
+                    <input class="form-control" id="searchBox" type="text" placeholder="entrer une série">
                   <?php } ?>
                   <div id="result"></div>
                 </div>
@@ -54,11 +54,11 @@
               <div class="rate" data-rate-value="<?php echo $score ?>"></div>
             </div>
             <div class="form-group">
-                <textarea class="form-control" type="text" name="comment" id="comment" placeholder="enter your comment"><?php echo $commentRaw ?></textarea>
+                <textarea class="form-control" type="text" name="comment" id="comment" placeholder="entrer votre commentaire"><?php echo $commentRaw ?></textarea>
             </div>
             <div class="btn-group" role="group" aria-label="Action">
-              <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Save" <?php echo $save ?>>
-              <a class="btn btn-secondary btnCancel" href="<?php echo $urlReferrer ?>">Cancel</a>
+              <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Enregistrer" <?php echo $save ?>>
+              <a class="btn btn-secondary btnCancel" href="<?php echo $urlReferrer ?>">Annuler</a>
             </div>
           </div>
         </form>

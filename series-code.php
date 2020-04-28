@@ -6,7 +6,7 @@ require_once "model/serieModel.php";
 $showLog = false;
 $page = "serie";
 
-$result = SerieManager::GetLast(10);
+$result = SerieManager::GetLast(0);
 while($serie = mysqli_fetch_object($result)){
 
     $serie->url = "/serie?imdbID=" . $serie->imdbID;

@@ -23,7 +23,7 @@
                     }
                 ?>
               </span>
-              <p><a class="btn btn-primary btn-lg" href="./yourComment?imdbID=<?php echo $serie->imdbID ?>" role="button">Add comment +</a></p>
+              <p><a class="btn btn-primary btn-lg" href="./yourComment?imdbID=<?php echo $serie->imdbID ?>" role="button">Ajouter un commentaire +</a></p>
                 <div class="row">
                     <div class="col-3">
                         <?php

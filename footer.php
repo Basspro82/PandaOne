@@ -3,8 +3,8 @@
 	  	<div class="container">
 	  		<div class="row">
 	  			<div class="col-6">
-	  				<h2>About</h2>
-	  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consequat hendrerit nibh, eget interdum turpis tincidunt id. Ut ut neque et sem ullamcorper convallis.</p>
+	  				<h2>Equipe</h2>
+	  				<p>Développé avec &hearts; <br/>par Yann LAURAIN et Vincent JEZEQUEL</p>
 	  			</div>
 	  		</div>
 	  	</div>

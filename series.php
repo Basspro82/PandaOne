@@ -9,7 +9,7 @@
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Series</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <p>La liste complètes des séries ajoutées par vous et vos amis !</p>
         </div>
       </div>
 
@@ -53,7 +53,11 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-          $('#series').DataTable();
+          $('#series').DataTable({
+            "language": {
+                "url": "/js/dataTables.french.lang"
+            }
+          });
         });
     </script>
 

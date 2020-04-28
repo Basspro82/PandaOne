@@ -23,8 +23,8 @@
       <?php if (($comment->user->userID == $_SESSION["userID"])&&($page=='my-comments')){ ?>
       <div class="col text-right">
       	<div class="btn-group" role="group" aria-label="Action">
-        	<a class="btn btn-primary" href="./yourComment?commentID=<?php echo $comment->commentID ?>">Modify</a>
-        	<button type="button" class="btn btn-danger btnRemove" data-commentID="<?php echo $comment->commentID ?>">Remove</button>
+        	<a class="btn btn-primary" href="./yourComment?commentID=<?php echo $comment->commentID ?>">Modifier</a>
+        	<button type="button" class="btn btn-danger btnRemove" data-commentID="<?php echo $comment->commentID ?>">Supprimer</button>
       	</div>
       </div>
       <?php } ?>
