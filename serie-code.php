@@ -15,9 +15,9 @@ $result = LoadOne('serie','serie.imdbID',"'" . $_GET["imdbID"] . "'");
 while($row = mysqli_fetch_object($result)){
 	$serie = Serie::fromDB($row,0);
 }
-
+$serie->comments = [];
 // Load Serie s comments
-
+$nbComments = 0;
 $sum = 0;
 $result = CommentManager::LoadAll("comment.imdbID = '" . $serie->imdbID . "'");
 while($row = mysqli_fetch_object($result)){
@@ -27,7 +27,7 @@ while($row = mysqli_fetch_object($result)){
 	$sum = $sum + $comment->score;
 }
 
-$averageRate = round($sum/$nbComments,1);
+$averageRate = $nbComments>0 ? round($sum/$nbComments,1) : 0;
 
 showLog('serie-code','',$serie);
 
