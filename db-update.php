@@ -64,6 +64,11 @@ if (!property_exists($row,"banner")) {
     ExecuteQuery($sql);
     echo "Ajout de la colonne banner<br>";
 }
+if (!property_exists($row,"betaID")) {
+    $sql = "ALTER TABLE serie ADD COLUMN betaID integer";
+    ExecuteQuery($sql);
+    echo "Ajout de la colonne betaID sur la série<br>";
+}
 
 // Ajout de la table reply
 if (!tableExist('reply')){
@@ -83,4 +88,15 @@ if (!tableExist('reply')){
 $sql = "ALTER TABLE serie MODIFY COLUMN plot NVARCHAR(1000)";
 ExecuteQuery($sql);
 echo "Rallongement de la colonne plot<br>";
+
+
+if (!tableExist('episode')){
+    $sql = "CREATE TABLE IF NOT EXISTS `episode` (
+      `serieID` VARCHAR (50) NOT NULL,
+      `betaID` int(11) NOT NULL
+    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+    ExecuteQuery($sql);
+    echo "Ajout de la table episode<br>";
+}
+
 ?>

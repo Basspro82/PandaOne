@@ -2,60 +2,95 @@
 
 require_once "../framework/database.php";
 
-class UserManager{
+class UserManager
+{
 
-	public static function UpdateFromBetaseries($betaData) {
-	    $id = $betaData->id;
-	    $login = $betaData->login;
+    public static function UpdateFromBetaseries($user)
+    {
 
-	    $sql = "UPDATE user SET betaID=$id WHERE betaLogin='$login'";
-	    ExecuteQuery($sql);
-        echo $sql . "<br>";
+        $url = "https://api.betaseries.com/members/search?key=cabf2a885a7d&login=" . $user->betaLogin;
+        $strData = file_get_contents($url);
+        $data = json_decode($strData);
+        if (count($data->users)>0) {
+            $sql = "UPDATE user SET betaID='" . $data->users[0]->id . "' WHERE email='" . $user->email . "'";
+        } else {
+            $sql = "UPDATE user SET betaID=NULL WHERE email='" . $user->email . "'";
+        }
+        ExecuteQuery($sql);
     }
 
     public static function Add($user)
-	{
-						
-		$con = Connect();
-		
-		showLog('userManager.php','Add',$user);
+    {
 
-		// Insert user
+        $con = Connect();
 
-		$query = "INSERT INTO user(pseudo,email,gravatar,password,betaLogin) VALUES('$user->pseudo','$user->email','$user->gravatar','$user->password','$user->betaLogin')";
+        showLog('userManager.php', 'Add', $user);
 
-		If (!ExecuteQuery($query)){
-			return false;
-		}
-			
-		Disconnect($con);
+        // Insert user
+        $query = "INSERT INTO user(pseudo,email,gravatar,password,betaLogin) VALUES('$user->pseudo','$user->email','$user->gravatar','$user->password','$user->betaLogin')";
 
-		return true;
-	}
+        if (!ExecuteQuery($query)) {
+            return false;
+        }
 
-	public static function LoadAll($filtre='',$nb=0,$p=1)
-	{
+        if ($user->betaLogin) {
+            self::UpdateFromBetaseries($user);
+        }
 
-		$con = Connect();
-		
-		$sql = ' SELECT * FROM user ';
-		
-		if (!empty($filtre)) {
-			$sql .= ' WHERE ' . $filtre;
-		}	   
+        Disconnect($con);
 
-		//$sql .= ' ORDER BY comment.createdAt DESC ';	   
+        return true;
+    }
 
-		if ($nb > 0) $sql .= " LIMIT " . $nb * ($p - 1) . ", " . $nb;
-		
-		$result = $con->query($sql);
-		
-		Disconnect($con);
+    public static function Update($user)
+    {
 
-		showLog('userManager.php','LoadAll',$sql);
+        $sql = "UPDATE user SET pseudo='" . $user->pseudo . "', 
+                        email='" . $user->email . "',
+                        betaLogin='" . $user->betaLogin . "'
+                        WHERE userID='" . $user->userID . "'";
+        ExecuteQuery($sql);
 
-		return $result;
-		
-	}
+        if ($user->betaLogin) {
+            self::UpdateFromBetaseries($user);
+        }
+        return true;
+    }
+
+    public static function GetCurrent()
+    {
+        if (!isset($_SESSION["userID"])) {
+            return null;
+        }
+        $result = self::LoadAll("userID=" . $_SESSION["userID"]);
+        if ($result) {
+            return mysqli_fetch_object($result);
+        }
+    }
+
+    public static function LoadAll($filtre = '', $nb = 0, $p = 1)
+    {
+
+        $con = Connect();
+
+        $sql = ' SELECT * FROM user ';
+
+        if (!empty($filtre)) {
+            $sql .= ' WHERE ' . $filtre;
+        }
+
+        //$sql .= ' ORDER BY comment.createdAt DESC ';
+
+        if ($nb > 0) $sql .= " LIMIT " . $nb * ($p - 1) . ", " . $nb;
+
+        $result = $con->query($sql);
+
+        Disconnect($con);
+
+        showLog('userManager.php', 'LoadAll', $sql);
+
+        return $result;
+
+    }
 
 }

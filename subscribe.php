@@ -40,11 +40,13 @@
       <input type="password" id="password" name="password" class="form-control" placeholder="Mot de passe *" required>
       <br/>
 
-      <label for="betaLogin" class="sr-only">BetaSeries login</label>
-      <input id="betaLogin" name="betaLogin" class="form-control" placeholder="BetaSeries login">
-      <br/>
+      <label for="betaLogin" class="sr-only">Login Betaseries</label>
+      <input id="betaLogin" name="betaLogin" class="form-control" placeholder="Login BetaSeries">
+        <a href="https://www.betaseries.com/" target="_blank">pas encore de compte ?</a>
+        <br/>
+        <br/>
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
       <p class="text-left mt-2 mb-2">
         * Champs obligatoires<br/>
         <?php echo $message ?>

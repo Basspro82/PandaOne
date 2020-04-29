@@ -1,131 +1,174 @@
 <?php
 
-class CommentManager{
+class CommentManager
+{
 
-	public static function Add($comment)
-	{
-						
-		$con = Connect();
-		
-		showLog('CommentManager.php','Add',$comment);
+    public static function Add($comment)
+    {
 
-		//************************************
-		// Save serie
-		//************************************
+        $con = Connect();
 
-		If (!AlreadyExist('serie','imdbID',$comment->imdbID)){
+        showLog('CommentManager.php', 'Add', $comment);
 
-			$serie = $comment->serie;	
-			$title = mysqli_real_escape_string($con,$serie->title);
-			$poster = mysqli_real_escape_string($con,$serie->poster);
-			$plot = mysqli_real_escape_string($con,$serie->plot);
+        //************************************
+        // Save serie
+        //************************************
 
-			// Insert in serie table 
+        if (!AlreadyExist('serie', 'imdbID', $comment->imdbID)) {
 
-			$query = "INSERT INTO serie VALUES('$comment->imdbID','$title','$plot','$serie->year','','$poster',NOW(),NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
+            $serie = $comment->serie;
+            $title = mysqli_real_escape_string($con, $serie->title);
+            $poster = mysqli_real_escape_string($con, $serie->poster);
+            $plot = mysqli_real_escape_string($con, $serie->plot);
 
-			If (!ExecuteQuery($query)){
-				return;
-			}
+            // Insert in serie table
 
-		}
+            $query = "INSERT INTO serie VALUES('$comment->imdbID','$title','$plot','$serie->year','','$poster',NOW(),NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
 
-		// Insert in comment table
+            if (!ExecuteQuery($query)) {
+                return;
+            }
 
-		$commentraw = mysqli_real_escape_string($con,$comment->comment);
+        }
 
-		$query = "INSERT INTO comment(imdbID,userID,comment,score,createdAt) VALUES('$comment->imdbID',$comment->userID,'$commentraw','$comment->score',NOW())";
+        // Insert in comment table
 
-		If (!ExecuteQuery($query)){
-			return;
-		}
-			
-		Disconnect($con);
-	}
+        $commentraw = mysqli_real_escape_string($con, $comment->comment);
 
-	public static function Update($comment)
-	{
-						
-		$con = Connect();
-		
-		showLog('CommentManager.php','Update',$comment);
+        $query = "INSERT INTO comment(imdbID,userID,comment,score,createdAt) VALUES('$comment->imdbID',$comment->userID,'$commentraw','$comment->score',NOW())";
 
-		// Update comment
+        if (!ExecuteQuery($query)) {
+            return;
+        }
 
-		$commentraw = mysqli_real_escape_string($con,$comment->comment);
+        Disconnect($con);
+    }
 
-		$query = "UPDATE comment SET comment = '$commentraw', score = " . $comment->score . " WHERE commentID = " . $comment->commentID;
+    public static function Update($comment)
+    {
 
-		If (!ExecuteQuery($query)){
-			return;
-		}
-			
-		Disconnect($con);
-	}
+        $con = Connect();
 
-	public static function LoadAll($filtre,$nb=0,$p=1)
-	{
+        showLog('CommentManager.php', 'Update', $comment);
 
-		$con = Connect();
-		
-		$sql = ' SELECT * FROM comment ' . 
-			   ' INNER JOIN user ON comment.userID = user.userID ' .
-			   ' INNER JOIN serie ON comment.imdbID = serie.imdbID';
-		
-		if (!empty($filtre)) {
-			$sql .= ' WHERE ' . $filtre;
-		}	   
+        // Update comment
 
-		$sql .= ' ORDER BY comment.createdAt DESC ';	   
+        $commentraw = mysqli_real_escape_string($con, $comment->comment);
 
-		if ($nb > 0) $sql .= " LIMIT " . $nb * ($p - 1) . ", " . $nb;
-		
-		$result = $con->query($sql);
-		
-		Disconnect($con);
+        $query = "UPDATE comment SET comment = '$commentraw', score = " . $comment->score . " WHERE commentID = " . $comment->commentID;
 
-		showLog('commentManager.php','LoadAll',$sql);
+        if (!ExecuteQuery($query)) {
+            return;
+        }
 
-		return $result;
-		
-	}
+        Disconnect($con);
+    }
 
-	public static function LoadOne($commentID)
-	{
+    public static function LoadAll($filtre, $nb = 0, $p = 1)
+    {
 
-		$con = Connect();
-		
-		$sql = ' SELECT * FROM comment ' . 
-			   ' INNER JOIN user ON comment.userID = user.userID ' .
-			   ' INNER JOIN serie ON comment.imdbID = serie.imdbID' .
-			   ' WHERE commentID = ' . $commentID;   
+        $con = Connect();
 
-		showLog('commentManager.php','LoadOne',$sql);
+        $sql = ' SELECT * FROM comment ' .
+            ' INNER JOIN user ON comment.userID = user.userID ' .
+            ' INNER JOIN serie ON comment.imdbID = serie.imdbID';
 
-		$result = $con->query($sql);
-		
-		Disconnect($con);
+        if (!empty($filtre)) {
+            $sql .= ' WHERE ' . $filtre;
+        }
 
-		return $result;
-		
-	}
+        $sql .= ' ORDER BY comment.createdAt DESC ';
 
-	public static function Delete($commentID)
-	{
-						
-		$con = Connect();
-		
-		showLog('CommentManager.php','Delete',$commentID);
+        if ($nb > 0) $sql .= " LIMIT " . $nb * ($p - 1) . ", " . $nb;
 
-		$sql = " DELETE FROM comment WHERE commentID = " . $commentID;
-		$result = $con->query($sql);
+        $result = $con->query($sql);
 
-		Disconnect($con);
+        Disconnect($con);
 
-		showLog('commentManager.php','Delete',$sql);
+        showLog('commentManager.php', 'LoadAll', $sql);
 
-		return $result;
+        return $result;
 
-	}
+    }
+
+    public static function LoadOne($commentID)
+    {
+
+        $con = Connect();
+
+        $sql = ' SELECT * FROM comment ' .
+            ' INNER JOIN user ON comment.userID = user.userID ' .
+            ' INNER JOIN serie ON comment.imdbID = serie.imdbID' .
+            ' WHERE commentID = ' . $commentID;
+
+        showLog('commentManager.php', 'LoadOne', $sql);
+
+        $result = $con->query($sql);
+
+        Disconnect($con);
+
+        return $result;
+
+    }
+
+    public static function Delete($commentID)
+    {
+
+        $con = Connect();
+
+        showLog('CommentManager.php', 'Delete', $commentID);
+
+        $sql = " DELETE FROM comment WHERE commentID = " . $commentID;
+        $result = $con->query($sql);
+
+        Disconnect($con);
+
+        showLog('commentManager.php', 'Delete', $sql);
+
+        return $result;
+
+    }
+
+
+    const MOST_COMMENTS = "MOST_COMMENTS";
+    const BEST_RATED = "BEST_RATED";
+    const WORST_RATED = "WORST_RATED";
+
+    public static function GetTop($order)
+    {
+        $con = Connect();
+
+        $orderQuery = '';
+        $sort = "";
+        switch ($order) {
+            case self::MOST_COMMENTS:
+                $orderQuery = "COUNT(commentID)";
+                $sort = "DESC";
+                break;
+            case self::BEST_RATED:
+                $orderQuery = "AVG(commentID)";
+                $sort = "DESC";
+                break;
+            case self::WORST_RATED:
+                $orderQuery = "AVG(commentID)";
+                $sort = "ASC";
+                break;
+
+        }
+        $sql = " SELECT pseudo,user.userID,gravatar,$orderQuery as val FROM comment 
+                INNER JOIN user ON comment.userID = user.userID
+                GROUP BY pseudo,user.userID,gravatar
+                ORDER BY $orderQuery $sort
+                LIMIT 0,1";
+
+        $result = $con->query($sql);
+
+        Disconnect($con);
+
+        if ($result && $result->num_rows)
+            return mysqli_fetch_object($result);
+
+        return $result;
+    }
 
 }
