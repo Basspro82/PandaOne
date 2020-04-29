@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./series">Series</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./betaseries">betaseries</a>
+                </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">

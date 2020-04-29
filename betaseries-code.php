@@ -6,6 +6,7 @@ require_once "manager/episodeManager.php";
 require_once "model/commentModel.php";
 
 $showLog = false;
+$showRequest = false;
 
 $page = 'betaseries';
 $message = '';
@@ -22,11 +23,10 @@ while($row = mysqli_fetch_row($result)){
     $data = json_decode($str);
     foreach ($data->events as $event) {
 
-
         // on récupère la série ou l'épisode :
-        if ($event->type=="markas") {
+        if ($event->type=="markas" || $event->type=="add_serie") {
             // episode :
-            $episode = EpisodeMoanager::Find($event->ref);
+            $episode = EpisodeMoanager::Find($event->ref_id);
             $event->imdbID = $episode->imdbID;
             $event->poster = $episode->poster;
         } else {
@@ -35,7 +35,7 @@ while($row = mysqli_fetch_row($result)){
             $event->imdbID = $serie->imdbID;
             $event->poster = $serie->poster;
         }
-
+        $event->html = strip_tags($event->html);
         $event->userID = $userID;
         $event->username = $member;
         $event->avatar = $avatar;

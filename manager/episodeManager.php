@@ -14,6 +14,9 @@ class EpisodeMoanager
 		from episode
 		INNER JOIN serie ON episode.serieID=imdbID
 		WHERE episode.betaID=$betaID";
+
+
+        showLog('episodeManager.php', 'Find', $sql);
         $result = $con->query($sql);
 
         if (!$result || !$result->num_rows) {
@@ -21,7 +24,6 @@ class EpisodeMoanager
             $url = "https://api.betaseries.com/episodes/display?key=cabf2a885a7d&id=" . $betaID;
             $str = file_get_contents($url);
             $data = json_decode($str);
-            var_dump($data);
             $serieID = $data->episode->show->id;
 
             // on vérifie si on a deja enregistré la série :
@@ -29,12 +31,16 @@ class EpisodeMoanager
             if ($serie) {
                 // on ajoute l'épisode
                 $sql = "INSERT INTO episode (serieID,betaID) VALUES ('$serie->imdbID',$betaID)";
+                showLog('episodeManager.php', 'Find', $sql);
                 ExecuteQuery($sql);
+
             }
             $sql = "SELECT * 
                         from episode
                         INNER JOIN serie ON episode.serieID=imdbID
                         WHERE episode.betaID=$betaID";
+            showLog('episodeManager.php', 'Find', $sql);
+
             $result = $con->query($sql);
         }
 
@@ -58,6 +64,7 @@ class EpisodeMoanager
         $commentraw = mysqli_real_escape_string($con, $comment->comment);
 
         $query = "UPDATE comment SET comment = '$commentraw', score = " . $comment->score . " WHERE commentID = " . $comment->commentID;
+        showLog('episodeManager.php', 'Update', $query);
 
         if (!ExecuteQuery($query)) {
             return;

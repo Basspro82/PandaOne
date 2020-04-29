@@ -63,7 +63,6 @@ class UserManager
             return null;
         }
         $result = self::LoadAll("userID=" . $_SESSION["userID"]);
-        var_dump($result);
         if ($result) {
             return mysqli_fetch_object($result);
         }

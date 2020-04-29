@@ -26,9 +26,10 @@ require 'home-code.php';
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title pricing-card-title text-center">
-                                        <a href="./user?userID=<?php echo $top->userID ?>">
+                                        <a class="user" href="./user?userID=<?php echo $top->userID ?>">
                                             <div class="img-box"><img src="<?php echo $top->gravatar ?>"/></div>
-                                            <?php echo $top->pseudo ?></a></h4>
+                                            <span class="pseudo">
+                                            <?php echo $top->pseudo ?></span></a></h4>
                                 </div>
                             </div>
                             <div class="card mb-4 shadow-sm mr-2">
@@ -37,20 +38,22 @@ require 'home-code.php';
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title pricing-card-title text-center">
-                                        <a href="./user?userID=<?php echo $best->userID ?>">
+                                        <a class="user" href="./user?userID=<?php echo $best->userID ?>">
                                             <div class="img-box"><img src="<?php echo $best->gravatar ?>"/></div>
-                                            <?php echo $best->pseudo ?></a></h4>
+                                            <span class="pseudo">
+                                            <?php echo $best->pseudo ?></span></a></h4>
                                 </div>
                             </div>
                             <div class="card mb-4 shadow-sm">
                                 <div class="card-header">
-                                    <h4 class="my-0 font-weight-normal">Le plus dur</h4>
+                                    <h4 class="my-0 font-weight-normal">Le plus critique</h4>
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title pricing-card-title text-center">
-                                        <a href="./user?userID=<?php echo $worst->userID ?>">
+                                        <a class="user" href="./user?userID=<?php echo $worst->userID ?>">
                                             <div class="img-box"><img src="<?php echo $worst->gravatar ?>"/></div>
-                                            <?php echo $worst->pseudo ?></a></h4>
+                                            <span class="pseudo">
+                                            <?php echo $worst->pseudo ?></span></a></h4>
                                 </div>
                             </div>
                         </div>

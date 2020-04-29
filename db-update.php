@@ -92,10 +92,8 @@ echo "Rallongement de la colonne plot<br>";
 
 if (!tableExist('episode')){
     $sql = "CREATE TABLE IF NOT EXISTS `episode` (
-      `episodeID` int(11) NOT NULL AUTO_INCREMENT,
-      `serieID` int(11) NOT NULL,
-      `betaID` int(11) NOT NULL,
-      PRIMARY KEY (`episodeID`)
+      `serieID` VARCHAR (50) NOT NULL,
+      `betaID` int(11) NOT NULL
     ) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
     ExecuteQuery($sql);
     echo "Ajout de la table episode<br>";

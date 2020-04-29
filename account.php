@@ -31,7 +31,7 @@
         <br/>
         <br/>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Mettre à jour</button>
       <p class="text-left mt-2 mb-2">
         * Champs obligatoires<br/>
         <?php echo $message ?>

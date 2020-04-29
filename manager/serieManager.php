@@ -27,7 +27,7 @@ class SerieManager
     public static function FindByImdbID($imdbID) {
         $con = Connect();
 
-        $result = self::LoadAll("imdbID=$imdbID");
+        $result = self::LoadAll("imdbID='$imdbID'");
 
         Disconnect($con);
 
@@ -94,6 +94,7 @@ class SerieManager
         $seasons = $betaData->seasons;
         $episodes = $betaData->episodes;
         $banner = $betaData->images->show;
+        $poster = $betaData->images->poster;
         $desc = str_ireplace("'", "''", $betaData->description);
         $genres = get_object_vars($betaData->genres);
 
@@ -114,13 +115,13 @@ class SerieManager
                         episodes=$episodes, 
                         genres='$genres', 
                         banner='$banner', 
+                        poster='$poster', 
                         over=$over, 
                         platform='$platform', 
                         platformUrl='$platformUrl', 
                         platformLogo='$platformLogo' 
                         WHERE imdbID='$imdbId'";
         ExecuteQuery($sql);
-        echo $sql . "<br>";
     }
 
     public static function InsertFromBetaseries($betaData)

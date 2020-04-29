@@ -34,7 +34,7 @@ while($row = mysqli_fetch_object($result)){
 	$sum = $sum + $comment->score;
 }
 
-$averageRate = round($sum/$nbComments,1);
+$averageRate = $nbComments ? round($sum/$nbComments,1) : "-";
 
 showLog('user-code','',$series);
 
