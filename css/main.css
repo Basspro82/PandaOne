@@ -162,4 +162,29 @@ footer {
 .fiche-serie .platform {
   width: 100%; }
 
-/*# sourceMappingURL=main.css.map */
+.infos-betaseries-toggle {
+  position: relative;
+  display: inline-block;
+  z-index: 10; }
+  .infos-betaseries-toggle span {
+    cursor: help; }
+    .infos-betaseries-toggle span:hover {
+      text-decoration: underline; }
+
+.infos-betaseries {
+  display: none;
+  width: 500px;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  border: solid 1px #00000055;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -250px;
+  box-shadow: 10px 5px 5px gray; }
+  .infos-betaseries span {
+    cursor: pointer; }

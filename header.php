@@ -38,6 +38,8 @@
         <link href="./css/main.css" rel="stylesheet">
 
         <script src="./js/jquery-3.4.1.js"></script>
+        <script src="./vendor/bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+        <script src="./vendor/bootstrap-4.4.1-dist/js/bootstrap.bundle.js"></script>
 
     </head>
 

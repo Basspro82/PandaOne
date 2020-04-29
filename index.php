@@ -23,7 +23,7 @@
   </head>
 
   <body class="text-center">
-    <form action="index.php" method="post" class="form-signin">
+    <form method="post" class="form-signin">
       <input type="hidden" name="mode" value="1">
       <h1 class="h3 mb-3 font-weight-normal">Bienvenue sur</h1>
       <img class="mb-4" src="./images/logo.png" alt="logo">
