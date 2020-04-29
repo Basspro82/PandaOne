@@ -9,6 +9,9 @@
         <li>de trouver des séries similaires, ...</li>
     </ul>
     <p>Il permet aussi à présent de gérer de la même manière ses films</p>
-    <p><a href="https://www.betaseries.com/inscription/" target="_blank"> Inscription</a></p>
-    <span onclick="$('#info-beta').toggle();" class="">Fermer</span>
+    <div class="text-center">
+        <a href="https://www.betaseries.com/inscription/" target="_blank"> Inscription</a><br>
+        <span onclick="$('#info-beta').toggle();" class="">Fermer</span>
+    </div>
+
 </div>
