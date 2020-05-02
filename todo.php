@@ -17,15 +17,15 @@
         <div class="row">
           <div class="col-12">
               <ul>
-                <li>Pagination sur la liste des derniers commentaires de la home</li>
+                <li><strike>Pagination sur la liste des derniers commentaires de la home</strike></li>
                 <li><strike>Récupération automatique du résumé de la série</strike></li>
                 <li><strike>Afficher la note moyenne dans la liste des séries et sur la fiche série</strike></li>
                 <li><strike>Ajouter la plateforme qui propose la série lors de la création</strike></li>
                 <li><strike>Ajouter la possibilité de répondre à un commentaire</strike></li>
                 <li><strike>Fiche série : ajouter l'année et la description dans le header</strike></li>
                 <li>Fiche utilisateur : ajouter la liste des amis</li>
-                <li>Espace privé : ajouter la page "my friends"</li>
-                <li>Uploader les visuels (utilisateur et films) en local"</li>
+                <li><strike>Espace privé : ajouter la page "my friends"</strike></li>
+                <li><strike>Uploader les visuels utilisateur en local</strike></li>
               </ul>
           </div>
         </div>
