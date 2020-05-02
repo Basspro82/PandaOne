@@ -20,6 +20,7 @@
     <link href="./css/signin.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet">
 
+      <script src="./js/jquery-3.4.1.js"></script>
   </head>
 
   <body class="text-center">
@@ -42,8 +43,11 @@
 
       <label for="betaLogin" class="sr-only">Login Betaseries</label>
       <input id="betaLogin" name="betaLogin" class="form-control" placeholder="Login BetaSeries">
-        <a href="https://www.betaseries.com/" target="_blank">pas encore de compte ?</a>
-        <br/>
+        <div class="infos-betaseries-toggle mb-4">
+            <span onclick="$('#info-beta').toggle();" class="">Kézako ?</span><br/>
+            <?php
+            require '_betaseries_desc.php'; ?>
+        </div>
         <br/>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>

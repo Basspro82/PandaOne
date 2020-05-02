@@ -27,7 +27,11 @@
 
       <label for="betaLogin" >Login Betaseries</label>
       <input id="betaLogin" name="betaLogin" class="form-control" value="<?php echo $user->betaLogin; ?>" >
-        <a href="https://www.betaseries.com/" target="_blank">pas encore de compte ?</a>
+        <div class="infos-betaseries-toggle mb-4">
+            <span onclick="$('#info-beta').toggle();" class="">Kézako ?</span><br/>
+            <?php
+            require '_betaseries_desc.php'; ?>
+        </div>
         <br/>
         <br/>
 
