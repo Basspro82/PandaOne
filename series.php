@@ -20,8 +20,8 @@
           <thead>
               <tr>
                   <th></th>
-                  <th>Title</th>
-                  <th>Description</th>
+                  <th>Titre</th>
+                  <th>Résumé</th>
                   <th>Année</th>
                   <th>Genre</th>
                   <th>Note moyenne</th>

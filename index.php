@@ -6,24 +6,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="#">
+  
+  <?php include "_head.php" ?>
 
-    <title>PandaOne</title>
-
-    <link rel="canonical" href="#">
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/signin.css" rel="stylesheet">
-    <link href="./css/main.css" rel="stylesheet">
-
-  </head>
-
-  <body class="text-center">
-    <form method="post" class="form-signin">
+  <body class="text-center loginPage">
+    <form method="post" class="form">
       <input type="hidden" name="mode" value="1">
       <h1 class="h3 mb-3 font-weight-normal">Bienvenue sur</h1>
       <img class="mb-4" src="./images/logo.png" alt="logo">
@@ -38,5 +25,8 @@
       <p><?php echo $message ?></p>
       <p class="mt-5 mb-3 text-muted">PandaOne © 2020</p>
     </form>
+
+    <?php include "_scripts.php" ?>
+
   </body>
 </html>

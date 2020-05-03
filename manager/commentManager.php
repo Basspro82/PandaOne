@@ -77,7 +77,7 @@ class CommentManager
             $sql .= ' WHERE ' . $filtre;
         }
 
-        $sql .= ' ORDER BY comment.createdAt DESC ';
+        $sql .= ' ORDER BY comment.commentCreatedAt DESC ';
 
         if ($nb > 0) $sql .= " LIMIT " . $nb * ($p - 1) . ", " . $nb;
 

@@ -9,7 +9,7 @@ class Serie
 		// allocate your stuff
 	}
 
-    public static function fromDb($object,$firstIndex) {
+    public static function fromDb($object) {
 
     	$instance = $object;
         $instance->url = "/serie?imdbID=" . $instance->imdbID;

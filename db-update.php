@@ -99,4 +99,23 @@ if (!tableExist('episode')){
     echo "Ajout de la table episode<br>";
 }
 
+if(!columnExist('comment','commentCreatedAt')){
+    $sql = "ALTER TABLE `comment` CHANGE COLUMN `createdAt` `commentCreatedAt` DATETIME NOT NULL AFTER `score`";
+    ExecuteQuery($sql);
+    echo "Renommage de la colonne createdAt dans la table Comment<br>";
+}
+
+if(!columnExist('serie','serieCreatedAt')){
+    $sql = "ALTER TABLE `serie` CHANGE COLUMN `createdAt` `serieCreatedAt` DATETIME NOT NULL AFTER `poster`";
+    ExecuteQuery($sql);
+    echo "Renommage de la colonne createdAt dans la table Serie<br>";
+}
+
+if(!columnExist('reply','replyCreatedAt')){
+    $sql = "ALTER TABLE `reply` CHANGE COLUMN `createdAt` `replyCreatedAt` DATETIME NOT NULL AFTER `body`";
+    ExecuteQuery($sql);
+    echo "Renommage de la colonne createdAt dans la table Reply<br>";
+}
+
+
 ?>

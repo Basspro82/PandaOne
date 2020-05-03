@@ -9,13 +9,10 @@ class Reply
 		// allocate your stuff
 	}
 
-    public static function fromDb($row,$firstIndex) {
-    	$instance = new self();
-    	$instance->replyID = $row[$firstIndex];
-		$instance->userID = $row[$firstIndex + 1];
-		$instance->commentID = $row[$firstIndex + 2];
-		$instance->body = $row[$firstIndex + 3];
-        $date = new DateTime($row[$firstIndex + 4]);
+    public static function fromDb($row) {
+    	
+    	$instance = $object;
+        $date = new DateTime($object->replyCreatedAt);
 		$instance->createdAt = $date->format('d/m/yy H:i');
 		return $instance;
     }

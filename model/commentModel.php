@@ -14,7 +14,7 @@ class Comment
 
     	$instance = $object;
 
-        $date = new DateTime($object->createdAt);
+        $date = new DateTime($object->commentCreatedAt);
 		$instance->createdAt = $date->format('d/m/yy H:i');
 
         $now = new DateTime;

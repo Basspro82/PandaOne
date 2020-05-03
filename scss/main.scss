@@ -11,6 +11,12 @@ $lightYellow:#f7c457;
 $red:#dc3545;
 $gray:#aaa;
 
+.loginPage, .subscribePage{
+	.form{
+		max-width:300px;
+	}
+}
+
 .card{
 
 	background-color:$background;
@@ -287,4 +293,9 @@ footer{
 .form{
 	max-width:600px;
 	margin:auto;
+
+	img{
+		max-width:100%;
+	}
+
 }

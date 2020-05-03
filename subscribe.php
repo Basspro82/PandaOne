@@ -6,25 +6,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="#">
+  
+  <?php include "_head.php" ?>
 
-    <title>PandaOne</title>
-
-    <link rel="canonical" href="#">
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link href="./css/signin.css" rel="stylesheet">
-    <link href="./css/main.css" rel="stylesheet">
-
-      <script src="./js/jquery-3.4.1.js"></script>
-  </head>
-
-  <body class="text-center">
-    <form action="subscribe.php" method="post" class="form-signin">
+  <body class="text-center subscribePage">
+    <form action="subscribe.php" method="post" class="form">
       <input type="hidden" name="mode" value="1">
       <img class="mb-4" src="./images/logo.png" alt="logo">
       <p>Merci de renseigner les champs suivants : </p>
@@ -42,13 +28,13 @@
       <br/>
 
       <label for="betaLogin" class="sr-only">Login Betaseries</label>
-      <input id="betaLogin" name="betaLogin" class="form-control" placeholder="Login BetaSeries">
-        <div class="infos-betaseries-toggle mb-4">
-            <span onclick="$('#info-beta').toggle();" class="">Kézako ?</span><br/>
-            <?php
-            require '_betaseries_desc.php'; ?>
-        </div>
-        <br/>
+      <div class="input-group">   
+        <div class="input-group-prepend">
+          <div class="input-group-text info" data-toggle="popover" title="Betaseries" data-html="true" data-placement="right" data-content="<?php require '_betaseries_desc.php'; ?>">?</div>
+          </div>
+        <input id="betaLogin" name="betaLogin" class="form-control" placeholder="Login BetaSeries">
+      </div>
+      <br/>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
       <p class="text-left mt-2 mb-2">
@@ -57,5 +43,8 @@
       </p>
       <p class="mt-5 mb-3 text-muted">PandaOne © 2020</p>
     </form>
+
+    <?php include "_scripts.php" ?>
+
   </body>
 </html>

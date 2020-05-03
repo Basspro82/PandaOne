@@ -7,7 +7,7 @@ class User
 		// allocate your stuff
 	}
 
-    public static function fromDb($object, $firstIndex) {
+    public static function fromDb($object) {
 	    return $object;
     }
 	
