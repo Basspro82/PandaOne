@@ -11,51 +11,57 @@ require 'home-code.php';
         <div class="jumbotron">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-5">
                         <h1 class="display-3">Bienvenue</h1>
                         <p>Partagez avec vos amis les commentaires sur vos séries préférées !</p>
                         <p><a class="btn btn-primary btn-lg" href="./yourComment" role="button">Ajouter un commentaire
                                 +</a>
                         </p>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-7">
                         <div class="row">
-                            <div class="card mb-4 shadow-sm mr-2">
-                                <div class="card-header">
-                                    <h4 class="my-0 font-weight-normal">Le plus bavard</h4>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title pricing-card-title text-center">
-                                        <a class="user" href="./user?userID=<?php echo $top->userID ?>">
-                                            <div class="img-box"><img src="<?php echo $top->gravatar ?>"/></div>
-                                            <span class="pseudo">
-                                            <?php echo $top->pseudo ?></span></a></h4>
-                                </div>
-                            </div>
-                            <div class="card mb-4 shadow-sm mr-2">
-                                <div class="card-header">
-                                    <h4 class="my-0 font-weight-normal">Le plus sympa</h4>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title pricing-card-title text-center">
-                                        <a class="user" href="./user?userID=<?php echo $best->userID ?>">
-                                            <div class="img-box"><img src="<?php echo $best->gravatar ?>"/></div>
-                                            <span class="pseudo">
-                                            <?php echo $best->pseudo ?></span></a></h4>
-                                </div>
-                            </div>
-                            <div class="card mb-4 shadow-sm">
-                                <div class="card-header">
-                                    <h4 class="my-0 font-weight-normal">Le plus critique</h4>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title pricing-card-title text-center">
-                                        <a class="user" href="./user?userID=<?php echo $worst->userID ?>">
-                                            <div class="img-box"><img src="<?php echo $worst->gravatar ?>"/></div>
-                                            <span class="pseudo">
-                                            <?php echo $worst->pseudo ?></span></a></h4>
-                                </div>
-                            </div>
+                        	<div class="col">
+	                            <div class="card mb-4 shadow-sm">
+	                                <div class="card-header text-center">
+	                                    <h5 class="my-0 font-weight-normal">Le plus bavard</h4>
+	                                </div>
+	                                <div class="card-body">
+	                                    <h4 class="card-title pricing-card-title text-center">
+	                                        <a class="user" href="./user?userID=<?php echo $top->userID ?>">
+	                                            <div class="img-box"><img src="<?php echo $top->gravatar ?>"/></div>
+	                                            <span class="pseudo">
+	                                            <?php echo $top->pseudo ?></span></a></h4>
+	                                </div>
+	                            </div><!-- card -->
+                    		</div>
+                    		<div class="col">
+	                            <div class="card mb-4 shadow-sm">
+	                                <div class="card-header text-center">
+	                                    <h5 class="my-0 font-weight-normal">Le plus sympa</h4>
+	                                </div>
+	                                <div class="card-body">
+	                                    <h4 class="card-title pricing-card-title text-center">
+	                                        <a class="user" href="./user?userID=<?php echo $best->userID ?>">
+	                                            <div class="img-box"><img src="<?php echo $best->gravatar ?>"/></div>
+	                                            <span class="pseudo">
+	                                            <?php echo $best->pseudo ?></span></a></h4>
+	                                </div>
+	                            </div><!--card-->
+	                        </div>
+	                        <div class="col">
+	                            <div class="card mb-4 shadow-sm">
+	                                <div class="card-header text-center">
+	                                    <h5 class="my-0 font-weight-normal">Le plus critique</h4>
+	                                </div>
+	                                <div class="card-body">
+	                                    <h4 class="card-title pricing-card-title text-center">
+	                                        <a class="user" href="./user?userID=<?php echo $worst->userID ?>">
+	                                            <div class="img-box"><img src="<?php echo $worst->gravatar ?>"/></div>
+	                                            <span class="pseudo">
+	                                            <?php echo $worst->pseudo ?></span></a></h4>
+	                                </div>
+	                            </div><!--card-->
+                    		</div>
                         </div>
                     </div>
                 </div>

@@ -36,4 +36,10 @@ $(document).ready(function() {
     }
     $(".rateRO").rate(options);
 
+    // Enabled Tooltip
+
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    })
+
  });

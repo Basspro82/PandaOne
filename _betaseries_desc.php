@@ -1,5 +1,5 @@
-<div class="infos-betaseries" id="info-beta">
-    <p><a href="http://www.betaseries.com" target="_blank">Betaseries</a> est un site communataire permettant aux
+<div class='betaSeriesDescription'>
+    <p><a href='http://www.betaseries.com' target='_blank'><img src='images/betaseries.png'/></a>BetaSeries est un site communataire permettant aux
         utilisateurs d'optimiser leur visionnage de séries.
         Il permet entre autres :</p>
     <ul>
@@ -8,10 +8,8 @@
         <li>de suivre l'activité de tous ses amis (que vous pourrez également voir chez nous)</li>
         <li>de trouver des séries similaires, ...</li>
     </ul>
-    <p>Il permet aussi à présent de gérer de la même manière ses films</p>
-    <div class="text-center">
-        <a href="https://www.betaseries.com/inscription/" target="_blank"> Inscription</a><br>
-        <span onclick="$('#info-beta').toggle();" class="">Fermer</span>
+    <p>Il permet aussi à présent de gérer de la même manière ses films.</p>
+    <div class='text-center'>
+        <a href='https://www.betaseries.com/inscription/' target='_blank'> Inscription</a><br>
     </div>
-
 </div>

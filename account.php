@@ -10,14 +10,14 @@
     </div>
 
     <div class="container">
-    <form method="post" class="form-signin">
+    <form method="post" class="form">
       <input type="hidden" name="mode" value="1">
 
-      <label for="pseudo" >Pseudo</label>
+      <label for="pseudo" >Pseudo *</label>
       <input type="pseudo" id="pseudo" name="pseudo" class="form-control" value="<?php echo $user->pseudo; ?>" required autofocus="">
       <br/>
       
-      <label for="email" >Email</label>
+      <label for="email" >Email *</label>
       <input type="email" id="email" name="email" class="form-control" value="<?php echo $user->email; ?>"  required autofocus="">
       <br/>
       
@@ -26,21 +26,19 @@
       <br/>
 
       <label for="betaLogin" >Login Betaseries</label>
-      <input id="betaLogin" name="betaLogin" class="form-control" value="<?php echo $user->betaLogin; ?>" >
-        <div class="infos-betaseries-toggle mb-4">
-            <span onclick="$('#info-beta').toggle();" class="">Kézako ?</span><br/>
-            <?php
-            require '_betaseries_desc.php'; ?>
-        </div>
-        <br/>
-        <br/>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Mettre à jour</button>
+      <div class="input-group">   
+          <div class="input-group-prepend">
+            <div class="input-group-text info" data-toggle="popover" title="Betaseries" data-html="true" data-placement="right" data-content="<?php
+            require '_betaseries_desc.php'; ?>">?</div>
+          </div>
+          <input id="betaLogin" name="betaLogin" class="form-control" value="<?php echo $user->betaLogin; ?>" >
+      </div>
+      <br/>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Mettre à jour</button>
       <p class="text-left mt-2 mb-2">
         * Champs obligatoires<br/>
         <?php echo $message ?>
       </p>
-      <p class="mt-5 mb-3 text-muted">PandaOne © 2020</p>
     </form>
     </div>
 </main>
