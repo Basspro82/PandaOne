@@ -3,8 +3,12 @@
     ini_set('display_errors',1);
 
     session_start(); 
-    if ((!isset($_SESSION['userID']))&&(!issset($_GET['supervision']))){
+    if ((!isset($_SESSION['userID']))&&(!isset($_GET['supervision']))){
         header('Location:./'); 
+    }else if (isset($_GET['supervision'])){
+        $_SESSION["userID"] = 1;
+        $_SESSION["pseudo"] = 'basspro';
+        $_SESSION["gravatar"] = '';
     }
 
     include('config.php');

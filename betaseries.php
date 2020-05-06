@@ -18,7 +18,7 @@
             <div class="row">
               <?php if (isset($events)) { foreach ($events as $event) { ?>
                 <div class="col-12">
-                  <?php require "betaseriesCard.php" ?>
+                  <?php require "_betaseriesCard.php" ?>
                 </div>
               <?php }} ?>
             </div><!--row-->

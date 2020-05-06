@@ -1,10 +1,10 @@
 <?php
 
-include 'config.php';
+include '../config.php';
 
 require_once '../../framework/log.php';
 require_once "../../framework/database.php";
-require_once "manager/userManager.php";
+require_once "../manager/userManager.php";
 
 $series = LoadAll('user',"betaLogin is not null",'email');
 while ($row = mysqli_fetch_object($series)) {

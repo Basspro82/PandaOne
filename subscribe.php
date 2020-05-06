@@ -12,7 +12,7 @@
   <body class="text-center subscribePage">
     <form action="subscribe.php" method="post" class="form">
       <input type="hidden" name="mode" value="1">
-      <img class="mb-4" src="./images/logo.png" alt="logo">
+      <img class="mb-4" src="./images/logo-beta.png" alt="logo">
       <p>Merci de renseigner les champs suivants : </p>
       
       <label for="pseudo" class="sr-only">Email</label>

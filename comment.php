@@ -36,7 +36,7 @@
 
       <div class="container">
 
-        <h2>Replies</h2>
+        <h2>Réaction(s)</h2>
 
           <div class="replies">
             <?php if (isset($replies)):
@@ -47,7 +47,7 @@
                 <div class="reply clearfix">
                   <div class="row">
                     <div class="col text-right align-self-center">
-                      <span class="comment-date"><?php echo date("d/m/yy H:i", strtotime($reply["createdAt"])); ?></span>
+                      <span class="comment-date"><?php echo date("d/m/yy H:i", strtotime($reply["replyCreatedAt"])); ?></span>
                       <p><?php echo $reply['body']; ?></p>
                     </div>
                     <div class="col-auto align-self-center">

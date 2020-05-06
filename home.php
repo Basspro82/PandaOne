@@ -5,20 +5,20 @@ require 'home-code.php';
 
 ?>
 
-    <main role="main">
+    <main role="main" class="homePage">
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-lg-5 mb-3 mt-3">
                         <h1 class="display-3">Bienvenue</h1>
                         <p>Partagez avec vos amis les commentaires sur vos séries préférées !</p>
                         <p><a class="btn btn-primary btn-lg" href="./yourComment" role="button">Ajouter un commentaire
                                 +</a>
                         </p>
                     </div>
-                    <div class="col-7">
+                    <div class="col-lg-7 mb-3 mt-3">
                         <div class="row">
                         	<div class="col">
 	                            <div class="card mb-4 shadow-sm">

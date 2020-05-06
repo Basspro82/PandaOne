@@ -1,3 +1,29 @@
+.link {
+  display: block;
+  color: #f1ad1f; }
+  .link:hover {
+    color: #f1ad1f; }
+
+.btn-primary {
+  background-color: #f1ad1f;
+  border: solid 1Px #f1ad1f; }
+  .btn-primary:hover {
+    background-color: #f7c457;
+    border-color: #f7c457; }
+  .btn-primary:disabled {
+    background-color: #f1ad1f;
+    border: solid 1Px #f1ad1f; }
+  .btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #f7c457;
+    border-color: #f7c457; }
+  .btn-primary:focus {
+    background-color: #f7c457;
+    border-color: #f7c457;
+    box-shadow: 0 0 0 0.2rem rgba(247, 196, 87, 0.5); }
+
+body {
+  padding-top: 4rem; }
+
 .loginPage .form, .subscribePage .form {
   max-width: 300px; }
 
@@ -50,7 +76,8 @@
     margin-bottom: 0;
     color: #212529; }
   .user:hover {
-    opacity: 0.8; }
+    opacity: 0.8;
+    text-decoration: none; }
 
 /* card-user */
 .img-box {
@@ -63,17 +90,7 @@
   margin: auto; }
   .img-box img {
     border-radius: 50%;
-    width: 100%; }
-
-.btn-primary {
-  background-color: #f1ad1f;
-  border: solid 1Px #f1ad1f; }
-  .btn-primary:hover {
-    background-color: #f7c457;
-    border-color: #f7c457; }
-  .btn-primary:disabled {
-    background-color: #f1ad1f;
-    border: solid 1Px #f1ad1f; }
+    width: 100% !important; }
 
 .navbar-brand img {
   max-height: 66px; }
@@ -148,20 +165,21 @@ footer {
   border-color: #f1ad1f; }
 
 .fiche-serie .jumbotron {
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
+  .fiche-serie .jumbotron::before {
+    content: ' ';
+    background: black;
+    opacity: 0.65;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute; }
   .fiche-serie .jumbotron .container {
     color: white; }
     .fiche-serie .jumbotron .container h1 {
       position: relative; }
-    .fiche-serie .jumbotron .container::before {
-      content: "COUCOU";
-      background: black;
-      opacity: 0.65;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      position: absolute; }
 .fiche-serie .platform {
   width: 100%; }
 
@@ -175,6 +193,9 @@ footer {
   float: left;
   margin: 10px;
   margin-left: 0; }
+
+.action img {
+  width: 70px; }
 
 /****************************************/
 /*              Forms                   */

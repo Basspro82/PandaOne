@@ -11,6 +11,48 @@ $lightYellow:#f7c457;
 $red:#dc3545;
 $gray:#aaa;
 
+.link{
+
+	display:block;
+	color:$primaryColor;
+
+	&:hover{
+		color:$primaryColor;
+	}
+
+}
+
+.btn-primary{ 
+	background-color:$primaryColor;
+	border:solid 1Px $primaryColor;
+
+	&:hover{
+		background-color:$primaryColorHover;
+		border-color:$primaryColorHover;
+	}
+
+	&:disabled{
+		background-color:$primaryColor;
+		border:solid 1Px $primaryColor;
+	}
+
+	&:not(:disabled):not(.disabled):active{
+		background-color:$primaryColorHover;
+		border-color:$primaryColorHover;
+	}
+
+	&:focus{
+		background-color:$primaryColorHover;
+		border-color:$primaryColorHover;
+		box-shadow: 0 0 0 0.2rem rgba(247,196,87,.5);
+	}
+
+}
+
+body{
+	padding-top:4rem;
+}
+
 .loginPage, .subscribePage{
 	.form{
 		max-width:300px;
@@ -81,6 +123,7 @@ $gray:#aaa;
 
 	&:hover{
 		opacity:0.8;
+		text-decoration:none;
 	}
 
 }/* card-user */
@@ -96,23 +139,7 @@ $gray:#aaa;
 
 	img{
 		border-radius: 50%;
-		width:100%;
-	}
-
-}
-
-.btn-primary{ 
-	background-color:$primaryColor;
-	border:solid 1Px $primaryColor;
-
-	&:hover{
-		background-color:$primaryColorHover;
-		border-color:$primaryColorHover;
-	}
-
-	&:disabled{
-		background-color:$primaryColor;
-		border:solid 1Px $primaryColor;
+		width:100% !important;
 	}
 
 }
@@ -246,23 +273,28 @@ footer{
 
 .fiche-serie {
 	.jumbotron {
+
 		background-size: cover;
+		position:relative;
+		
+		&::before {
+			content: ' ';
+			background: black;
+			opacity: 0.65;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			position: absolute;
+		}
+
 		.container {
 			color:white;
 
 			h1 {
 				position: relative;
 			}
-			&::before {
-				content: "COUCOU";
-				background: black;
-				opacity: 0.65;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				position: absolute;
-			}
+			
 		}
 	}
 	.platform {
@@ -283,6 +315,12 @@ footer{
 	img{
 		float:left;
 		margin:10px;margin-left:0;
+	}
+}
+
+.action{
+	img{
+		width:70px;
 	}
 }
 
