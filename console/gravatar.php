@@ -15,6 +15,7 @@ if (gravatarExist($email)){
 	saveImageFromUrl($urlGravatar,imgVirtualPath . '999.png');
 }else{
 	echo 'Gravatar not found';
+	print_r(file_get_contents('https://api.adorable.io/avatars/100/' . $email . '.png'));
 	saveImageFromUrl('https://api.adorable.io/avatars/100/' . $email . '.png',imgVirtualPath . '999.png');
 }
 

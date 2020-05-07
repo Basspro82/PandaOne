@@ -8,7 +8,11 @@ class User
 	}
 
     public static function fromDb($object) {
-	    return $object;
+	    
+    	$instance = $object;
+        $instance->gravatar = "/images/avatars/" . $instance->userID . ".png";
+		return $instance;
+
     }
 	
 }

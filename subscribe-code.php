@@ -50,7 +50,7 @@ if (isset($_POST['mode'])){
 
 				// Save picture
 
-				$imgPath = imgPhysicalPath . 'avatars\\' . $user->userID . '.png';
+				$imgPath = imgPhysicalPath . 'avatars/' . $user->userID . '.png';
 
 				if (gravatarExist($email)){
 					$urlGravatar = getGravatar($email);
@@ -61,9 +61,12 @@ if (isset($_POST['mode'])){
 
 				// connect new user to his home
 
-				$_SESSION['userID'] = $user->userID;
+				session_start();
+				$_SESSION["userID"] = $user->userID;
+				$_SESSION["pseudo"] = $user->pseudo;
+				$_SESSION["gravatar"] = $user->gravatar;
 
-				header('Location:home');
+				if (!$showLog) header('Location:home');
 
 			}
 
