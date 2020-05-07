@@ -10,6 +10,6 @@
     </ul>
     <p>Il permet aussi à présent de gérer de la même manière ses films.</p>
     <div class='text-center'>
-        <a href='https://www.betaseries.com/inscription/' target='_blank'> Inscription</a><br>
+        <a class='link' href='https://www.betaseries.com/inscription/' target='_blank'> Inscription</a><br>
     </div>
 </div>

@@ -5,7 +5,7 @@
   require 'subscribe-code.php'; 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   
   <?php include "_head.php" ?>
 
@@ -41,7 +41,7 @@
         * Champs obligatoires<br/>
         <?php echo $message ?>
       </p>
-      <p class="mt-5 mb-3 text-muted">PandaOne © 2020</p>
+      <p class="mt-5 mb-3 text-muted">PandaOne © 2020 - <a class="link" href="mailTo:yann.laurain@6tm.com">Contact</a></p>
     </form>
 
     <?php include "_scripts.php" ?>

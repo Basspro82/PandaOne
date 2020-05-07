@@ -1,5 +1,5 @@
 .link {
-  display: block;
+  display: inline-block;
   color: #f1ad1f; }
   .link:hover {
     color: #f1ad1f; }

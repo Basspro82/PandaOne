@@ -10,6 +10,7 @@
   <li>Mettre un message pour dire que le RGPD hum hum</li>
   <li><strike>Finir le style sur les boutons</strike></li>
   <li><strike>Fiche série : bandeau gris à revoir</strike></li>
+  <li><strike>Pb de session non détruite correctement</strike></li>
 </ul>
 </body>
 </html>

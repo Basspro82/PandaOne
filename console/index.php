@@ -29,6 +29,7 @@ checkPage($dns . 'account','Mon compte');
 checkPage($dns . 'subscribe.php','Inscription');
 checkPage($dns . 'user?userID=2','Fiche utilisateur');
 checkPage($dns . 'betaseries?supervision=1','Actualités sur betaseries');
+checkPage($dns . 'delete-code','Page de suppression d un commentaire');
 echo '</table>';
 
 function checkPage($url,$page){

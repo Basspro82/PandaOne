@@ -23,7 +23,7 @@ class CommentManager
 
             // Insert in serie table
 
-            $query = "INSERT INTO serie VALUES('$comment->imdbID','$title','$plot','$serie->year','','$poster',NOW(),NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
+            $query = "INSERT INTO serie VALUES('$comment->imdbID','$title','$plot','$serie->year','','$poster',NOW(),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)";
 
             if (!ExecuteQuery($query)) {
                 return;
@@ -35,7 +35,7 @@ class CommentManager
 
         $commentraw = mysqli_real_escape_string($con, $comment->comment);
 
-        $query = "INSERT INTO comment(imdbID,userID,comment,score,createdAt) VALUES('$comment->imdbID',$comment->userID,'$commentraw','$comment->score',NOW())";
+        $query = "INSERT INTO comment(imdbID,userID,comment,score,commentCreatedAt) VALUES('$comment->imdbID',$comment->userID,'$commentraw','$comment->score',NOW())";
 
         if (!ExecuteQuery($query)) {
             return;
