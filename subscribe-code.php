@@ -12,67 +12,67 @@ $showLog = false;
 
 $message = '';
 
-if (isset($_POST['mode'])){
-		
-	$email = $_POST["email"];
-	
-	$result = LoadAll('user',"email = '" . $email . "'");
+if (isset($_POST['mode'])) {
 
-	if (mysqli_num_rows($result)!=0) {
-		
-		// User already exist 
-		
-		$message = 'Cet email existe déjà dans le système';
-		return;
+    $email = $_POST["email"];
 
-	}else{
+    $result = LoadAll('user', "email = '" . $email . "'");
 
-		// Create new user
+    if (mysqli_num_rows($result) != 0) {
 
-		$user = new User();
-		$user->pseudo = $_POST["pseudo"];
-		$user->email = $_POST["email"];
-		$user->password = $_POST['password'];
-		$user->betaLogin = $_POST['betaLogin'];
-		$user->gravatar = '';
+        // User already exist
 
-		if (UserManager::Add($user)){
+        $message = 'Cet email existe déjà dans le système';
+        return;
 
-			$email = $user->email;
+    } else {
 
-			// Load New User
+        // Create new user
 
-			$result = LoadAll('user',"email = '" . $email . "'");
-			
-			while($row = mysqli_fetch_object($result)){
-				
-				$user = User::fromDB($row,0);
+        $user = new User();
+        $user->pseudo = $_POST["pseudo"];
+        $user->email = $_POST["email"];
+        $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $user->betaLogin = $_POST['betaLogin'];
+        $user->gravatar = '';
 
-				// Save picture
+        if (UserManager::Add($user)) {
 
-				$imgPath = imgPhysicalPath . 'avatars\\' . $user->userID . '.png';
+            $email = $user->email;
 
-				if (gravatarExist($email)){
-					$urlGravatar = getGravatar($email);
-					saveImageFromUrl($urlGravatar,$imgPath);
-				}else{
-					saveImageFromUrl('https://api.adorable.io/avatars/100/' . $email . '.png',$imgPath);
-				}
+            // Load New User
 
-				// connect new user to his home
+            $result = LoadAll('user', "email = '" . $email . "'");
 
-				$_SESSION['userID'] = $user->userID;
+            while ($row = mysqli_fetch_object($result)) {
 
-				header('Location:home');
+                $user = User::fromDB($row, 0);
 
-			}
+                // Save picture
 
-		}else{
-			$message = 'Un problème technique est survenu';
-		}
+                $imgPath = imgPhysicalPath . 'avatars\\' . $user->userID . '.png';
 
-	}
-		
+                if (gravatarExist($email)) {
+                    $urlGravatar = getGravatar($email);
+                    saveImageFromUrl($urlGravatar, $imgPath);
+                } else {
+                    saveImageFromUrl('https://api.adorable.io/avatars/100/' . $email . '.png', $imgPath);
+                }
+
+                // connect new user to his home
+
+                $_SESSION['userID'] = $user->userID;
+
+                header('Location:home');
+
+            }
+
+        } else {
+            $message = 'Un problème technique est survenu';
+        }
+
+    }
+
 }
 
 ?>

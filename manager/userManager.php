@@ -40,13 +40,18 @@ class UserManager
         return true;
     }
 
-    public static function Update($user)
+    public static function Update($user, $newPassword)
     {
 
         $sql = "UPDATE user SET pseudo='" . $user->pseudo . "', 
                         email='" . $user->email . "',
-                        betaLogin='" . $user->betaLogin . "'
-                        WHERE userID='" . $user->userID . "'";
+                        betaLogin='" . $user->betaLogin . "'";
+
+        if ($newPassword) {
+            $sql .= ", password='" . password_hash($newPassword,PASSWORD_DEFAULT) ."'";
+        }
+        $sql .= " WHERE userID='" . $user->userID . "'";
+        echo $sql;
         ExecuteQuery($sql);
 
         if ($user->betaLogin) {
