@@ -7,6 +7,8 @@ require_once "model/userModel.php";
 
 require_once "../framework/gravatar.php";
 require_once "../framework/image.php";
+require_once "../framework/mail.php";
+require_once('functions.php');
 
 $showLog = false;
 
@@ -58,6 +60,10 @@ if (isset($_POST['mode'])){
 				}else{
 					saveImageFromUrl('https://api.adorable.io/avatars/100/' . $email . '.png',$imgPath);
 				}
+
+				// Send email
+
+				sendPandaLog('Inscription',$email . ' s est inscrit sur le site.');
 
 				// connect new user to his home
 

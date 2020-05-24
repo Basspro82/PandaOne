@@ -74,6 +74,10 @@ if (isset($_POST['mode'])){
 			
 			CommentManager::Add($comment);
 
+			// Send email
+
+			sendPandaLog('Nouveau commentaire',$_SESSION["pseudo"] . ' a créé un commentaire pour la série ' . $_POST['title']);
+
 		}
 
 		header('Location:' . $_POST["urlReferrer"]);   

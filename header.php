@@ -18,6 +18,8 @@
     require_once('../framework/database.php');
     require_once('../framework/string.php');
     require_once('../framework/ux.php');
+    require_once('../framework/mail.php');
+    require_once('functions.php');
 
 ?>
 

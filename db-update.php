@@ -117,5 +117,29 @@ if(!columnExist('reply','replyCreatedAt')){
     echo "Renommage de la colonne createdAt dans la table Reply<br>";
 }
 
+if (!tableExist('community')){
+    $sql = "CREATE TABLE IF NOT EXISTS `community` (
+      `communityID` int(11) NOT NULL AUTO_INCREMENT,
+      `name` NVARCHAR(250) NOT NULL,
+      `logo` NVARCHAR(1000) NULL,
+      `communityCreatedAt` datetime NOT NULL, 
+      PRIMARY KEY (`communityID`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+    ExecuteQuery($sql);
+    echo "Ajout de la table community<br>";
+}
+
+if (!tableExist('communityUser')){
+    $sql = "CREATE TABLE `communityUser` (
+    `communityID` INT NOT NULL,
+    `userID` INT NOT NULL,
+    PRIMARY KEY (`communityID`, `userID`),
+    KEY `FK_communityUser_user` (`userID`),
+    KEY `FK_communityUser_community` (`communityID`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+    ExecuteQuery($sql);
+    echo "Ajout de la table communityUser<br>";
+}
+
 
 ?>
