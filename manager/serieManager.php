@@ -8,16 +8,18 @@ class SerieManager
 
         $con = Connect();
 
-        $sSQL = ' SELECT serie.*, avg(score) as score
+        $sql = ' SELECT serie.*, avg(score) as score
              FROM serie
              INNER JOIN comment on serie.imdbID=comment.imdbID
+             INNER JOIN user on comment.userID = user.userID
+             WHERE user.userID IN (' . $_SESSION["friends"] . ')
              GROUP BY serie.imdbID ';
 
-        if ($nb != 0) {
-            $sSQL .= ' LIMIT 0,' . $nb;
-        }
+        if ($nb != 0) $sql .= ' LIMIT 0,' . $nb;
 
-        $result = $con->query($sSQL);
+        showLog('serieManager.php', 'GetLast', $sql);
+
+        $result = $con->query($sql);
 
         Disconnect($con);
         return $result;

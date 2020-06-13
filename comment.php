@@ -61,7 +61,7 @@
                 <hr/>
               <?php endforeach;
             }else{ ?>
-              <p><i>There are no reply for this comment</i></p>
+              <p><i>Il n'y a pas de réponse à ce commentaire</i></p>
             <?php }
             endif ?>
 

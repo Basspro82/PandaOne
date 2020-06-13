@@ -28,6 +28,22 @@ class Comment
 		
 		return $instance;
     }
+
+    public static function GetTop($order){
+
+    	$result = CommentManager::GetTop($order);
+    	while($row = mysqli_fetch_object($result)){
+			$top = $row;
+
+			// Add User Gravatar
+
+			$top->gravatar = "/images/avatars/" . $top->userID . ".png";
+
+		}
+
+		return $top;
+
+    }
 	
 }
 

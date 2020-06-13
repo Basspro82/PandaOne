@@ -32,7 +32,7 @@ class ReplyManager{
 
 		$body = mysqli_real_escape_string($con,$reply->body);
 
-		$query = "INSERT INTO reply(userID,commentID,body,createdAt) VALUES('$reply->userID',$reply->commentID,'$body',NOW())";
+		$query = "INSERT INTO reply(userID,commentID,body,replyCreatedAt) VALUES('$reply->userID',$reply->commentID,'$body',NOW())";
 
 		If (!ExecuteQuery($query)){
 			return;

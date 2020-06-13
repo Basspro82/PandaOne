@@ -9,6 +9,7 @@
         $_SESSION["userID"] = 1;
         $_SESSION["pseudo"] = 'basspro';
         $_SESSION["gravatar"] = '';
+        $_SESSION["friends"] = '1';
     }
 
     include('config.php');

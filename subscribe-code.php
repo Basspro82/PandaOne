@@ -65,14 +65,9 @@ if (isset($_POST['mode'])){
 
 				sendPandaLog('Inscription',$email . ' s est inscrit sur le site.');
 
-				// connect new user to his home
+				// Connect user
 
-				session_start();
-				$_SESSION["userID"] = $user->userID;
-				$_SESSION["pseudo"] = $user->pseudo;
-				$_SESSION["gravatar"] = $user->gravatar;
-
-				if (!$showLog) header('Location:home');
+				connectUser($user);
 
 			}
 

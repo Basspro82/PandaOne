@@ -1,7 +1,10 @@
 <?php
 
 require_once "manager/commentManager.php";
+require_once "manager/CommunityUserManager.php";
+
 require_once "model/commentModel.php";
+require_once "model/communityUserModel.php";
 
 $showLog = false;
 $page = 'home';
@@ -16,9 +19,11 @@ while($row = mysqli_fetch_object($result)){
 	$comment = Comment::fromDB($row);
 	$comments[] = $comment;
 }
-$top = CommentManager::GetTop(CommentManager::MOST_COMMENTS);
-$best = CommentManager::GetTop(CommentManager::BEST_RATED);
-$worst = CommentManager::GetTop(CommentManager::WORST_RATED);
+$top = Comment::GetTop(CommentManager::MOST_COMMENTS);
+$best = Comment::GetTop(CommentManager::BEST_RATED);
+$worst = Comment::GetTop(CommentManager::WORST_RATED);
+
+showLog('home-code','',$top);
 
 $pagination = GetPagination("/home",$result,10,$pageCourante);
 

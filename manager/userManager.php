@@ -73,9 +73,9 @@ class UserManager
 
         $sql = ' SELECT * FROM user ';
 
-        if (!empty($filtre)) {
-            $sql .= ' WHERE ' . $filtre;
-        }
+        $sql .= ' WHERE user.userID IN (' . $_SESSION["friends"] . ') ';    
+
+        if (!empty($filtre)) $sql .= ' AND ' . $filtre;
 
         //$sql .= ' ORDER BY comment.createdAt DESC ';
 

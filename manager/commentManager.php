@@ -69,13 +69,13 @@ class CommentManager
 
         $con = Connect();
 
-        $sql = ' SELECT * FROM comment ' .
-            ' INNER JOIN user ON comment.userID = user.userID ' .
-            ' INNER JOIN serie ON comment.imdbID = serie.imdbID';
+        $sql = " SELECT * FROM comment
+                 INNER JOIN user ON comment.userID = user.userID
+                 INNER JOIN serie ON comment.imdbID = serie.imdbID";
 
-        if (!empty($filtre)) {
-            $sql .= ' WHERE ' . $filtre;
-        }
+        $sql .= ' WHERE user.userID IN (' . $_SESSION["friends"] . ') ';    
+
+        if (!empty($filtre)) $sql .= ' AND ' . $filtre;
 
         $sql .= ' ORDER BY comment.commentCreatedAt DESC ';
 
@@ -157,6 +157,7 @@ class CommentManager
         }
         $sql = " SELECT pseudo,user.userID,gravatar,$orderQuery as val FROM comment 
                 INNER JOIN user ON comment.userID = user.userID
+                WHERE user.userID IN (" . $_SESSION["friends"] . ")
                 GROUP BY pseudo,user.userID,gravatar
                 ORDER BY $orderQuery $sort
                 LIMIT 0,1";
@@ -165,8 +166,7 @@ class CommentManager
 
         Disconnect($con);
 
-        if ($result && $result->num_rows)
-            return mysqli_fetch_object($result);
+        showLog('commentManager.php', 'GetTop', $sql);
 
         return $result;
     }

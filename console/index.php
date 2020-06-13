@@ -21,15 +21,14 @@ echo '<h1>' . $dns . '</h1>';
 echo '<table>';
 checkPage($dns,'login');
 checkPage($dns . 'series?supervision=1','Liste des séries');
-checkPage($dns . 'serie?imdbID=tt10293938','Fiche série');
-checkPage($dns . 'comment.php?commentID=36','Fiche commentaire');
-checkPage($dns . 'my-comments','Mes commentaires');
-checkPage($dns . 'my-friends','Mes amis');
-checkPage($dns . 'account','Mon compte');
+checkPage($dns . 'serie?imdbID=tt10293938&supervision=1','Fiche série');
+checkPage($dns . 'comment.php?commentID=36&supervision=1','Fiche commentaire');
+checkPage($dns . 'my-comments?supervision=1','Mes commentaires');
+checkPage($dns . 'my-friends?supervision=1','Mes amis');
+checkPage($dns . 'account?supervision=1','Mon compte');
 checkPage($dns . 'subscribe.php','Inscription');
-checkPage($dns . 'user?userID=2','Fiche utilisateur');
+checkPage($dns . 'user?userID=2&supervision=1','Fiche utilisateur');
 checkPage($dns . 'betaseries?supervision=1','Actualités sur betaseries');
-checkPage($dns . 'delete-code','Page de suppression d un commentaire');
 echo '</table>';
 
 function checkPage($url,$page){

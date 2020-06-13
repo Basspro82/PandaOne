@@ -3,8 +3,14 @@
 include 'config.php';
 
 require_once "manager/commentManager.php";
+require_once "manager/communityUserManager.php";
+
 require_once "model/serieModel.php";
 require_once "model/commentModel.php";
+require_once "model/userModel.php";
+require_once "model/communityUserModel.php";
+
+require_once('functions.php');
 
 $showLog = false;
 
@@ -22,11 +28,7 @@ if (isset($_POST['mode'])){
 				$user = User::fromDB($row,0);
 			}
 
-			session_start();
-			$_SESSION["userID"] = $user->userID;
-			$_SESSION["pseudo"] = $user->pseudo;
-			$_SESSION["gravatar"] = $user->gravatar;
-			header('Location:home');
+			connectUser($user);
 
 		}else{
 			$message = 'utilisateur inconnu';
