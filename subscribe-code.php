@@ -10,7 +10,7 @@ require_once "../framework/image.php";
 require_once "../framework/mail.php";
 require_once('functions.php');
 
-$showLog = false;
+$showLog = true;
 
 $message = '';
 
@@ -40,15 +40,19 @@ if (isset($_POST['mode'])){
 
 		if (UserManager::Add($user)){
 
-			$email = $user->email;
-
 			// Load New User
+
+			$email = $user->email;
 
 			$result = LoadAll('user',"email = '" . $email . "'");
 			
 			while($row = mysqli_fetch_object($result)){
 				
 				$user = User::fromDB($row,0);
+
+				// Create new entry in communityUser
+
+				CommunityUserManager::Add(1,$user);
 
 				// Save picture
 

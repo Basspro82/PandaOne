@@ -16,10 +16,28 @@ class CommunityUserManager
 
         Disconnect($con);
 
-        showLog('commentManager.php', 'LoadAll', $sql);
+        showLog('communityUserManager.php', 'LoadAll', $sql);
 
         return $result;
 
+    }
+
+    public static function Add($communityID,$user)
+    {
+
+        $con = Connect();
+
+        showLog('communityUserManager.php', 'Add', $user);
+
+        $query = "INSERT INTO communityuser VALUES($communityID,$user->userID)";
+
+        showLog('communityUserManager.php', 'Add', $query);    
+
+        if (!ExecuteQuery($query)) return false;
+
+        Disconnect($con);
+
+        return true;
     }
 
 }
