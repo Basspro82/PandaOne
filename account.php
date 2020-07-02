@@ -34,6 +34,11 @@
           <input id="betaLogin" name="betaLogin" class="form-control" value="<?php echo $user->betaLogin; ?>" >
       </div>
       <br/>
+ 
+      <input type="checkbox" <?php echo ($user->notif==1 ? 'checked' : '');?> id="notif" name="notif"/>
+      <label for="notif">Recevoir les notifications</label>
+      <br/><br/>
+
       <button class="btn btn-lg btn-primary btn-block" type="submit">Mettre à jour</button>
       <p class="text-left mt-2 mb-2">
         * Champs obligatoires<br/>

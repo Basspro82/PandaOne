@@ -20,7 +20,11 @@
     require_once('../framework/string.php');
     require_once('../framework/ux.php');
     require_once('../framework/mail.php');
+    require_once('../framework/url.php');
     require_once('functions.php');
+
+    include ('model/models.php');
+    include ('manager/managers.php');
 
 ?>
 

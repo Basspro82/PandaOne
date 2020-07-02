@@ -1,7 +1,5 @@
 <?php
 
-require_once 'userModel.php';
-
 class Reply
 {
 	

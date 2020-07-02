@@ -1,6 +1,7 @@
 <?php
 
 require_once "manager/commentManager.php";
+require_once "manager/communityUserManager.php";
 
 require_once "model/commentModel.php";
 require_once "model/communityUserModel.php";

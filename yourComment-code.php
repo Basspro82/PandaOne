@@ -74,9 +74,13 @@ if (isset($_POST['mode'])){
 			
 			CommentManager::Add($comment);
 
-			// Send email
+			// Send Administrator email
 
 			sendPandaLog('Nouveau commentaire',$_SESSION["pseudo"] . ' a créé un commentaire pour la série ' . $_POST['title']);
+
+			// Send notifications
+
+			User::sendNotifications($_SESSION['userID'],$comment->imdbID);
 
 		}
 

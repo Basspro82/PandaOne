@@ -10,7 +10,7 @@ require_once "../framework/image.php";
 require_once "../framework/mail.php";
 require_once('functions.php');
 
-$showLog = true;
+$showLog = false;
 
 $message = '';
 

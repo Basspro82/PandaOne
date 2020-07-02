@@ -141,5 +141,11 @@ if (!tableExist('communityUser')){
     echo "Ajout de la table communityUser<br>";
 }
 
+if (!property_exists($row,"notif")) {
+    $sql = "ALTER TABLE user ADD COLUMN notif BIT DEFAULT 0";
+    ExecuteQuery($sql);
+    echo "Ajout de la colonne notif<br>";
+}
+
 
 ?>

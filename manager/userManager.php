@@ -25,7 +25,7 @@ class UserManager
         showLog('userManager.php', 'Add', $user);
 
         // Insert user
-        $query = "INSERT INTO user(pseudo,email,gravatar,password,betaLogin) VALUES('$user->pseudo','$user->email','$user->gravatar','$user->password','$user->betaLogin')";
+        $query = "INSERT INTO user(pseudo,email,gravatar,password,betaLogin,notif) VALUES('$user->pseudo','$user->email','$user->gravatar','$user->password','$user->betaLogin',1)";
 
         if (!ExecuteQuery($query)) {
             return false;
@@ -43,10 +43,12 @@ class UserManager
     public static function Update($user)
     {
 
-        $sql = "UPDATE user SET pseudo='" . $user->pseudo . "', 
-                        email='" . $user->email . "',
-                        betaLogin='" . $user->betaLogin . "'
-                        WHERE userID='" . $user->userID . "'";
+        $sql = "UPDATE user SET pseudo='$user->pseudo', 
+                        email='$user->email',
+                        betaLogin='$user->betaLogin',
+                        notif=$user->notif
+                        WHERE userID='$user->userID'";
+
         ExecuteQuery($sql);
 
         if ($user->betaLogin) {

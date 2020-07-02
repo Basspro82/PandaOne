@@ -1,7 +1,5 @@
 <?php
 
-require_once "serieManager.php";
-
 class EpisodeMoanager
 {
 

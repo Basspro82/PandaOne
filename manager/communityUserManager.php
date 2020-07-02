@@ -3,12 +3,12 @@
 class CommunityUserManager
 {
 
-    public static function LoadAllUserID($communityID)
+    public static function LoadAllUser($communityID)
     {
 
         $con = Connect();
 
-        $sql = ' SELECT U.userID FROM user U ' .
+        $sql = ' SELECT U.* FROM user U ' .
             ' INNER JOIN communityUser CU ON CU.userID = U.userID ' . 
             ' WHERE CU.communityID = ' . $communityID;
 

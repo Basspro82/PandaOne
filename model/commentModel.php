@@ -1,8 +1,5 @@
 <?php
 
-require_once 'userModel.php';
-require_once 'serieModel.php';
-
 class Comment
 {
 	
@@ -25,6 +22,8 @@ class Comment
 		$instance->user = User::fromDB($object,6);
 		
 		$instance->serie = Serie::fromDB($object,13);
+
+		$instance->url = GetHostUrl() . '/comment.php?commentID=' . $instance->commentID;
 		
 		return $instance;
     }

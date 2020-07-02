@@ -3,9 +3,9 @@
 ini_set('display_errors',1);
 
 include('../config.php');
-
-require "../../framework/error.php";
-require "../../framework/dom.php";
+include ('../../framework/frameworks.php');
+include "../manager/managers.php";
+include "../model/models.php";
 
 $dns = '';
 if (env == 'prod'){
