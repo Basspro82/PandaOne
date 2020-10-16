@@ -5,88 +5,61 @@ require 'home-code.php';
 
 ?>
 
-    <main role="main" class="homePage">
+<main role="main" class="homePage">
 
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 mb-3 mt-3">
-                        <h1 class="display-3">Bienvenue</h1>
-                        <p>Partagez avec vos amis les commentaires sur vos séries préférées !</p>
-                        <p><a class="btn btn-primary btn-lg" href="./yourComment" role="button">Ajouter un commentaire
-                                +</a>
-                        </p>
-                    </div>
-                    <div class="col-lg-7 mb-3 mt-3">
-                        <div class="row">
-                        	<div class="col">
-	                            <div class="card mb-4 shadow-sm">
-	                                <div class="card-header text-center">
-	                                    <h5 class="my-0 font-weight-normal">Le plus bavard</h4>
-	                                </div>
-	                                <div class="card-body">
-	                                    <h4 class="card-title pricing-card-title text-center">
-	                                        <a class="user" href="./user?userID=<?php echo $top->userID ?>">
-	                                            <div class="img-box"><img src="<?php echo $top->gravatar ?>"/></div>
-	                                            <span class="pseudo">
-	                                            <?php echo $top->pseudo ?></span></a></h4>
-	                                </div>
-	                            </div><!-- card -->
-                    		</div>
-                    		<div class="col">
-	                            <div class="card mb-4 shadow-sm">
-	                                <div class="card-header text-center">
-	                                    <h5 class="my-0 font-weight-normal">Le plus sympa</h4>
-	                                </div>
-	                                <div class="card-body">
-	                                    <h4 class="card-title pricing-card-title text-center">
-	                                        <a class="user" href="./user?userID=<?php echo $best->userID ?>">
-	                                            <div class="img-box"><img src="<?php echo $best->gravatar ?>"/></div>
-	                                            <span class="pseudo">
-	                                            <?php echo $best->pseudo ?></span></a></h4>
-	                                </div>
-	                            </div><!--card-->
-	                        </div>
-	                        <div class="col">
-	                            <div class="card mb-4 shadow-sm">
-	                                <div class="card-header text-center">
-	                                    <h5 class="my-0 font-weight-normal">Le plus critique</h4>
-	                                </div>
-	                                <div class="card-body">
-	                                    <h4 class="card-title pricing-card-title text-center">
-	                                        <a class="user" href="./user?userID=<?php echo $worst->userID ?>">
-	                                            <div class="img-box"><img src="<?php echo $worst->gravatar ?>"/></div>
-	                                            <span class="pseudo">
-	                                            <?php echo $worst->pseudo ?></span></a></h4>
-	                                </div>
-	                            </div><!--card-->
-                    		</div>
-                        </div>
-                    </div>
-                </div>
+    <div class="container-fluid">
+        <div class="row mt-5 intro">
+            <div class="col-auto my-auto">
+                <h1>PandaOne Blog</h1>
+            </div>
+            <div class="col-md-3 my-auto">
+                <h2>Les dernières actus séries de votre communauté entreprise.</h2>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="col-lg-9">
 
-        <div class="container">
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="col-12">
-                    <h2>Quoi de neuf ?</h2>
-
-                    <div class="row">
-                        <?php foreach ($comments as $comment) { ?>
-                            <div class="col-12">
-                                <?php require "commentCard.php" ?>
-                            </div>
-                        <?php } ?>
-                    </div><!--row-->
-                    <?php echo $pagination ?>
-                </div>
+                <div class="row row-eq-height">
+                    <?php foreach ($comments as $comment) { ?>
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <?php require "commentCard.php" ?>
+                        </div>
+                    <?php } ?>
+                </div><!--row-->
+                <?php echo $pagination ?>
             </div>
+            <div class="col-lg-3">
+                <div class="card highlight p-5 mt-2 mb-2">
+                    <div class="row align-items-center mb-4">
+                        <div class="col-auto">
+                            <?php $user = $top; include "_user.php" ?> 
+                        </div>
+                        <div class="col">
+                            <p>est le plus bavard</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-4">
+                        <div class="col-auto">
+                            <?php $user = $best; include "_user.php" ?> 
+                        </div>
+                        <div class="col">
+                            <p>est le plus sympa</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <?php $user = $worst; include "_user.php" ?> 
+                        </div>
+                        <div class="col">
+                            <p>est le plus critique</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div><!-- row -->
 
-        </div> <!-- /container -->
+    </div> <!-- /container -->
 
-    </main>
+</main>
 
 <?php include 'footer.php' ?>

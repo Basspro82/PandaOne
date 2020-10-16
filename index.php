@@ -13,7 +13,7 @@
     <form method="post" class="form">
       <input type="hidden" name="mode" value="1">
       <h1 class="h3 mb-3 font-weight-normal">Bienvenue sur</h1>
-      <img class="mb-4" src="./images/logo-beta.png" alt="logo">
+      <img class="mb-4" src="./images/logo.png" alt="logo">
       <label for="email" class="sr-only">Email</label>
       <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus="">
       <br/>

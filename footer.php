@@ -3,7 +3,6 @@
 	  	<div class="container">
 	  		<div class="row">
 	  			<div class="col-6">
-	  				<h2>Equipe</h2>
 	  				<p>Développé avec &hearts; <br/>par Yann LAURAIN et Vincent JEZEQUEL</p>
 	  			</div>
 	  		</div>

@@ -9,7 +9,7 @@ require_once "model/communityUserModel.php";
 $showLog = false;
 $page = 'home';
 
-$nbComments = 10;
+$nbComments = 12;
 
 $pageCourante = 1;
 if (isset($_GET["page"])) $pageCourante = $_GET["page"];
@@ -25,7 +25,7 @@ $worst = Comment::GetTop(CommentManager::WORST_RATED);
 
 showLog('home-code','',$top);
 
-$pagination = GetPagination("/home",$result,10,$pageCourante);
+$pagination = GetPagination("/home",$result,$nbComments,$pageCourante);
 
 showLog('home-code','',$comments[0]);
 
