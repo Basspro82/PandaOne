@@ -1,6 +1,9 @@
 @import "fonts";
 @import "variables";
-@import "menu"; 
+@import "menu";
+@import "imdbAutoComplete"; 
+
+//@import "bootstrapHack";
 
 body{
 	padding-top:90px;
@@ -56,8 +59,9 @@ h2{
 	}
 
 	&:disabled{
-		background-color:$primaryColor;
+		background-color:transparent;
 		border:solid 1Px $primaryColor;
+		color:$primaryColor;
 	}
 
 	&:not(:disabled):not(.disabled):active{
@@ -71,6 +75,31 @@ h2{
 		box-shadow: 0 0 0 0.2rem rgba(247,196,87,.5);
 	}
 
+}
+
+.btn-secondary{
+	background-color:transparent;
+	border:solid 1Px $veryVeryLightGrey;
+	color:$veryVeryLightGrey;
+
+	&:hover{
+		background-color:$veryVeryLightGrey;
+		border-color:$veryVeryLightGrey;
+		color:#fff;
+	}
+
+}
+
+.btn-danger{
+	background-color:transparent;
+	border:solid 1Px $red;
+	color:$red;
+
+	&:hover{
+		background-color:$red;
+		border-color:$red;
+		color:#fff;
+	}
 }
 
 .page-link{
@@ -87,17 +116,30 @@ h2{
 	}
 }
 
+.jumbotron{
+	background-color:transparent;
+	border-bottom:solid 1px $lightGrey;
+}
+
+.jumbotron p{
+	color:$textColor;
+}
+
 /*******************************/
 /*         Navigation          */
 /*******************************/
 
 .navbar{
-	background: rgba(11,11,11,0.7);
-	padding:0;
+
+	background: rgba(11,11,11,1);
+	min-height:96px;
+
+	.navbar-toggler{
+		margin-top:10px;
+		margin-bottom:10px;
+	}
 
 	.navbar-collapse{
-
-		justify-content: center;
 
 		.navbar-nav{
 
@@ -107,18 +149,10 @@ h2{
 
 				.nav-link{
 					color:#fff;
-					height:90px;
-					line-height:90px;
-					padding-top:0;padding-bottom:0;
 					font-family:$fontLight;
 
 					&.nav-selected{
-						border-bottom:solid 3px $primaryColor;
-					}
-
-					&.dropdown-toggle{
-						height:auto;
-						line-height:auto;
+						color:$primaryColor;
 					}
 
 					&:hover{
@@ -130,6 +164,22 @@ h2{
 
 		}	
 	}
+}
+
+.logo{
+
+	z-index:2000;
+	position:fixed;top:10px;margin-left:-87px;
+	left:50%;
+
+	&.smallLogo{
+		margin-left:-28px;top:15px;
+	}
+
+	img{
+		height:70px;
+	}
+
 }
 
 .loginPage, .subscribePage{
@@ -163,7 +213,7 @@ h2{
 		width:100px;height:100px;
 
 		span{
-			position:absolute;top:0;right:0;	
+			position:absolute;top:0;right:0;z-index:2;	
 			width: 100px;height:30px;
 			right: -30px;top:5px;
 			text-align: center;
@@ -175,7 +225,7 @@ h2{
 			color:#fff;
 			line-height:30px;
 			text-align:center;
-			border:solid 2px #fff;
+			border:solid 1px #fff;
 		}
 
 	}	
@@ -247,7 +297,7 @@ h2{
 
 			img{
 				margin-top:-10%;
-				opacity:0.8;
+				opacity:0.6;
 			}	
 
 		}
@@ -294,6 +344,12 @@ h2{
 		color:$textColor;
 		font-family:$fontLight;
 		margin:0;
+		text-align:justify;
+
+		a{
+			color:$primaryColor;
+		}
+
 	}
 
 }
@@ -366,7 +422,7 @@ h2{
 
 	.rate, .rateRO{
 
-		font-size:35px;
+		font-size:30px;
 
 		.rate-base-layer
 		{

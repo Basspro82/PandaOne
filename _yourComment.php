@@ -1,9 +1,7 @@
-<?php require '_yourComment-code.php' ?>
-
 <form action="yourComment" method="post">
   <div class="container">
     <div class="searchArea row">
-      <div class="col-8">
+      <div class="col">
         <div class="form-group">
           <?php 
           if (isset($_GET['imdbID']) || isset($_GET['commentID'])){ 
@@ -19,7 +17,9 @@
           <div id="result"></div>
         </div>
       </div>
-      <div class="col-4">
+    </div>
+    <div class="row">
+      <div class="col">
         <span class="preview"></span>
       </div>
     </div>
@@ -34,15 +34,19 @@
     <input type="hidden" name="score" id="score">
     <input type="hidden" name="commentID" value="<?php echo $commentID ?>">
 
-    <div class="form-group">
-      <div class="rate" data-rate-value="<?php echo $score ?>"></div>
-    </div>
-    <div class="form-group">
-      <textarea class="form-control" type="text" name="comment" id="comment" placeholder="entrer votre commentaire"><?php echo $commentRaw ?></textarea>
-    </div>
-    <div class="btn-group" role="group" aria-label="Action">
-      <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Enregistrer" <?php echo $save ?>>
-      <a class="btn btn-secondary btnCancel" href="<?php echo $urlReferrer ?>">Annuler</a>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <div class="rate" data-rate-value="<?php echo $score ?>"></div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" type="text" name="comment" id="comment" placeholder="entrer votre commentaire"><?php echo $commentRaw ?></textarea>
+        </div>
+        <div class="btn-group" role="group" aria-label="Action">
+          <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Enregistrer" <?php echo $save ?>>
+          <a class="btn btn-secondary btnCancel" href="<?php echo $urlReferrer ?>">Annuler</a>
+        </div>
+      </div>
     </div>
   </div>
 </form>

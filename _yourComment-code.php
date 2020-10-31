@@ -1,9 +1,5 @@
 <?php
 
-require_once "manager/commentManager.php";
-require_once "model/serieModel.php";
-require_once "model/commentModel.php";
-
 $showLog = false;
 $imdbID = '';
 $commentID = '';

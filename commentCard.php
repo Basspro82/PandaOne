@@ -1,6 +1,6 @@
   <?php require "commentCard-code.php" ?>
 
-  <div class="commentCard card mt-2 mb-2 pb-5 comment<?php echo $comment->commentID ?> shadow-sm">
+  <div id="<?php echo $comment->commentID ?>" class="commentCard card mt-2 mb-2 pb-5 comment<?php echo $comment->commentID ?> shadow-sm">
     <?php if ($comment->new) { ?><div class="card-corner"><span>New</span></div><?php } ?>
 
     <?php if ($page <> 'serie'){ ?>
@@ -24,27 +24,34 @@
         include "_user.php";
         ?>
       </div>
-      <div class="col">
+      <div class="col p-0">
         <div class="rateRO" data-rate-value="<?php echo $comment->score ?>"></div>
         <h4 class="card-date"><?php echo $comment->createdAt ?></h4>    
       </div>
-      <?php if (($comment->user->userID == $_SESSION["userID"])&&($page=='my-comments')){ ?>
-        <div class="col text-right">
-          <div class="btn-group" role="group" aria-label="Action">
-            <a class="btn btn-primary" href="./yourComment?commentID=<?php echo $comment->commentID ?>">Modifier</a>
-            <button type="button" class="btn btn-danger btnRemove" data-commentID="<?php echo $comment->commentID ?>">Supprimer</button>
-          </div>
-        </div>
-      <?php } ?>
     </div><!--row-->
     <div class="row m-3">
       <div class="col">
-        <blockquote>"<?php echo $comment->comment ?>"</blockquote>
+        <blockquote>
+          <?php if ($page == 'serie'){
+            echo $comment->comment;
+          }else{
+            echo cutString($comment->comment,200,'...<a href="./serie?imdbID=' . $comment->imdbID . '#' . $comment->commentID . '">Lire la suite</a>');
+          }
+          ?>
+          &nbsp;"
+        </blockquote>
       </div>
     </div><!--row-->
-
-
-
+    <?php if (($comment->user->userID == $_SESSION["userID"])&&($page=='my-comments')){ ?>
+        <div class="row">
+          <div class="col text-center">
+            <div class="btn-group" role="group" aria-label="Action">
+              <a class="btn btn-primary" href="./yourComment?commentID=<?php echo $comment->commentID ?>">Modifier</a>
+              <button type="button" class="btn btn-danger btnRemove" data-commentID="<?php echo $comment->commentID ?>">Supprimer</button>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
     <div class="card-footer">
       <a href="./comment.php?commentID=<?php echo $comment->commentID ?>"><i class="fas fa-comment"></i>&nbsp;<?php echo $replies->num_rows ?></a>
     </div>  

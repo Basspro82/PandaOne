@@ -1,18 +1,23 @@
 <?php
 
+	include('config.php');
+
     ini_set('display_errors',1);
 
     session_start(); 
-    if ((!isset($_SESSION['userID']))&&(!isset($_GET['supervision']))){
+
+    if ((!isset($_SESSION['userID']))&&(env != 'dev')){
+
         header('Location:./'); 
-    }else if (isset($_GET['supervision'])){
+    
+    }else if (env == 'dev'){
+        
         $_SESSION["userID"] = 1;
         $_SESSION["pseudo"] = 'basspro';
         $_SESSION["gravatar"] = '';
-        $_SESSION["friends"] = '1';
+        $_SESSION["friends"] = '1,2,3';
+    
     }
-
-    include('config.php');
     
     require_once('../framework/log.php');
     require_once('../framework/dom.php');
@@ -25,6 +30,8 @@
 
     include ('model/models.php');
     include ('manager/managers.php');
+
+    require_once ('_yourComment-code.php');
 
 ?>
 

@@ -3,24 +3,23 @@
 }
 
 #result {
-	width: 300px;
-	position:absolute;left:0;top:50px;z-index:2;
+	width: 94%;
+	position:absolute;left:15px;right:15px;top:50px;z-index:2;
 	margin: 0 auto;
 	text-align: left;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
 	background-color:#fff;
 }
 
 .resultRow {
 	padding: 2px 15px;
-	border-bottom: 1px solid #ccc;
 	display: block;
 	cursor:pointer;
+	background-color:$lightGrey;
+
 }
 
 .resultRow:hover {
-	background-color: #FBFBDF;
+	background-color:$veryLightGrey;
 }
 
 .poster {
@@ -43,7 +42,7 @@
 }
 
 .description h4 {
-	color: #3177EB;
+	color: #fff;
 	font-size: 18px;
 	padding-bottom: 4px;
 	font-weight: 300;
@@ -51,7 +50,7 @@
 }
 
 .description h5 {
-	color: #686868;
+	color: #fff;
 	font-size: 13px;
 	font-weight: 300;
 }
