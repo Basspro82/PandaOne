@@ -1,6 +1,16 @@
 <?php
 
-	include('config.php');
+    /*****************************************/
+    /* REQUIRE */
+
+    require_once('config.php');
+    require_once(FRAMEWORKPATH . 'frameworks.php');
+    require_once('model/models.php');
+    require_once('manager/managers.php');
+    require_once('functions.php');
+    require_once ('_yourComment-code.php');
+
+    /*****************************************/
 
     ini_set('display_errors',1);
 
@@ -18,20 +28,6 @@
         $_SESSION["friends"] = '1,2,3';
     
     }
-    
-    require_once('../framework/log.php');
-    require_once('../framework/dom.php');
-    require_once('../framework/database.php');
-    require_once('../framework/string.php');
-    require_once('../framework/ux.php');
-    require_once('../framework/mail.php');
-    require_once('../framework/url.php');
-    require_once('functions.php');
-
-    include ('model/models.php');
-    include ('manager/managers.php');
-
-    require_once ('_yourComment-code.php');
 
 ?>
 

@@ -5,6 +5,10 @@
 
 //@import "bootstrapHack";
 
+.log{
+	background-color:#fff;
+}
+
 body{
 	padding-top:90px;
 	background-attachment: fixed;
@@ -55,7 +59,7 @@ h2{
 	&:hover{
 		background-color:$primaryColor;
 		border-color:$primaryColorHover;
-		color:#fff;
+		color:#000;
 	}
 
 	&:disabled{
@@ -370,219 +374,275 @@ h2{
 		text-decoration:none;
 	}
 
-	}/* card-user */
+}
 
-	.img-box{
+.img-box{
 
-		padding: 5px;
+	padding: 5px;
+	border-radius: 50%;
+	width:70px;height:70px;
+	margin:auto;
+	background-color:$lightGrey;
+
+	img{
 		border-radius: 50%;
-		width:70px;height:70px;
-		margin:auto;
-		background-color:$lightGrey;
-
-		img{
-			border-radius: 50%;
-			width:100% !important;
-		}
-
+		width:100% !important;
 	}
 
-	.navbar-brand{
-		img{
-			max-height:66px; 
+}
+
+.navbar-brand{
+	img{
+		max-height:66px; 
+	}
+}
+
+.gravatar{
+	width:60px;height:60px;
+	border-radius:30px;
+	margin-right:10px;
+}
+
+footer{
+
+	color:$textColor;
+	margin-top:4rem;
+
+	p{
+		margin:0;
+	}
+
+	.footerUp{
+		background: rgba(11, 11, 11, 0.4);
+		padding:1rem;
+	}
+
+	.footerDown{
+		background-color:#000;
+		padding:1rem;
+	}
+
+}
+
+.rate, .rateRO{
+
+	font-size:30px;
+
+	.rate-base-layer
+	{
+		color: #aaa;
+	}
+	.rate-hover-layer
+	{
+		color: $lightYellow;
+	}
+
+	.rate-select-layer{
+		color:$yellow;
+	}
+
+}
+
+.seriePoster img{
+	max-width:100%; 
+}
+
+.highlight{
+	border:solid 1px $lightGrey;
+	color:#fff;
+	background:transparent;
+
+	.user{
+		.pseudo{
+			color:#fff;
 		}
 	}
 
-	.gravatar{
-		width:60px;height:60px;
-		border-radius:30px;
-		margin-right:10px;
-	}
+}
 
-	footer{
+/*******************************************/
+/*           	Series page                */
+/*******************************************/
 
-		color:$textColor;
-		margin-top:4rem;
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate{
+	color:$primaryColor;
+}
 
-		p{
-			margin:0;
-		}
+table{
 
-		.footerUp{
-			background: rgba(11, 11, 11, 0.4);
-			padding:1rem;
-		}
+	&.dataTable.display{
 
-		.footerDown{
-			background-color:#000;
-			padding:1rem;
-		}
-
-	}
-
-	.rate, .rateRO{
-
-		font-size:30px;
-
-		.rate-base-layer
-		{
-			color: #aaa;
-		}
-		.rate-hover-layer
-		{
-			color: $lightYellow;
-		}
-
-		.rate-select-layer{
-			color:$yellow;
-		}
-
-	}
-
-	.seriePoster img{
-		max-width:100%; 
-	}
-
-	.highlight{
-		border:solid 1px $lightGrey;
-		color:#fff;
-		background:transparent;
-
-		.user{
-			.pseudo{
+		thead{
+			th{
 				color:#fff;
+				font-weight:normal;
+				padding:10px 10px 10px 0px;
+
+				&.sorting_desc, &.sorting_asc{
+					color:$primaryColor;
+				}
+
 			}
 		}
 
-	}
+		tbody{
+			tr{
+				background-color:$lightGrey;
 
-	/*******************************************/
-	.series{
-		img{
-			max-width:100px;
-		}
-	}
+				td{
+					color:$textColor;
+					border:none;
+					padding:0;padding-right:10px;
 
-	.serie-yearAndGenre{
-		color:$gray;
-		margin-bottom:1rem;
-		display:block;
-	}
+					img{
+						max-width:100px;
+					}
 
-	.serie{
+					&.sorting_1{
+						background-color:transparent !important;
+					}
 
-		background-color:#fff;
-		padding:10px;
-		border-radius:5px;
-		border:solid 1Px $border;
-
-		font-size:0.9rem;
-
-		a {
-			h4{
-				color:$primaryColor;
+				}
 
 				&:hover{
-					color:$primaryColorHover;
+					background-color:$lightGrey !important;	
 				}
 
-			}
+				&.odd{
+					background-color:$darkGrey !important;
 
-			&:hover{
-				text-decoration:none;
-			}
-		}
+					&:hover{
+						background-color:$darkGrey !important;	
+					}
 
-		.poster{
-			img{
-				width:70px;
-			}
-
-			&:hover{
-				opacity:0.8;
-			}
-
-		}
-
-	}
-
-	.replies{
-
-		background-color:$background2;
-		padding: 10px;
-		border-radius: 5px;
-		border: solid 1Px #ddd;
-		font-size: 0.9rem;
-		margin-top:1rem;
-
-		.reply{
-
-		}
-	}
-
-	.fiche-serie {
-		.jumbotron {
-
-			background-size: cover;
-			position:relative;
-
-			&::before {
-				content: ' ';
-				background: black;
-				opacity: 0.65;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				position: absolute;
-			}
-
-			.container {
-				color:white;
-
-				h1 {
-					position: relative;
 				}
+				
+			}	
+		}
+	}  
+}
+/*******************************************/
 
+.serie-yearAndGenre{
+	color:$gray;
+	margin-bottom:1rem;
+	display:block;
+}
+
+.serie{
+
+	background-color:#fff;
+	padding:10px;
+	border-radius:5px;
+	border:solid 1Px $border;
+
+	font-size:0.9rem;
+
+	a {
+		h4{
+			color:$primaryColor;
+
+			&:hover{
+				color:$primaryColorHover;
 			}
-		}
-		.platform {
-			width:100%;
+
 		}
 
-	}
-
-	.info{
-		cursor:pointer;
-	}
-
-	.tooltip .tooltip-inner {
-		min-width:500px !important;
-	}
-
-	.betaSeriesDescription{
-		img{
-			float:left;
-			margin:10px;margin-left:0;
+		&:hover{
+			text-decoration:none;
 		}
 	}
 
-	.action{
+	.poster{
 		img{
 			width:70px;
 		}
-	}
 
-	/****************************************/
-	/*              Forms                   */
-	/****************************************/
-
-	.form{
-		max-width:600px;
-		margin:auto;
-
-		img{
-			max-width:100%;
+		&:hover{
+			opacity:0.8;
 		}
 
 	}
+
+}
+
+.replies{
+
+	background-color:$background2;
+	padding: 10px;
+	border-radius: 5px;
+	border: solid 1Px #ddd;
+	font-size: 0.9rem;
+	margin-top:1rem;
+
+	.reply{
+
+	}
+}
+
+.fiche-serie {
+	.jumbotron {
+
+		background-size: cover;
+		position:relative;
+
+		&::before {
+			content: ' ';
+			background: black;
+			opacity: 0.65;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			position: absolute;
+		}
+
+		.container {
+			color:white;
+
+			h1 {
+				position: relative;
+			}
+
+		}
+	}
+	.platform {
+		width:100%;
+	}
+
+}
+
+.info{
+	cursor:pointer;
+}
+
+.tooltip .tooltip-inner {
+	min-width:500px !important;
+}
+
+.betaSeriesDescription{
+	img{
+		float:left;
+		margin:10px;margin-left:0;
+	}
+}
+
+.action{
+	img{
+		width:70px;
+	}
+}
+
+/****************************************/
+/*              Forms                   */
+/****************************************/
+
+.form{
+	max-width:600px;
+	margin:auto;
+
+	img{
+		max-width:100%;
+	}
+
+}

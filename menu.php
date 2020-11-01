@@ -32,7 +32,7 @@
 	    <ul class="navbar-nav ml-auto align-items-center">
 	    	<li class="nav-item"><a class="nav-link nav-selected" href="./home">Home <span class="sr-only">(current)</span></a></li>
 	    	<li class="nav-item"><a class="nav-link" href="./series">Series</a></li>
-	    	<li class="nav-item"><a class="nav-link" href="./betaseries">betaseries</a></li>
+	    	<li class="nav-item d-none"><a class="nav-link" href="./betaseries">betaseries</a></li>
 	    	<li class="nav-item dropdown">
 	      		<a class="nav-link dropdown-toggle" href="http://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	      			<img class="gravatar" src="<?php echo $_SESSION["gravatar"]; ?>"/> <?php echo $_SESSION["pseudo"]; ?>

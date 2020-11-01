@@ -21,7 +21,6 @@
               <tr>
                   <th></th>
                   <th>Titre</th>
-                  <th>Résumé</th>
                   <th>Année</th>
                   <th>Genre</th>
                   <th>Note moyenne</th>
@@ -33,10 +32,12 @@
               <tr>
                  <td><a href="./serie?imdbID=<?php echo $serie->imdbID ?>"><img src="<?php echo $serie->poster ?>" class="img-fluid" alt="<?php echo $serie->title ?>"></a></td> 
                  <td><?php echo $serie->title ?></td>
-                 <td><?php echo $serie->plot ?></td>
                  <td><?php echo $serie->year ?></td>
                  <td><?php echo $serie->genres ?></td>
-                 <td><?php echo round($serie->score,2) ?></td>
+                 <td>
+                 	<span class="d-none"><?php echo round($serie->score,2) ?></span>
+                 	<div class="rateRO" data-rate-value="<?php echo round($serie->score,2) ?>"></div>
+                 </td>
                  <td><?php
                      if ($serie->platform) {
                         echo "<a target='_blank' href='" . $serie->platformUrl . "'><img src='" . $serie->platformLogo ."'></a>";
@@ -56,7 +57,10 @@
           $('#series').DataTable({
             "language": {
                 "url": "/js/dataTables.french.lang"
-            }
+            },
+            "order": [[ 4, "desc" ]],
+            "paging": false,
+            "info" : false
           });
         });
     </script>

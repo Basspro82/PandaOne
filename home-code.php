@@ -19,14 +19,9 @@ while($row = mysqli_fetch_object($result)){
 	$comment = Comment::fromDB($row);
 	$comments[] = $comment;
 }
-$top = Comment::GetTop(CommentManager::MOST_COMMENTS);
-$best = Comment::GetTop(CommentManager::BEST_RATED);
-$worst = Comment::GetTop(CommentManager::WORST_RATED);
-
-showLog('home-code','',$top);
 
 $pagination = GetPagination("/home",$result,$nbComments,$pageCourante);
 
-showLog('home-code','',$comments[0]);
+showLog('home-code','',$comments);
 
 ?>

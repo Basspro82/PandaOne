@@ -28,38 +28,8 @@ require 'home-code.php';
                 </div><!--row-->
                 <?php echo $pagination ?>
             </div>
-            <div class="d-none">
-                <div class="card highlight p-5 mt-2 mb-2">
-                    <div class="row align-items-center mb-4">
-                        <div class="col-auto">
-                            <?php $user = $top; include "_user.php" ?> 
-                        </div>
-                        <div class="col">
-                            <p>est le plus bavard</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center mb-4">
-                        <div class="col-auto">
-                            <?php $user = $best; include "_user.php" ?> 
-                        </div>
-                        <div class="col">
-                            <p>est le plus sympa</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-auto">
-                            <?php $user = $worst; include "_user.php" ?> 
-                        </div>
-                        <div class="col">
-                            <p>est le plus critique</p>
-                        </div>
-                    </div>
-                </div>    
-            </div>
         </div><!-- row -->
-
     </div> <!-- /container -->
-
 </main>
 
 <?php include 'footer.php' ?>

@@ -1,7 +1,5 @@
 <?php 
   ini_set('display_errors',1);
-  require '../framework/log.php';
-  require '../framework/database.php';
   require 'index-code.php'; 
 ?>
 <!DOCTYPE html>
@@ -21,7 +19,7 @@
       <input type="password" id="password" name="password" class="form-control" required placeholder="Password">
       <br/>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
-      <a class="link mt-2" href="/subscribe.php">S'inscrire</a>
+      <a class="link mt-2" href="./subscribe.php">S'inscrire</a>
       <p><?php echo $message ?></p>
       <p class="mt-5 mb-3 text-muted">PandaOne © 2020 - <a class="link" href="mailTo:yann.laurain@6tm.com">Contact</a></p>
     </form>

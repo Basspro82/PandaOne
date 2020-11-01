@@ -1,16 +1,15 @@
 <?php
 
-include 'config.php';
+/*****************************************/
+/* REQUIRE */
 
-require_once "manager/commentManager.php";
-require_once "manager/communityUserManager.php";
-
-require_once "model/serieModel.php";
-require_once "model/commentModel.php";
-require_once "model/userModel.php";
-require_once "model/communityUserModel.php";
-
+require_once('config.php');
+require_once(FRAMEWORKPATH . 'frameworks.php');
+require_once('model/models.php');
+require_once('manager/managers.php');
 require_once('functions.php');
+
+/*****************************************/
 
 $showLog = false;
 

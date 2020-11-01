@@ -6,5 +6,6 @@ define ('dbPASSWD','');
 define ('dbBDD','hippoSeries');
 define('env','dev'); /* dev or prod */
 define ('imgPhysicalPath',__DIR__ ."\images\\");
+define('FRAMEWORKPATH','../framework/');
 
 ?>

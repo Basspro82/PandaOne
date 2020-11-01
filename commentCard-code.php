@@ -1,8 +1,5 @@
 <?php
 
-require_once "manager/commentManager.php";
-require_once "manager/replyManager.php";
-
 $showLog = false;
 
 // Delete comment
