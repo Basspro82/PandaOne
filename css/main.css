@@ -281,6 +281,18 @@ h2 {
   .link:hover {
     color: #f1ad1f; }
 
+.success {
+  color: #6EEB83; }
+
+.error {
+  color: #A50104; }
+
+.message {
+  width: 100%;
+  background-color: #505050;
+  padding: 20px;
+  margin: 20px 0; }
+
 /*******************************/
 /*       Bootstrap Hack        */
 /*******************************/
@@ -328,8 +340,12 @@ h2 {
 .page-link {
   color: #343a40;
   background-color: transparent;
-  border: solid 1px #505050;
-  color: #505050; }
+  border: none;
+  color: #999; }
+  .page-link:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: #f1ad1f; }
 
 .page-item.active .page-link {
   background-color: #f1ad1f;
@@ -577,6 +593,9 @@ footer {
 /*******************************************/
 /*           	Series page                */
 /*******************************************/
+.seriesPage td.title {
+  font-size: 20px; }
+
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
   color: #f1ad1f; }
 
@@ -691,5 +710,26 @@ table.dataTable.display tbody tr {
     margin-top: 20px;
     margin-bottom: 20px;
     display: block; }
+
+/****************************************/
+/*              User page               */
+/****************************************/
+.userPage .user .img-box {
+  width: 90px;
+  height: 90px; }
+.userPage .user .pseudo {
+  font-size: 30px;
+  margin-top: 10px; }
+.userPage .card {
+  background-color: #323232; }
+  .userPage .card .card-header {
+    background-color: #505050;
+    color: #999; }
+
+/****************************************/
+/*              Account page            */
+/****************************************/
+.accountPage {
+  color: #999; }
 
 /*# sourceMappingURL=main.css.map */

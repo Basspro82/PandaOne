@@ -22,7 +22,7 @@
 
             <div class="row">
               <?php if (isset($users)) { foreach ($users as $user) { ?>     
-                <div class="col-3">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mb-4">
                   <?php require "_friendCard.php" ?>
                 </div>
               <?php }} ?>

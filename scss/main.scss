@@ -43,6 +43,21 @@ h2{
 
 }
 
+.success{
+	color:$green;
+}
+
+.error{
+	color:$red;
+}
+
+.message{
+	width:100%;
+	background-color:$veryLightGrey;
+	padding:20px;
+	margin:20px 0;
+}
+
 /*******************************/
 /*       Bootstrap Hack        */
 /*******************************/
@@ -109,8 +124,15 @@ h2{
 .page-link{
 	color:$dark;
 	background-color:transparent;
-	border:solid 1px $veryLightGrey;
-	color:$veryLightGrey;
+	border:none;
+	color:$textColor;
+
+	&:hover{
+		background-color:transparent;
+		border-color:transparent;
+		color:$primaryColor;
+	}
+
 }
 
 .page-item.active {
@@ -489,6 +511,16 @@ footer{
 /*           	Series page                */
 /*******************************************/
 
+.seriesPage{
+
+	td{
+		&.title{
+			font-size:20px;
+		}
+	}
+
+}
+
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate{
 	color:$primaryColor;
 }
@@ -689,5 +721,46 @@ table{
 		margin:auto;margin-top:20px;margin-bottom:20px;
 		display:block;
 	}
+
+}
+
+/****************************************/
+/*              User page               */
+/****************************************/
+
+.userPage{
+
+	.user{
+
+		.img-box{
+			width:90px;height:90px;
+		}
+
+		.pseudo{
+			font-size:30px;
+			margin-top:10px;
+		}
+	}
+
+	.card{
+
+		background-color:$lightGrey;
+
+		.card-header{
+			background-color:$veryLightGrey;
+			color:$textColor;
+		}
+
+	}
+
+}
+
+/****************************************/
+/*              Account page            */
+/****************************************/
+
+.accountPage{
+
+	color:$textColor;
 
 }

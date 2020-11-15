@@ -3,18 +3,15 @@ include 'header.php';
 require 'user-code.php';
 ?>
 
-    <main role="main">
+    <main role="main" class="userPage">
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
 
                     <div class="col-auto">
-                        <h1 class="display-3"><?php echo $user->pseudo ?></h1>
-                        <div class="col-2 userGravatar text-center">
-                            <div class="img-box"><img src="<?php echo $user->gravatar ?>"/></div>
-                        </div>
+                        <?php include "_user.php" ?>
                     </div>
 
                     <div class="col card-deck mt-4 text-center">
@@ -54,10 +51,22 @@ require 'user-code.php';
             </div><!-- container -->
         </div><!-- jumbotron -->
 
-        <div class="container">
+        <div class="container-fluid">
 
             <div role="tabpanel" id="commentsTab" class="tab-pane fade active show pt-5">
-                <?php include 'userComments.php'; ?>
+                <div class="row">
+                  <div class="col-12">
+
+                    <div class="row">
+                      <?php if (isset($comments)) { foreach ($comments as $comment) { ?>     
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mb-4">
+                          <?php require "commentCard.php" ?>
+                        </div>
+                      <?php }} ?>
+                    </div><!--row-->
+
+                  </div>
+                </div>
             </div>            
 
         </div> <!-- /container -->

@@ -3,7 +3,7 @@
   require 'series-code.php'; 
 ?>
 
-    <main role="main">
+    <main role="main" class="seriesPage">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
@@ -21,28 +21,31 @@
               <tr>
                   <th></th>
                   <th>Titre</th>
-                  <th class="d-none d-sm-block">Année</th>
-                  <th class="d-none d-sm-block">Genre</th>
+                  <th class="d-none d-sm-table-cell">Année</th>
+                  <th class="d-none d-sm-table-cell">Genre</th>
                   <th>Note moyenne</th>
-                  <th class="d-none d-sm-block">Visible sur</th>
+                  <th class="d-none d-sm-table-cell">Visible sur</th>
               </tr>
           </thead>
           <tbody>
               <?php foreach ($series as $serie) { ?>    
               <tr>
-                 <td><a href="./serie?imdbID=<?php echo $serie->imdbID ?>"><img src="<?php echo $serie->poster ?>" class="img-fluid" alt="<?php echo $serie->title ?>"></a></td> 
-                 <td><?php echo $serie->title ?></td>
-                 <td class="d-none d-sm-block"><?php echo $serie->year ?></td>
-                 <td class="d-none d-sm-block"><?php echo $serie->genres ?></td>
-                 <td>
+                <td>
+                  <a href="./serie?imdbID=<?php echo $serie->imdbID ?>"><img src="<?php echo $serie->poster ?>" class="img-fluid" alt="<?php echo $serie->title ?>"></a>
+                </td> 
+                <td class="title"><?php echo $serie->title ?></td>
+                <td class="d-none d-sm-table-cell"><?php echo $serie->year ?></td>
+                <td class="d-none d-sm-table-cell"><?php echo $serie->genres ?></td>
+                <td>
                  	<span class="d-none"><?php echo round($serie->score,2) ?></span>
                  	<div class="rateRO" data-rate-value="<?php echo round($serie->score,2) ?>"></div>
-                 </td>
-                 <td class="d-none d-sm-block"><?php
+                </td>
+                <td class="d-none d-sm-table-cell"><?php
                      if ($serie->platform) {
                         echo "<a target='_blank' href='" . $serie->platformUrl . "'><img src='" . $serie->platformLogo ."'></a>";
                      }
-                     ?></td>
+                     ?>
+                </td>
               </tr>
               <?php } ?>
           </tbody>

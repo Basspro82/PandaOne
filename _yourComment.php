@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <input type="hidden" name="mode" value="1">
+    <input type="hidden" name="mode" value="comment">
     <input type="hidden" name="urlReferrer" value="<?php echo $urlReferrer ?>">
 
     <input type="hidden" name="imdbID" id="imdbID" value="<?php echo $imdbID ?>">

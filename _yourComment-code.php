@@ -35,10 +35,10 @@ if (isset($_GET['commentID'])){
 
 if (isset($_POST['mode'])){
 
-	showLog('yourComment-code.php','POST OBJECT ',$_POST);
+	if ($_POST['mode'] == 'comment'){
 
-	if ($_POST["mode"]==1){
-		
+		showLog('yourComment-code.php','POST OBJECT ',$_POST);
+			
 		if ($_POST['commentID']!=''){
 				
 			// Update comment
@@ -83,6 +83,7 @@ if (isset($_POST['mode'])){
 		//header('Location:' . $_POST["urlReferrer"]);   
 
 	}
+
 }
 
 ?>

@@ -62,7 +62,7 @@ class UserManager
         if (!isset($_SESSION["userID"])) {
             return null;
         }
-        $result = self::LoadAll("userID=" . $_SESSION["userID"]);
+        $result = LoadOne("user","userID",$_SESSION["userID"]);
         if ($result) {
             return mysqli_fetch_object($result);
         }

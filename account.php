@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
 <?php require 'account-code.php' ?>
 
-<main role="main">
+<main role="main" class="accountPage">
 
     <div class="jumbotron">
         <div class="container">
@@ -10,8 +10,12 @@
     </div>
 
     <div class="container">
-    <form method="post" class="form">
-      <input type="hidden" name="mode" value="1">
+
+    <?php echo '<div class="message ' . $class . '">' . $message . '</div>' ?>  
+
+    <form method="post" class="form" action="account">
+      
+      <input type="hidden" name="mode" value="account">
 
       <label for="pseudo" >Pseudo *</label>
       <input type="pseudo" id="pseudo" name="pseudo" class="form-control" value="<?php echo $user->pseudo; ?>" required autofocus="">
@@ -39,10 +43,9 @@
       <label for="notif">Recevoir les notifications</label>
       <br/><br/>
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Mettre à jour</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="MettreAJour">Mettre à jour</button>
       <p class="text-left mt-2 mb-2">
         * Champs obligatoires<br/>
-        <?php echo $message ?>
       </p>
     </form>
     </div>

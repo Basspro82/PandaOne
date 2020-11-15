@@ -1,6 +1,6 @@
   <?php require "commentCard-code.php" ?>
 
-  <div id="<?php echo $comment->commentID ?>" class="commentCard card mt-2 mb-2 pb-5 comment<?php echo $comment->commentID ?> shadow-sm">
+  <div id="<?php echo $comment->commentID ?>" class="commentCard card mt-2 mb-2 pb-4 comment<?php echo $comment->commentID ?> shadow-sm">
     <?php if ($comment->new) { ?><div class="card-corner"><span>New</span></div><?php } ?>
 
     <?php if ($page <> 'serie'){ ?>
@@ -18,12 +18,16 @@
     <?php } ?>
 
     <div class="row justify-content-center m-3">
+      
+      <?php if (!isset($_GET["userID"])){ ?>
       <div class="col-auto">
         <?php 
         $user = $comment->user;
         include "_user.php";
         ?>
       </div>
+      <?php } ?>
+      
       <div class="col p-0">
         <div class="rateRO" data-rate-value="<?php echo $comment->score ?>"></div>
         <h4 class="card-date"><?php echo $comment->createdAt ?></h4>    
@@ -53,7 +57,7 @@
         </div>
       <?php } ?>
     <div class="card-footer">
-      <a href="./comment.php?commentID=<?php echo $comment->commentID ?>"><i class="fas fa-comment"></i>&nbsp;<?php echo $replies->num_rows ?></a>
+      <a class="d-none" href="./comment.php?commentID=<?php echo $comment->commentID ?>"><i class="fas fa-comment"></i>&nbsp;<?php echo $replies->num_rows ?></a>
     </div>  
 
 </div><!--card-->
