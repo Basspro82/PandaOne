@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'header.php';
 require 'home-code.php';
 

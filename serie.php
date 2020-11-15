@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'header.php';
 require 'serie-code.php';
 ?>
@@ -23,8 +24,6 @@ require 'serie-code.php';
                             }
                             ?>
               </span>
-                        <p><a class="btn btn-primary btn-lg" href="./yourComment?imdbID=<?php echo $serie->imdbID ?>"
-                              role="button">Ajouter un commentaire +</a></p>
 
 
                     </div>

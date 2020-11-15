@@ -80,7 +80,7 @@ if (isset($_POST['mode'])){
 
 		}
 
-		header('Location:' . $_POST["urlReferrer"]);   
+		//header('Location:' . $_POST["urlReferrer"]);   
 
 	}
 }

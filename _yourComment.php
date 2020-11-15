@@ -1,7 +1,10 @@
-<form action="yourComment" method="post">
+<form action="<?php echo $_SERVER["REQUEST_URI"] ?>" method="post">
   <div class="container">
     <div class="searchArea row">
       <div class="col">
+        <div class="form-group">
+          <h3>Rechercher, noter et commenter votre série</h3>    
+        </div>
         <div class="form-group">
           <?php 
           if (isset($_GET['imdbID']) || isset($_GET['commentID'])){ 
@@ -44,7 +47,6 @@
         </div>
         <div class="btn-group" role="group" aria-label="Action">
           <input class="btn btn-primary btnSave" type="submit" name="btnSave" id="btnSave" value="Enregistrer" <?php echo $save ?>>
-          <a class="btn btn-secondary btnCancel" href="<?php echo $urlReferrer ?>">Annuler</a>
         </div>
       </div>
     </div>

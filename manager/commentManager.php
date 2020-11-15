@@ -171,4 +171,24 @@ class CommentManager
         return $result;
     }
 
+    public static function GetScores($userID, $friendID)
+    {
+
+        $con = Connect();
+
+        $sql = "SELECT UC.imdbID, UC.score as 'userScore', UF.score as 'friendScore' FROM COMMENT AS UC
+                INNER JOIN COMMENT AS UF ON UC.imdbID = UF.imdbID AND UF.commentID <> UC.commentID AND UC.userID <> UF.userID
+                WHERE UC.userID = " . $userID . " AND UF.userID = " . $friendID . "
+                ORDER BY UC.imdbID";
+
+        showLog('commentManager.php', 'LoadOne', $sql);
+
+        $result = $con->query($sql);
+
+        Disconnect($con);
+
+        return $result;
+
+    }
+
 }

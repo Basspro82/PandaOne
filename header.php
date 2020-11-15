@@ -1,4 +1,4 @@
-<?php
+<?php 
 
     /*****************************************/
     /* REQUIRE */
@@ -14,8 +14,6 @@
 
     ini_set('display_errors',1);
 
-    session_start(); 
-
     if ((!isset($_SESSION['userID']))&&(env != 'dev')){
 
         header('Location:./'); 
@@ -25,7 +23,7 @@
         $_SESSION["userID"] = 1;
         $_SESSION["pseudo"] = 'basspro';
         $_SESSION["gravatar"] = '';
-        $_SESSION["friends"] = '1,2,3';
+        $_SESSION["friends"] = '2,3';
     
     }
 

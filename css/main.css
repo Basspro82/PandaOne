@@ -36,7 +36,7 @@
   z-index: 2001;
   position: fixed;
   top: 10px;
-  left: 10px;
+  left: 0px;
   margin: .5rem 1rem; }
 
 .outer-menu .checkbox-toggle {
@@ -200,9 +200,6 @@
   width: 100%;
   max-width: 800px; }
 
-.outer-menu .menu > div .row, .outer-menu .menu > div .form-group {
-  width: 100%; }
-
 .searchArea {
   position: relative; }
 
@@ -321,11 +318,11 @@ h2 {
 
 .btn-danger {
   background-color: transparent;
-  border: solid 1Px #dc3545;
-  color: #dc3545; }
+  border: solid 1Px #A50104;
+  color: #A50104; }
   .btn-danger:hover {
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: #A50104;
+    border-color: #A50104;
     color: #fff; }
 
 .page-link {
@@ -349,11 +346,21 @@ h2 {
 /*         Navigation          */
 /*******************************/
 .navbar {
-  background: #0b0b0b;
-  min-height: 96px; }
+  background: #0b0b0b; }
   .navbar .navbar-toggler {
-    margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .navbar .navbar-collapse.show .nav-item, .navbar .navbar-collapse.collapsing .nav-item {
+    border: solid 1px #f1ad1f;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px !important; }
+    .navbar .navbar-collapse.show .nav-item img, .navbar .navbar-collapse.collapsing .nav-item img {
+      display: none; }
+    .navbar .navbar-collapse.show .nav-item:hover, .navbar .navbar-collapse.collapsing .nav-item:hover {
+      background-color: #f1ad1f; }
+      .navbar .navbar-collapse.show .nav-item:hover a, .navbar .navbar-collapse.collapsing .nav-item:hover a {
+        color: #000 !important; }
   .navbar .navbar-collapse .navbar-nav .nav-item {
     margin: 0; }
     .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
@@ -413,7 +420,7 @@ h2 {
       font-family: arial;
       transform: rotate(45deg);
       display: block;
-      background-color: #dc3545;
+      background-color: #A50104;
       color: #fff;
       line-height: 30px;
       text-align: center;
@@ -669,5 +676,20 @@ table.dataTable.display tbody tr {
   margin: auto; }
   .form img {
     max-width: 100%; }
+
+/****************************************/
+/*           Friends page               */
+/****************************************/
+.friendCard {
+  background-color: #1B1B1B;
+  color: #999;
+  padding: 20px; }
+  .friendCard .user {
+    margin: auto; }
+  .friendCard .friendCompatibility {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block; }
 
 /*# sourceMappingURL=main.css.map */

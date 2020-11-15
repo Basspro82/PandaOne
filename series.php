@@ -21,10 +21,10 @@
               <tr>
                   <th></th>
                   <th>Titre</th>
-                  <th>Année</th>
-                  <th>Genre</th>
+                  <th class="d-none d-sm-block">Année</th>
+                  <th class="d-none d-sm-block">Genre</th>
                   <th>Note moyenne</th>
-                  <th>Visible sur</th>
+                  <th class="d-none d-sm-block">Visible sur</th>
               </tr>
           </thead>
           <tbody>
@@ -32,13 +32,13 @@
               <tr>
                  <td><a href="./serie?imdbID=<?php echo $serie->imdbID ?>"><img src="<?php echo $serie->poster ?>" class="img-fluid" alt="<?php echo $serie->title ?>"></a></td> 
                  <td><?php echo $serie->title ?></td>
-                 <td><?php echo $serie->year ?></td>
-                 <td><?php echo $serie->genres ?></td>
+                 <td class="d-none d-sm-block"><?php echo $serie->year ?></td>
+                 <td class="d-none d-sm-block"><?php echo $serie->genres ?></td>
                  <td>
                  	<span class="d-none"><?php echo round($serie->score,2) ?></span>
                  	<div class="rateRO" data-rate-value="<?php echo round($serie->score,2) ?>"></div>
                  </td>
-                 <td><?php
+                 <td class="d-none d-sm-block"><?php
                      if ($serie->platform) {
                         echo "<a target='_blank' href='" . $serie->platformUrl . "'><img src='" . $serie->platformLogo ."'></a>";
                      }

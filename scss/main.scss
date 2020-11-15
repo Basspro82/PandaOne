@@ -136,14 +136,39 @@ h2{
 .navbar{
 
 	background: rgba(11,11,11,1);
-	min-height:96px;
 
 	.navbar-toggler{
-		margin-top:10px;
-		margin-bottom:10px;
+		margin-top:20px;
+		margin-bottom:20px;
 	}
 
 	.navbar-collapse{
+
+		&.show, &.collapsing{
+
+			.nav-item{
+				border:solid 1px $primaryColor;
+				width:100%;
+				text-align:center;
+				margin-bottom:10px !important;
+
+				img{
+					display:none;
+				}
+
+				&:hover{
+					background-color:$primaryColor;
+
+					a{
+						color:#000 !important;
+					}
+
+				}
+
+
+			}
+
+		}
 
 		.navbar-nav{
 
@@ -643,6 +668,26 @@ table{
 
 	img{
 		max-width:100%;
+	}
+
+}
+
+/****************************************/
+/*           Friends page               */
+/****************************************/
+
+.friendCard{
+	background-color:$darkGrey;
+	color:$textColor;
+	padding:20px;
+
+	.user{
+		margin:auto;
+	}
+
+	.friendCompatibility{
+		margin:auto;margin-top:20px;margin-bottom:20px;
+		display:block;
 	}
 
 }

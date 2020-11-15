@@ -1,6 +1,6 @@
 .outer-menu {
   z-index: 2001;
-  position:fixed;top:10px;left:10px;
+  position:fixed;top:10px;left:0px;
   margin: .5rem 1rem;
 }
 .outer-menu .checkbox-toggle {
@@ -166,8 +166,4 @@
 .outer-menu .menu > div > div{
   width:100%;
   max-width:800px;
-}
-
-.outer-menu .menu > div .row, .outer-menu .menu > div .form-group{
-  width:100%;
 }

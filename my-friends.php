@@ -1,6 +1,10 @@
 <?php include 'header.php' ?>
 <?php require 'my-friends-code.php' ?>
 
+<script type="text/javascript" src="js/compatibility.js"></script>
+<script type="text/javascript" src="vendor/circle-progress/circle-progress.js"></script>
+<link href="vendor/circle-progress/circle-progress.css" rel="stylesheet">
+
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -19,7 +23,7 @@
             <div class="row">
               <?php if (isset($users)) { foreach ($users as $user) { ?>     
                 <div class="col-3">
-                  <?php require "_userCard.php" ?>
+                  <?php require "_friendCard.php" ?>
                 </div>
               <?php }} ?>
             </div><!--row-->

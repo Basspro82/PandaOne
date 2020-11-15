@@ -9,7 +9,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'post',
             dataType:'json',
-            url: 'delete-code.php',
+            url: 'ajax-delete-code.php',
             data:{commentID:commentID},
             success: function (response) {
             	$('.comment' + commentID).fadeOut();	    

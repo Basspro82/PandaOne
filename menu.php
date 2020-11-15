@@ -20,10 +20,9 @@
 	<img src="./images/small-logo-light.png"/>
 </a>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">  	
-	<a class="navbar-brand" href="#"></a>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 
-  	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar"
+  	<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar"
 	    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
   	</button>

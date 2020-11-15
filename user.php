@@ -56,19 +56,9 @@ require 'user-code.php';
 
         <div class="container">
 
-            <ul class="nav nav-tabs">
-                <!--<li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" href="#seriesTab">Series</a></li>-->
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#commentsTab">Commentaires</a></li>
-            </ul>
-
-            <div class="tab-content">
-                <!--<div role="tabpanel" id="seriesTab" class="tab-pane fade active show pt-5">
-              <?php //include 'userSeries.php'; ?>
-          </div>-->
-                <div role="tabpanel" id="commentsTab" class="tab-pane fade active show pt-5">
-                    <?php include 'userComments.php'; ?>
-                </div>
-            </div>
+            <div role="tabpanel" id="commentsTab" class="tab-pane fade active show pt-5">
+                <?php include 'userComments.php'; ?>
+            </div>            
 
         </div> <!-- /container -->
 
