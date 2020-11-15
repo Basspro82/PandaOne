@@ -1,5 +1,8 @@
-<?php include 'header.php' ?>
-<?php require 'my-friends-code.php' ?>
+<?php 
+session_start();
+include 'header.php';
+require 'my-friends-code.php'; 
+?>
 
 <script type="text/javascript" src="js/compatibility.js"></script>
 <script type="text/javascript" src="vendor/circle-progress/circle-progress.js"></script>

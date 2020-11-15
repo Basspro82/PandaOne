@@ -7,6 +7,7 @@ $showLog = false;
 
 $message = '';
 $user = UserManager::GetCurrent();
+$class="d-none";
 
 if (isset($_POST['mode'])) {
 

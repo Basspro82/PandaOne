@@ -76,7 +76,7 @@ if (isset($_POST['mode'])){
 
 			// Send notifications
 
-			User::sendNotifications($_SESSION['userID'],$comment->imdbID);
+			//User::sendNotifications($_SESSION['userID'],$comment->imdbID);
 
 		}
 

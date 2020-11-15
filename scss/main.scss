@@ -151,6 +151,16 @@ h2{
 	color:$textColor;
 }
 
+.badge{
+	font-size:16px;
+	font-weight:normal;
+
+	&.badge-info{
+		background-color:$primaryColor;
+		color:#000;
+	}
+}
+
 /*******************************/
 /*         Navigation          */
 /*******************************/
@@ -269,14 +279,12 @@ h2{
 			right: -30px;top:5px;
 			text-align: center;
 			font-size: 16px;
-			font-family: arial;
 			transform: rotate(45deg);
 			display:block;
 			background-color:$red;
 			color:#fff;
 			line-height:30px;
 			text-align:center;
-			border:solid 1px #fff;
 		}
 
 	}	
@@ -742,13 +750,17 @@ table{
 		}
 	}
 
-	.card{
+	.jumbotron{
 
-		background-color:$lightGrey;
+		.card{
 
-		.card-header{
-			background-color:$veryLightGrey;
-			color:$textColor;
+			background-color:$lightGrey;
+
+			.card-header{
+				background-color:$veryLightGrey;
+				color:$textColor;
+			}
+
 		}
 
 	}

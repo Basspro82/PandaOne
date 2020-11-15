@@ -1,7 +1,7 @@
   <?php require "commentCard-code.php" ?>
 
   <div id="<?php echo $comment->commentID ?>" class="commentCard card mt-2 mb-2 pb-4 comment<?php echo $comment->commentID ?> shadow-sm">
-    <?php if ($comment->new) { ?><div class="card-corner"><span>New</span></div><?php } ?>
+    <?php if ($comment->new) { ?><div class="card-corner"><span>HOT</span></div><?php } ?>
 
     <?php if ($page <> 'serie'){ ?>
       <div class="row">

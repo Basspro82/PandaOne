@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'header.php';
 require 'user-code.php';
 ?>

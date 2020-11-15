@@ -8,7 +8,7 @@ $showLog = false;
 $page = 'my-friends';
 $message = '';
 
-$result = UserManager::LoadAll();
+$result = UserManager::LoadAll('userID <> ' . $_SESSION['userID']);
 if ($result){
 	while($row = mysqli_fetch_object($result)){
 		$user = User::fromDB($row,0);

@@ -1,5 +1,8 @@
-<?php include 'header.php' ?>
-<?php require 'my-comments-code.php' ?>
+<?php 
+session_start();
+include 'header.php';
+require 'my-comments-code.php'; 
+?>
 
     <main role="main">
 
@@ -8,7 +11,6 @@
         <div class="container-fluid">
           <h1 class="display-3">Mes commentaires</h1>
           <p>Vous pouvez ajouter, modifier ou supprimer vos commentaires !</p>
-          <p><a class="btn btn-primary btn-lg" href="./yourComment" role="button">Ajouter un commentaire +</a></p>
         </div>
       </div>
 

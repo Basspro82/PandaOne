@@ -1,6 +1,7 @@
 <?php 
-  include 'header.php';
-  require 'series-code.php'; 
+session_start();
+include 'header.php';
+require 'series-code.php'; 
 ?>
 
     <main role="main" class="seriesPage">

@@ -41,23 +41,16 @@ require 'serie-code.php';
             </div>
         </div>
 
-        <div class="container">
-            <!-- Example row of columns -->
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
+                <?php foreach ($serie->comments as $comment) { ?>
 
-                    <div class="row">
-                        <?php foreach ($serie->comments as $comment) { ?>
-
-                            <div class="col-12">
-                                <?php require "commentCard.php" ?>
-                            </div>
-                        <?php } ?>
-                    </div><!--row-->
-                </div>
-                </row>
-
-            </div> <!-- /container -->
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <?php require "commentCard.php" ?>
+                    </div>
+                <?php } ?>
+            </div><!--row-->
+        </div> <!-- /container -->
 
     </main>
 

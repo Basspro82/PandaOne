@@ -285,7 +285,7 @@ h2 {
   color: #6EEB83; }
 
 .error {
-  color: #A50104; }
+  color: #D64933; }
 
 .message {
   width: 100%;
@@ -330,11 +330,11 @@ h2 {
 
 .btn-danger {
   background-color: transparent;
-  border: solid 1Px #A50104;
-  color: #A50104; }
+  border: solid 1Px #D64933;
+  color: #D64933; }
   .btn-danger:hover {
-    background-color: #A50104;
-    border-color: #A50104;
+    background-color: #D64933;
+    border-color: #D64933;
     color: #fff; }
 
 .page-link {
@@ -357,6 +357,13 @@ h2 {
 
 .jumbotron p {
   color: #999; }
+
+.badge {
+  font-size: 16px;
+  font-weight: normal; }
+  .badge.badge-info {
+    background-color: #f1ad1f;
+    color: #000; }
 
 /*******************************/
 /*         Navigation          */
@@ -433,14 +440,12 @@ h2 {
       top: 5px;
       text-align: center;
       font-size: 16px;
-      font-family: arial;
       transform: rotate(45deg);
       display: block;
-      background-color: #A50104;
+      background-color: #D64933;
       color: #fff;
       line-height: 30px;
-      text-align: center;
-      border: solid 1px #fff; }
+      text-align: center; }
   .commentCard .card-footer {
     position: absolute;
     bottom: 0;
@@ -720,9 +725,9 @@ table.dataTable.display tbody tr {
 .userPage .user .pseudo {
   font-size: 30px;
   margin-top: 10px; }
-.userPage .card {
+.userPage .jumbotron .card {
   background-color: #323232; }
-  .userPage .card .card-header {
+  .userPage .jumbotron .card .card-header {
     background-color: #505050;
     color: #999; }
 

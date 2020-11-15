@@ -1,5 +1,8 @@
-<?php include 'header.php' ?>
-<?php require 'account-code.php' ?>
+<?php 
+session_start();
+include 'header.php';
+require 'account-code.php'; 
+?>
 
 <main role="main" class="accountPage">
 
