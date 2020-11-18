@@ -1,7 +1,5 @@
 <?php 
   ini_set('display_errors',1);
-  require '../framework/log.php';
-  require '../framework/database.php';
   require 'subscribe-code.php'; 
 ?>
 <!DOCTYPE html>
@@ -12,7 +10,7 @@
   <body class="text-center subscribePage">
     <form action="subscribe.php" method="post" class="form">
       <input type="hidden" name="mode" value="1">
-      <img class="mb-4" src="./images/logo-beta.png" alt="logo">
+      <img class="mb-4" src="./images/logo.png" alt="logo">
       <p>Merci de renseigner les champs suivants : </p>
       
       <label for="pseudo" class="sr-only">Email</label>
@@ -30,7 +28,7 @@
       <label for="betaLogin" class="sr-only">Login Betaseries</label>
       <div class="input-group">   
         <div class="input-group-prepend">
-          <div class="input-group-text info" data-toggle="popover" title="Betaseries" data-html="true" data-placement="right" data-content="<?php require '_betaseries_desc.php'; ?>">?</div>
+          <div class="input-group-text info" data-toggle="popover" title="Betaseries" data-html="true" data-placement="left" data-content="<?php require '_betaseries_desc.php'; ?>">?</div>
           </div>
         <input id="betaLogin" name="betaLogin" class="form-control" placeholder="Login BetaSeries">
       </div>

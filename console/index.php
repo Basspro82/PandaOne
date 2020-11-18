@@ -22,7 +22,6 @@ echo '<table>';
 checkPage($dns,'login');
 checkPage($dns . 'series?supervision=1','Liste des séries');
 checkPage($dns . 'serie?imdbID=tt10293938&supervision=1','Fiche série');
-checkPage($dns . 'comment.php?commentID=36&supervision=1','Fiche commentaire');
 checkPage($dns . 'my-comments?supervision=1','Mes commentaires');
 checkPage($dns . 'my-friends?supervision=1','Mes amis');
 checkPage($dns . 'account?supervision=1','Mon compte');

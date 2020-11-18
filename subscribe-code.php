@@ -1,14 +1,15 @@
 <?php
 
-include 'config.php';
+/*****************************************/
+/* REQUIRE */
 
-require_once "manager/userManager.php";
-require_once "model/userModel.php";
-
-require_once "../framework/gravatar.php";
-require_once "../framework/image.php";
-require_once "../framework/mail.php";
+require_once('config.php');
+require_once(FRAMEWORKPATH . 'frameworks.php');
+require_once('model/models.php');
+require_once('manager/managers.php');
 require_once('functions.php');
+
+/*****************************************/
 
 $showLog = false;
 
@@ -62,7 +63,7 @@ if (isset($_POST['mode'])){
 					$urlGravatar = getGravatar($email);
 					saveImageFromUrl($urlGravatar,$imgPath);
 				}else{
-					saveImageFromUrl('https://api.adorable.io/avatars/100/' . $email . '.png',$imgPath);
+					//saveImageFromUrl('https://api.adorable.io/avatars/100/' . $email . '.png',$imgPath);
 				}
 
 				// Send email

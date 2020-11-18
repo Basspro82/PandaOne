@@ -36,13 +36,14 @@
     <div class="row m-3">
       <div class="col">
         <blockquote>
+          "
           <?php if ($page == 'serie'){
             echo $comment->comment;
           }else{
             echo cutString($comment->comment,200,'...<a href="./serie?imdbID=' . $comment->imdbID . '#' . $comment->commentID . '">Lire la suite</a>');
           }
           ?>
-          &nbsp;"
+          "
         </blockquote>
       </div>
     </div><!--row-->

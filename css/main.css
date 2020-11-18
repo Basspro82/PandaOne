@@ -406,8 +406,10 @@ h2 {
   .logo img {
     height: 70px; }
 
-.loginPage .form, .subscribePage .form {
-  max-width: 300px; }
+.loginPage, .subscribePage {
+  color: #999; }
+  .loginPage .form, .subscribePage .form {
+    max-width: 300px; }
 
 /*******************************/
 /*            Card             */
