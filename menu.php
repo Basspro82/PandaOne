@@ -1,7 +1,13 @@
 <?php require "menu-code.php" ?>
 
-<div class="outer-menu">
-  <input class="checkbox-toggle" type="checkbox" />
+<div class="outer-menu" id="js-menu" name="js-menu">
+
+<?php if (isset($_GET['imdbID'])){ ?>
+<input class="checkbox-toggle btn2" type="checkbox" />
+<?php }else{ ?>
+<input class="checkbox-toggle btn1" type="checkbox" />
+<?php } ?>
+  
   <div class="hamburger">
     <div></div>
   </div>

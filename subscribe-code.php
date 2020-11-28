@@ -55,6 +55,10 @@ if (isset($_POST['mode'])){
 
 				CommunityUserManager::Add(1,$user);
 
+				// Add User Friends
+
+				User::addFriends($user);
+
 				// Save picture
 
 				$imgPath = imgPhysicalPath . 'avatars/' . $user->userID . '.png';
@@ -64,6 +68,7 @@ if (isset($_POST['mode'])){
 					saveImageFromUrl($urlGravatar,$imgPath);
 				}else{
 					//saveImageFromUrl('https://api.adorable.io/avatars/100/' . $email . '.png',$imgPath);
+					copy(imgPhysicalPath . 'avatars/default.png',$imgPath);
 				}
 
 				// Send email

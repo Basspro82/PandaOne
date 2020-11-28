@@ -42,4 +42,63 @@ $(document).ready(function() {
         $('[data-toggle="popover"]').popover();
     })
 
+    // Comment Add
+
+    show = false;
+
+    $(".btn1").change(function() {
+        manageCommentForm();
+        initCommentForm();
+    });
+
+    $(".btn2").change(function() {
+        manageCommentForm();
+    });
+
+    $(".btn3").change(function() {
+        manageCommentForm();
+        setCommentForm($(this).attr("data-title"),$(this).attr("data-imdbID"));
+    });
+
  });
+
+function manageCommentForm(){
+    if (show){
+        hideCommentForm();
+        show = false;
+    }else{
+        showCommentForm();
+        show = true;
+    }
+}
+
+function initCommentForm(){
+
+    $("#fTitle").val("");
+    $("#fTitle").attr("class","form-control d-none");
+    $("#searchBox").attr("class","form-control");
+
+}
+
+function setCommentForm(title,imdbID){
+
+    $("#fTitle").val(title);
+    $("#fTitle").attr("class","form-control");
+
+    $("#title").val(title);
+
+    $("#searchBox").attr("class","form-control d-none");
+
+    $("#imdbID").val(imdbID);
+
+    $("#btnSave").prop("disabled", false);
+
+}
+
+function showCommentForm(){
+    $("#js-menu").attr("class","outer-menu show");
+}
+
+function hideCommentForm(){
+    $("#js-menu").attr("class","outer-menu");
+}

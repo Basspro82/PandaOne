@@ -16,7 +16,6 @@ function connectUser($user){
 
 	// Set session
 
-	session_start();
 	$_SESSION["userID"] = $user->userID;
 	$_SESSION["pseudo"] = $user->pseudo;
 	$_SESSION["gravatar"] = $user->gravatar;

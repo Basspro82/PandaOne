@@ -263,6 +263,7 @@ h2{
 	border-radius:0;
 	height:100%;
 	transition: all 1s ease-out;
+	overflow:hidden;
 
 	.card-date{
 		font-size:0.8rem;
@@ -296,10 +297,12 @@ h2{
 
 		position:absolute;bottom:0;
 		width:100%;
+		height:60px;
 		transition: all 1s ease-out;
-		border-bottom:solid 2px $veryLightGrey;
+		/*border-bottom:solid 2px $veryLightGrey;*/
+		padding-top:10px;
 
-		&:before{
+		/*&:before{
 			z-index: 1;
 			background:$primaryColor;
 			bottom: 0;
@@ -312,18 +315,18 @@ h2{
 		}
 
 		&:after{
-			bottom: -3px;
+			bottom: -5px;
 			content: '';
 			display: block;
 			position: absolute;
-			right: -13px;
+			right: -19px;
 			transform: rotate(135deg);
 			width: 0;
 			height: 0;
-			border-left: 20px solid transparent;
-			border-right: 20px solid transparent;
-			border-bottom: 20px solid $veryLightGrey;
-		}
+			border-left: 40px solid transparent;
+			border-right: 40px solid transparent;
+			border-bottom: 40px solid $veryLightGrey;
+		}*/
 
 		a{
 			color:$primaryColor;
@@ -412,6 +415,54 @@ h2{
 			color:$primaryColor;
 		}
 
+	}
+
+	.outer-menu{
+		position:absolute;
+		top:10px;right:10px;left:initial;
+		margin:0;
+		display:flex;
+		color:$primaryColor;
+		z-index:2;
+
+		h3{
+			font-size:1.6rem;
+		}
+
+		.checkbox-toggle{
+			width:40px;height:40px;
+		}
+
+		.hamburger{
+
+			position:absolute;
+			top:0px;left:initial;
+			right:0px;
+			background-color:transparent;
+			padding:0.5em;
+			width:40px;height:40px;
+			border:solid 1Px $primaryColor;
+
+			> div{
+				background-color:$primaryColor;
+			}
+
+			&:hover{
+
+				border:solid 1Px #fff;
+
+				> div{
+					background-color:#fff;
+				}
+
+			}
+
+		}
+
+	}
+
+	.card-actions{
+	    
 	}
 
 }

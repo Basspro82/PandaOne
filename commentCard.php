@@ -1,6 +1,6 @@
   <?php require "commentCard-code.php" ?>
 
-  <div id="<?php echo $comment->commentID ?>" class="commentCard card mt-2 mb-2 pb-4 comment<?php echo $comment->commentID ?> shadow-sm">
+  <div id="<?php echo $comment->commentID ?>" class="commentCard card mt-2 mb-2 pb-5 comment<?php echo $comment->commentID ?> shadow-sm">
     <?php if ($comment->new) { ?><div class="card-corner"><span>HOT</span></div><?php } ?>
 
     <?php if ($page <> 'serie'){ ?>
@@ -59,6 +59,16 @@
       <?php } ?>
     <div class="card-footer">
       <a class="d-none" href="./comment.php?commentID=<?php echo $comment->commentID ?>"><i class="fas fa-comment"></i>&nbsp;<?php echo $replies->num_rows ?></a>
-    </div>  
 
+      <div class="card-actions">
+          <div class="outer-menu">
+            <input class="checkbox-toggle btn3" type="checkbox" title="Ajouter un commentaire" data-imdbID="<?php echo $comment->serie->imdbID ?>" data-title="<?php echo $comment->serie->title ?>" />
+            <div class="hamburger">
+              <div></div>
+            </div>
+          </div> 
+      </div>
+
+       
+    </div>
 </div><!--card-->

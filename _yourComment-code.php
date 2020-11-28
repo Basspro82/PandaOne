@@ -5,6 +5,25 @@ $imdbID = '';
 $commentID = '';
 $commentRaw = '';
 $score = '';
+$title = '';
+$save = '';
+$classFormTitle = '';
+$classSearchBox = '';
+
+showLog('yourComment-code.php','GET OBJECT',$_GET);
+showLog('yourComment-code.php','POST OBJECT ',$_POST);
+
+//Form configuration
+
+if (isset($_GET['imdbID'])){ 
+	$save = '';
+	$classFormTitle = "";
+	$classSearchBox = "d-none"; 
+}else{ 
+	$save = 'disabled';
+	$classFormTitle = "d-none";
+	$classSearchBox = "";
+} 
 
 //Load serie
 

@@ -6,17 +6,8 @@
           <h3>Rechercher, noter et commenter votre série</h3>    
         </div>
         <div class="form-group">
-          <?php 
-          if (isset($_GET['imdbID']) || isset($_GET['commentID'])){ 
-            $save = '';
-            ?>
-            <input class="form-control" id="title" type="text" value="<?php echo $title ?>" disabled>
-            <?php 
-          }else{ 
-            $save = 'disabled';
-            ?>  
-            <input class="form-control" id="searchBox" type="text" placeholder="entrer une série">
-          <?php } ?>
+          <input class="form-control <?php echo $classFormTitle ?>" id="fTitle" type="text" value="<?php echo $title ?>" disabled>
+          <input class="form-control <?php echo $classSearchBox ?>" id="searchBox" type="text" placeholder="entrer une série">
           <div id="result"></div>
         </div>
       </div>
