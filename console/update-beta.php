@@ -4,6 +4,7 @@ include '../config.php';
 
 require_once '../../framework/log.php';
 require_once "../../framework/database.php";
+require_once "../../framework/image.php";
 require_once "../manager/serieManager.php";
 
 $series = LoadAll('serie',"", 'imdbID');
@@ -17,4 +18,6 @@ $strData = file_get_contents($url);
 $data = json_decode($strData);
 foreach ($data->shows as $show) {
     SerieManager::UpdateFromBetaseries($show);
+    saveImageFromUrl($show->images->poster,imgPhysicalPath . 'series/posters/' . $show->imdb_id . '.jpg');
+    saveImageFromUrl($show->images->show,imgPhysicalPath . 'series/banners/' . $show->imdb_id . '.jpg');
 }

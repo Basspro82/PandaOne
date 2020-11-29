@@ -89,6 +89,18 @@ if (isset($_POST['mode'])){
 			
 			CommentManager::Add($comment);
 
+			// Update DataBase Serie with Beta Series Data
+
+			$url = "https://api.betaseries.com/shows/display?key=cabf2a885a7d&imdb_id=" . $comment->serie->imdbID;
+			$strData = file_get_contents($url);
+			$data = json_decode($strData);
+		    SerieManager::UpdateFromBetaseries($data->show);
+
+		    // Save Serie Pictures
+
+		    saveImageFromUrl($data->show->images->poster,imgPhysicalPath . 'series/posters/' . $comment->serie->imdbID . '.jpg');
+		    saveImageFromUrl($data->show->images->show,imgPhysicalPath . 'series/banners/' . $comment->serie->imdbID . '.jpg');
+
 			// Send Administrator email
 
 			sendPandaLog('Nouveau commentaire',$_SESSION["pseudo"] . ' a créé un commentaire pour la série ' . $_POST['title']);
