@@ -1,8 +1,9 @@
 <?php 
-session_start();
-include 'header.php';
+require '_init.php';
 require 'my-friends-code.php'; 
 ?>
+
+<?php include '_header.php'; ?>
 
 <script type="text/javascript" src="js/compatibility.js"></script>
 <script type="text/javascript" src="vendor/circle-progress/circle-progress.js"></script>
@@ -40,4 +41,4 @@ require 'my-friends-code.php';
 
     </main>
 
-<?php include 'footer.php' ?>
+<?php include '_footer.php' ?>

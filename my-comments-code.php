@@ -6,6 +6,7 @@ require_once "model/commentModel.php";
 $showLog = false;
 
 $page = 'my-comments';
+$bodyClass='myComments';
 $message = '';
 
 $result = CommentManager::LoadAll('comment.userID = ' . $_SESSION["userID"]);
@@ -18,5 +19,14 @@ if ($result){
 }else{
 	$message = "Vous n'avez pas de commentaire.";
 }
+
+/*********************************/
+/* SEO */
+/*********************************/
+
+$ogTitle = '';
+$ogUrl = '';
+$ogImage = '';
+$ogDescription = '';
 
 ?>

@@ -1,9 +1,9 @@
 <?php
-session_start();
-include 'header.php';
+require '_init.php';
 require 'home-code.php';
-
 ?>
+
+<?php include '_header.php'; ?>
 
 <main role="main" class="homePage">
 
@@ -32,4 +32,4 @@ require 'home-code.php';
     </div> <!-- /container -->
 </main>
 
-<?php include 'footer.php' ?>
+<?php include '_footer.php' ?>

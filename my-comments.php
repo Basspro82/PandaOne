@@ -1,8 +1,9 @@
 <?php 
-session_start();
-include 'header.php';
+include '_init.php';
 require 'my-comments-code.php'; 
 ?>
+
+<?php include '_header.php'; ?>
 
     <main role="main">
 
@@ -36,4 +37,4 @@ require 'my-comments-code.php';
 
     </main>
 
-<?php include 'footer.php' ?>
+<?php include '_footer.php' ?>

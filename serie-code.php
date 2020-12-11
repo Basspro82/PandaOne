@@ -6,6 +6,7 @@ require_once "model/commentModel.php";
 
 $showLog = false;
 $page = "serie";
+$bodyClass='serie';
 $nbComments = 0;
 $averageRate = '';
 
@@ -28,6 +29,15 @@ while($row = mysqli_fetch_object($result)){
 }
 
 $averageRate = $nbComments>0 ? round($sum/$nbComments,1) : 0;
+
+/*********************************/
+/* SEO */
+/*********************************/
+
+$ogTitle = $serie->title;
+$ogUrl = ROOTURL;
+$ogImage = ROOTURL . $serie->poster;
+$ogDescription = $serie->plot;
 
 showLog('serie-code','',$serie);
 

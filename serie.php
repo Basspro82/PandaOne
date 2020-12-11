@@ -1,8 +1,9 @@
 <?php
-session_start();
-include 'header.php';
+require '_init.php';
 require 'serie-code.php';
 ?>
+
+<?php include '_header.php'; ?>
 
     <main role="main" class="fiche-serie">
 
@@ -54,4 +55,4 @@ require 'serie-code.php';
 
     </main>
 
-<?php include 'footer.php' ?>
+<?php include '_footer.php' ?>

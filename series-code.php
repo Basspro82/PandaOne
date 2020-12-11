@@ -4,7 +4,8 @@ require_once "manager/serieManager.php";
 require_once "model/serieModel.php";
 
 $showLog = false;
-$page = "serie";
+$page = "series";
+$bodyClass='series';
 
 $result = SerieManager::GetLast(0);
 while($serie = mysqli_fetch_object($result)){
@@ -13,6 +14,15 @@ while($serie = mysqli_fetch_object($result)){
 	//$serie = Serie::fromDB($row,0);
 	$series[] = $serie;
 }
+
+/*********************************/
+/* SEO */
+/*********************************/
+
+$ogTitle = '';
+$ogUrl = '';
+$ogImage = '';
+$ogDescription = '';
 
 showLog('search-code','',$series[0]);
 

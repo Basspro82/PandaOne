@@ -1,8 +1,9 @@
 <?php 
-session_start();
-include 'header.php';
+include '_init.php';
 require 'series-code.php'; 
 ?>
+
+<?php include '_header.php'; ?>
 
     <main role="main" class="seriesPage">
 
@@ -69,4 +70,4 @@ require 'series-code.php';
         });
     </script>
 
-<?php include 'footer.php' ?>
+<?php include '_footer.php' ?>

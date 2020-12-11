@@ -1,17 +1,7 @@
 <?php
 
-/*****************************************/
-/* REQUIRE */
-
-require_once('config.php');
-require_once(FRAMEWORKPATH . 'frameworks.php');
-require_once('model/models.php');
-require_once('manager/managers.php');
-require_once('functions.php');
-
-/*****************************************/
-
 $showLog = false;
+$bodyClass = 'text-center loginPage';
 
 $message = '';
 if (isset($_POST['mode'])){

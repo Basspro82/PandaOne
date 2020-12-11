@@ -8,6 +8,7 @@ require_once "model/communityUserModel.php";
 
 $showLog = false;
 $page = 'home';
+$bodyClass = 'home';
 
 $nbComments = 12;
 
@@ -21,6 +22,15 @@ while($row = mysqli_fetch_object($result)){
 }
 
 $pagination = GetPagination("/home",$result,$nbComments,$pageCourante);
+
+/*********************************/
+/* SEO */
+/*********************************/
+
+$ogTitle = 'home';
+$ogUrl = ROOTURL;
+$ogImage = ROOTURL . 'images/icon4.png';
+$ogDescription = 'Bienvenue sur pandaOne';
 
 showLog('home-code','',$comments);
 

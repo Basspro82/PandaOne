@@ -1,11 +1,12 @@
-<?php include "footer-code.php" ?>
+<?php include "_footer-code.php" ?>
 
+<?php if (isset($_SESSION['userID'])){ ?>
 <footer>
 	  <div class="footerUp">
 	  	<div class="container">
 	  		<div class="row align-items-center">
 	  			<div class="col-3">
-	  				<p>Développé avec &hearts; <br/>par Yann LAURAIN et Vincent JEZEQUEL</p>
+	  				<p>Développé avec &hearts; <br/>par YL et VJ</p>
 	  			</div>
 	  			<div class="col-9">
 	  				<div class="row align-items-center">
@@ -50,7 +51,13 @@
 		</div>
 		</div>
     </footer>
+<?php } ?>
 
-    <?php include "_scripts.php" ?>
+    <script src="./js/popper.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="./js/rater.min.js"></script>
+	<script src="./js/main.js"></script>
 
-</body></html>
+</body>
+</html>

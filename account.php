@@ -1,8 +1,9 @@
 <?php 
-session_start();
-include 'header.php';
+require '_init.php';
 require 'account-code.php'; 
 ?>
+
+<?php include '_header.php'; ?>
 
 <main role="main" class="accountPage">
 
@@ -54,4 +55,4 @@ require 'account-code.php';
     </div>
 </main>
 
-<?php include 'footer.php' ?>
+<?php include '_footer.php' ?>

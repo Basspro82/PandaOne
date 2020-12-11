@@ -1,5 +1,7 @@
 <?php 
 
+     session_start();
+
     /*****************************************/
     /* REQUIRE */
 
@@ -14,6 +16,8 @@
 
     ini_set('display_errors',1);
 
+    // Check session
+
     if ((!isset($_SESSION['userID']))&&(env != 'dev')){
 
         header('Location:./'); 
@@ -27,20 +31,22 @@
     
     }
 
+    // Set Url Referrer
+
+    $urlReferrer = '';
+    if ((!isset($_POST['mode']))&&(isset($_SERVER['HTTP_REFERER']))){
+        $urlReferrer = $_SERVER['HTTP_REFERER'];
+    }
+
+    //Logout
+
+    if (isset($_POST['mode'])){
+        if ($_POST["mode"]=='logout'){
+            session_start();
+            session_unset();
+            session_destroy();
+            header('Location:index');
+        }
+    }    
+
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-    
-    <?php include "_head.php" ?>
-
-    <body>
-
-    <?php
-        $urlReferrer = '';
-        if ((!isset($_POST['mode']))&&(isset($_SERVER['HTTP_REFERER']))){
-            $urlReferrer = $_SERVER['HTTP_REFERER'];
-        }    
-    ?>
-
-    <?php include 'menu.php' ?>

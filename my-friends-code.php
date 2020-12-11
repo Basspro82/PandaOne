@@ -6,6 +6,7 @@ require_once "model/userModel.php";
 $showLog = false;
 
 $page = 'my-friends';
+$bodyClass='my-friends';
 $message = '';
 
 $result = UserManager::LoadAll('userID <> ' . $_SESSION['userID']);
@@ -18,5 +19,14 @@ if ($result){
 }else{
 	$message = "Vous n'avez pas de commentaire.";
 }
+
+/*********************************/
+/* SEO */
+/*********************************/
+
+$ogTitle = '';
+$ogUrl = '';
+$ogImage = '';
+$ogDescription = '';
 
 ?>
