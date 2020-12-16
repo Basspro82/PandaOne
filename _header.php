@@ -5,10 +5,10 @@
     
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
+        <meta name="description" content="<?php echo $descriptionPage ?>">
         <meta name="author" content="">
 
-        <title>Bienvenue sur PandaOne</title>
+        <title><?php echo $titlePage ?></title>
 
         <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
@@ -42,6 +42,10 @@
     <body class="<?php echo $bodyClass ?>">
 
         <?php if (isset($_SESSION['userID'])){ ?>
+
+
+        <?php if (!isset($hiddenForm)){ ?>    
+
         <div class="outer-menu" id="js-menu" name="js-menu">
 
         <?php if (isset($_GET['imdbID'])){ ?>
@@ -61,6 +65,9 @@
             </div>
           </div>
         </div>
+
+        <?php } ?>
+
         <a class="logo d-none d-sm-block" href="./home">
           <img src="./images/logo-light.png"/>
         </a>

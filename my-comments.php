@@ -3,7 +3,10 @@ include '_init.php';
 require 'my-comments-code.php'; 
 ?>
 
-<?php include '_header.php'; ?>
+<?php 
+  $hiddenForm = false;
+  include '_header.php'; 
+?>
 
     <main role="main">
 

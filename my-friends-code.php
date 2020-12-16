@@ -24,6 +24,9 @@ if ($result){
 /* SEO */
 /*********************************/
 
+$titlePage = 'Mes amis';
+$descriptionPage = 'Mes amis';
+
 $ogTitle = '';
 $ogUrl = '';
 $ogImage = '';

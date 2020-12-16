@@ -12,6 +12,7 @@ require_once('functions.php');
 /*****************************************/
 
 $showLog = false;
+$bodyClass='subscribePage';
 
 $message = '';
 
@@ -88,5 +89,12 @@ if (isset($_POST['mode'])){
 	}
 		
 }
+
+/*********************************/
+/* SEO */
+/*********************************/
+
+$titlePage = "S'inscrire";
+$descriptionPage = "S'inscrire";
 
 ?>

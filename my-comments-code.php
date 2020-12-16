@@ -24,6 +24,9 @@ if ($result){
 /* SEO */
 /*********************************/
 
+$titlePage = 'Mes commentaires';
+$descriptionPage = 'Mes commentaires';
+
 $ogTitle = '';
 $ogUrl = '';
 $ogImage = '';

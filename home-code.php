@@ -27,7 +27,10 @@ $pagination = GetPagination("/home",$result,$nbComments,$pageCourante);
 /* SEO */
 /*********************************/
 
-$ogTitle = 'home';
+$titlePage = 'Bienvenue sur PandaOne';
+$descriptionPage = 'Les dernières actus séries de votre communauté';
+
+$ogTitle = 'Bienvenue sur PandaOne';
 $ogUrl = ROOTURL;
 $ogImage = ROOTURL . 'images/icon4.png';
 $ogDescription = 'Bienvenue sur pandaOne';

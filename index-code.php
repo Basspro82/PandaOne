@@ -1,5 +1,9 @@
 <?php
 
+if (isset($_SESSION['userID'])){
+	header('Location:./home'); 
+}
+
 $showLog = false;
 $bodyClass = 'text-center loginPage';
 
@@ -25,5 +29,12 @@ if (isset($_POST['mode'])){
 		
 	}
 }
+
+/*********************************/
+/* SEO */
+/*********************************/
+
+$titlePage = 'Login';
+$descriptionPage = 'Login';
 
 ?>

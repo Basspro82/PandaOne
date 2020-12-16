@@ -6,7 +6,7 @@ require_once "model/commentModel.php";
 
 $showLog = false;
 $page = "serie";
-$bodyClass='serie';
+$bodyClass='seriePage';
 $nbComments = 0;
 $averageRate = '';
 
@@ -33,6 +33,9 @@ $averageRate = $nbComments>0 ? round($sum/$nbComments,1) : 0;
 /*********************************/
 /* SEO */
 /*********************************/
+
+$titlePage = $serie->title;
+$descriptionPage = $serie->plot;
 
 $ogTitle = $serie->title;
 $ogUrl = ROOTURL;

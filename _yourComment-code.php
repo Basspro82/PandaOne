@@ -58,58 +58,45 @@ if (isset($_POST['mode'])){
 
 		showLog('yourComment-code.php','POST OBJECT ',$_POST);
 			
-		if ($_POST['commentID']!=''){
-				
-			// Update comment
+		//Create comment
 
-			$comment = new Comment();
-			$comment->commentID = $_POST['commentID'];
-			$comment->imdbID = $_POST['imdbID'];
-			$comment->userID = $_SESSION['userID'];
-			$comment->comment = $_POST['comment'];
-			$comment->score = $_POST['score'];
-			CommentManager::Update($comment);
+		$comment = new Comment();
+		$comment->imdbID = $_POST['imdbID'];
+		$comment->userID = $_SESSION['userID'];
+		$comment->comment = $_POST['comment'];
+		$comment->score = $_POST['score'];	
 
-		}else{
-			
-			//Create comment
+		$comment->serie = new Serie();
+		$comment->serie->imdbID = $_POST['imdbID'];
+		$comment->serie->title = $_POST['title'];
+		$comment->serie->year = $_POST['year'];
+		$comment->serie->poster = $_POST['poster'];
+		$comment->serie->plot = getElementByClassName('https://www.imdb.com/title/' . $_POST['imdbID'] . '/','div','summary_text'); 
+		
+		CommentManager::Add($comment);
 
-			$comment = new Comment();
-			$comment->imdbID = $_POST['imdbID'];
-			$comment->userID = $_SESSION['userID'];
-			$comment->comment = $_POST['comment'];
-			$comment->score = $_POST['score'];	
+		// Update DataBase Serie with Beta Series Data
 
-			$comment->serie = new Serie();
-			$comment->serie->imdbID = $_POST['imdbID'];
-			$comment->serie->title = $_POST['title'];
-			$comment->serie->year = $_POST['year'];
-			$comment->serie->poster = $_POST['poster'];
-			$comment->serie->plot = getElementByClassName('https://www.imdb.com/title/' . $_POST['imdbID'] . '/','div','summary_text'); 
-			
-			CommentManager::Add($comment);
+		$url = "https://api.betaseries.com/shows/display?key=cabf2a885a7d&imdb_id=" . $comment->serie->imdbID;
+		$strData = file_get_contents($url);
+		$data = json_decode($strData);
+	    SerieManager::UpdateFromBetaseries($data->show);
 
-			// Update DataBase Serie with Beta Series Data
+	    // Save Serie Pictures
 
-			$url = "https://api.betaseries.com/shows/display?key=cabf2a885a7d&imdb_id=" . $comment->serie->imdbID;
-			$strData = file_get_contents($url);
-			$data = json_decode($strData);
-		    SerieManager::UpdateFromBetaseries($data->show);
+	    saveImageFromUrl($data->show->images->poster,imgPhysicalPath . 'series/posters/' . $comment->serie->imdbID . '.jpg');
+	    saveImageFromUrl($data->show->images->show,imgPhysicalPath . 'series/banners/' . $comment->serie->imdbID . '.jpg');
 
-		    // Save Serie Pictures
+		// Send Administrator email
 
-		    saveImageFromUrl($data->show->images->poster,imgPhysicalPath . 'series/posters/' . $comment->serie->imdbID . '.jpg');
-		    saveImageFromUrl($data->show->images->show,imgPhysicalPath . 'series/banners/' . $comment->serie->imdbID . '.jpg');
+		sendPandaLog('Nouveau commentaire',$_SESSION["pseudo"] . ' a créé un commentaire pour la série ' . $_POST['title']);
 
-			// Send Administrator email
+		// Send notifications
 
-			sendPandaLog('Nouveau commentaire',$_SESSION["pseudo"] . ' a créé un commentaire pour la série ' . $_POST['title']);
+		//User::sendNotifications($_SESSION['userID'],$comment->imdbID);
 
-			// Send notifications
-
-			//User::sendNotifications($_SESSION['userID'],$comment->imdbID);
-
-		}
+		$message = "Découvrez le commentaire laissé par " . $_SESSION["pseudo"] . " sur la série " . $comment->serie->title . " !";
+		postOnFacebook(ROOTURL . Serie::getUrl($comment->serie->imdbID),$message);
 
 		//header('Location:' . $_POST["urlReferrer"]);   
 

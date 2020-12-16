@@ -3,12 +3,9 @@
   ini_set('display_errors',1);
   require 'subscribe-code.php'; 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
   
-  <?php include "_head.php" ?>
+  <?php include "_header.php" ?>
 
-  <body class="text-center subscribePage">
     <form action="subscribe.php" method="post" class="form">
       <input type="hidden" name="mode" value="1">
       <img class="mb-4" src="./images/logo.png" alt="logo">
@@ -44,6 +41,3 @@
     </form>
 
     <?php include "_footer.php" ?>
-
-  </body>
-</html>

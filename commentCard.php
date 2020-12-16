@@ -51,7 +51,7 @@
         <div class="row">
           <div class="col text-center">
             <div class="btn-group" role="group" aria-label="Action">
-              <a class="btn btn-primary" href="./yourComment?commentID=<?php echo $comment->commentID ?>">Modifier</a>
+              <a class="btn btn-primary" href="./modifyComment?commentID=<?php echo $comment->commentID ?>">Modifier</a>
               <button type="button" class="btn btn-danger btnRemove" data-commentID="<?php echo $comment->commentID ?>">Supprimer</button>
             </div>
           </div>
