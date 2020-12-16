@@ -1,8 +1,9 @@
 <?php
-session_start();
-include 'header.php';
+require '_init.php';
 require 'user-code.php';
 ?>
+
+<?php include '_header.php'; ?>
 
     <main role="main" class="userPage">
 
@@ -83,4 +84,4 @@ require 'user-code.php';
 
     </script>
 
-<?php include 'footer.php' ?>
+<?php include '_footer.php' ?>

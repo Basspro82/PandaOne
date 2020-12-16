@@ -10,9 +10,9 @@ require 'serie-code.php';
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron" style="background-image: url('<?php echo $serie->banner ?>')">
             <div class="container">
-                <h1 class="display-3"><?php echo $serie->title ?></h1>
+                <h1 class="display-4"><?php echo $serie->title ?></h1>
                 <div class="row">
-                    <div class="col-3 seriePoster">
+                    <div class="col-sm-3 seriePoster">
                         <img src="<?php echo $serie->poster ?>"/>
                     </div>
                     <div class="col">
@@ -28,7 +28,7 @@ require 'serie-code.php';
 
 
                     </div>
-                    <div class="col-2">
+                    <div class="col-sm-2 d-none d-sm-block">
                         <?php
                         if ($serie->platform) {
                             echo "<a target='_blank' href='" . $serie->platformUrl . "'><img class='platform' src='" . $serie->platformLogo . "'></a>";

@@ -5,10 +5,10 @@
 	  <div class="footerUp">
 	  	<div class="container">
 	  		<div class="row align-items-center">
-	  			<div class="col-3">
-	  				<p>Développé avec &hearts; <br/>par YL et VJ</p>
+	  			<div class="col-sm-3">
+	  				<p>Développé avec &hearts; par YL et VJ</p>
 	  			</div>
-	  			<div class="col-9">
+	  			<div class="col-9 d-none d-sm-block">
 	  				<div class="row align-items-center">
 	  					<div class="col-4">
 		                    <div class="row align-items-center">
